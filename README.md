@@ -147,13 +147,52 @@ this is easy:
     which makes it easier to write
     [informative, complete commit messages](http://chris.beams.io/posts/git-commit/).
 
+## Pushing your branch to Github
+
 At this point you have your changes committed to your local copy of the
 repository, and want to _push_ that change up to the Github copy of the
 repository. This is the potentially tricky part. :smile:
 
-If no one else was working on this repository, it would be easy:
+If no one else is working on this branch in this repository (which is
+likely in this case since you're working on a special branch you created
+for this contact info document) all you'll need to do is _push_ your
+work up to the Github repository:
+* `git push` on the command line
+* `VCS -> Git -> Push…` in WebStorm
+This will push all commits on your current branch so a branch with the
+same name up on Github; if you refresh your view of the Github repository
+you should see your branch listed, probably along with a lot of other
+branches. (All these branches will start to clutter things up, and we'll
+look later at cleaning house.)
+
+## Merging your branch into `master`
+
+The problem with the current situation is that your nifty new contact
+info document is "trapped" in the branch you created. If you look at that
+branch on Github, you'll see your new document, but if you're on any
+other branch (such as `master`, which is the "default" branch people
+see when they go to the project), your file won't be there.
+
+So you need to _merge_ your work onto the `master` branch.
+
+If no one else was working on this repository it would be easy, and all
+you'd need to do is _merge_ into `master` and then _push_ your work up
+to the Github repository.
+
+
+
 * `git push` on the command line
 * `VCS -> Git -> Push…` in WebStorm
 This would push all commits on your current branch (remember that you're
 working on a special branch you created for this contact info document!)
 so a branch with the same name up on Github.
+
+If no one else has pushed any changes since you last checked out or
+pulled, then all you'll need to do is push. If, however, someone else
+has pushed, attempted to push will fail with a message saying that you
+need to pull first. With so many people editing the same repository at
+the same time this will be the most common scenario, and you will need
+to pull first:
+* `git pull` on the command line
+* `VCS -> Git -> Pull…` in WebStorm
+If things go smoothly
