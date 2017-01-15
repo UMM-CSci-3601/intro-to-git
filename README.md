@@ -201,17 +201,43 @@ first make sure to `pull` any changes other people have made into your
 copy:
 * `git pull` on the command line
 * `VCS -> Git -> Pull…` in WebStorm
+If you're lucky, any changes you've made won't interact badly (_conflict_)
+with changes other people have made. That should be the case here because
+so far everyone's working on completely different files and you haven't
+made any changes to the `master` branch, so we'll ignore
+merge conflicts for now and return to them in later in the lab.
 
-This would push all commits on your current branch (remember that you're
-working on a special branch you created for this contact info document!)
-so a branch with the same name up on Github.
+You've now got the latest version of `master`, which may include various
+changes other people have made. You need to _merge_ your changes from
+your feature branch into the `master` branch.
+* `git merge <feature branch>` on the command line
+* `VCS -> Git -> Merge Changes…` brings up a dialogue where you can then
+choose the branch(es) you want to merge into your currently checked out
+branch (`master` in this case). Check the box by your feature branch and
+hit `Merge` and you should get your changes merged in.
 
-If no one else has pushed any changes since you last checked out or
-pulled, then all you'll need to do is push. If, however, someone else
-has pushed, attempted to push will fail with a message saying that you
-need to pull first. With so many people editing the same repository at
-the same time this will be the most common scenario, and you will need
-to pull first:
-* `git pull` on the command line
-* `VCS -> Git -> Pull…` in WebStorm
-If things go smoothly
+Now that your copy of `master` has your work on it, you want to push
+that up to Github:
+* `git push` on the command line
+* `VCS -> Git -> Push…` in WebStorm
+
+Normally this should just work because you did a pull on `master` just
+a few minutes ago. Occassionally, however, someone will manage to sneak
+in a pushed change between your `pull` and `push`, and that's actually
+pretty likely today with so many people working in parallel on the same
+repository. If that happens you'll get some sort of error saying that
+your attempt to push `master` was rejected, and suggesting that you pull
+or merge remote changes before you push. WebStorm lets you do this from
+the error dialogue – if you click the `Merge` button WebStorm will pull
+down the changes from Github and merge them into your `master`.
+
+At that point you would try to `push` again, repeating the pull/merge
+step yet again if someone has once again snuck in on you. Eventually,
+though, your `push` should work, and you should be able to look at the
+repository on Github and see your new contact info document.
+
+At this point logout and trade with your partner(s) as appropriate until
+everyone has gone through this part of the lab.
+
+:bangbang: Don't move on to the next part until _everyone_ is done with
+this part.
