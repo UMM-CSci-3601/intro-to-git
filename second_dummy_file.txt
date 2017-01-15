@@ -1,1 +1,1 @@
-More dummy text.
+More dummy text to better understand merge conflcits in WebStorm.
