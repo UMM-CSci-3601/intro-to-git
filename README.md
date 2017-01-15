@@ -177,12 +177,31 @@ So you need to _merge_ your work onto the `master` branch.
 
 If no one else was working on this repository it would be easy, and all
 you'd need to do is _merge_ into `master` and then _push_ your work up
-to the Github repository.
+to the Github repository. But there are other people working on the
+repository, and you have to make sure you play nice with them.
 
+The basic process you'll typically want to follow is:
+* Make sure all your changes on your feature branch are committed locally.
+   * `git status` on the command line
+   * The "Local Changes" tab in the "Version Control" window in WebStorm
+* Checkout the `master` branch
+   * `git checkout master` on the command line
+   * `VCS -> Git -> Branches…` in WebStorm, and then choose `master ->
+   origin/master` followed by `Checkout`
 
+At this point you should be on the `master` branch, and all your work
+on your new contact info page should "disappear". Don't worry, it's still
+there in your feature branch, but it's not part of `master` so it's not
+visible when we have `master` checked out.
 
-* `git push` on the command line
-* `VCS -> Git -> Push…` in WebStorm
+The trick is that this is _your_ copy of the `master` branch, which is
+probably out of date with `master` on Github (`origin/master`) since
+other people have been committing and pushing changes. So you should
+first make sure to `pull` any changes other people have made into your
+copy:
+* `git pull` on the command line
+* `VCS -> Git -> Pull…` in WebStorm
+
 This would push all commits on your current branch (remember that you're
 working on a special branch you created for this contact info document!)
 so a branch with the same name up on Github.
