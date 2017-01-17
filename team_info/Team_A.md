@@ -1,6 +1,6 @@
 # Group A
 
-People assigned to Team A should their contact info here in this
+People assigned to Team A should add their contact info here in this
 cumulative document for that group.
 
 ## Your name
