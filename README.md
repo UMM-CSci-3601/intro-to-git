@@ -86,17 +86,17 @@ contact info page.
 
 Each contact info page should:
 
-* Be named `<your_name>.md`, e.g., `Nic_McPhee.md`
+* Be named `<their_name>.md`, e.g., `Nic_McPhee.md`
 * Contain at least:
-   * Your name as you preferred to be called
-   * Your preferred pronouns
-   * Your preferred way(s) for people to contact you, perhaps with some
+   * Their name as you preferred to be called
+   * Their preferred pronouns
+   * Their preferred way(s) for people to contact you, perhaps with some
    info on which one(s) people should use if they need to get in touch
    quickly
    * Any constraints on any of that info, e.g., "Don't call the
    apartment phone after 10pm or my roommate won't do dishes for a week."
 
-Your preferred contact methods is arguably the tricky part of this.
+The preferred contact methods is arguably the tricky part of this.
 You should _not_ feel that you
 need to share contact info you're not comfortable sharing. So if you
 want to include a phone number, that's fine, but it's _equally_ fine if
@@ -116,6 +116,11 @@ things up here in the second half of the semester when the groups are
 bigger and the team coordination gets more complex, so changes you
 make are likely to still be useful even if they're several weeks after
 we "complete" this lab.
+
+:bangbang: If you create the new file with WebStorm it's likely to
+ask you if you want to add it to the set of files that were being
+tracked by `git`. If that happens, say "Yes" to simplify things later,
+although it's not a big deal if you say "No".
 
 ## Sharing that new page
 
@@ -140,10 +145,18 @@ this is easy:
       * You can also use `git commit -m "Your cool commit message"` to
       avoid being sent to an editor. We _strongly_ discourage this,
       however, as people rarely enter useful one-line commit messages.
-    * `VCS -> Commit Changes…` in WebStorm. This gives you a nice
+      * So if `vi/vim` bugs you, you should probably set your default
+      `git` editor to something you like. [This Github help page](https://help.github.com/articles/associating-text-editors-with-git/)
+       shows you how to set various GUI editors like `atom`, but you
+       could also use something like `git config --global core.editor nano`
+       to set it to a command line editor like `nano`.
+   * `VCS -> Commit Changes…` in WebStorm. This gives you a nice
     dialogue where you can select which files you actually
-    want to include in this commit. You can also use the `Diff` tool
-    in that dialogue to remind yourself of what all you've changed,
+    want to include in this commit. This is useful because you may have
+    made a few changes that are related to different issues – this dialogue
+    makes it easier to comment separately on unrelated changes, increasing
+    the value of your commits and commit messages. You can also use the
+    `Diff` tool in that dialogue to remind yourself of what all you've changed,
     which makes it easier to write
     [informative, complete commit messages](http://chris.beams.io/posts/git-commit/).
 
@@ -159,7 +172,7 @@ for this contact info document) all you'll need to do is _push_ your
 work up to the Github repository:
 * `git push` on the command line
 * `VCS -> Git -> Push…` in WebStorm
-This will push all commits on your current branch so a branch with the
+This will push all commits on your current branch to a branch with the
 same name up on Github; if you refresh your view of the Github repository
 you should see your branch listed, probably along with a lot of other
 branches. (All these branches will start to clutter things up, and we'll
