@@ -42,11 +42,6 @@ This repository has a `contact_info` directory, and in this part of the
 lab we'll create a new file in that directory for every person in the
 class, containing their personal contact info.
 
-:question: KK – do we want to have person X type up person Y's info
-and vice versa so everyone is in some way involved all through the
-process? I'm going to write it up that way below, but we can definitely
-change that if you think that's a bad idea.
-
 In order to keep everyone engaged throughout, we'll model the ideas of
 a _driver_ and _navigator_ in [pair programming](https://en.wikipedia.org/wiki/Pair_programming).
 Imagine, for example, a group of two working together, Pat and Chris,
