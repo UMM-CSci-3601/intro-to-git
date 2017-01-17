@@ -1,6 +1,6 @@
 # Group B
 
-People assigned to Group B should their contact info here in this
+People assigned to Group B should add their contact info here in this
 cummulative document for that group.
 
 ## Your name
