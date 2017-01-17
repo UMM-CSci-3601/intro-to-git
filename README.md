@@ -90,6 +90,8 @@ Each contact info page should:
 * Contain at least:
    * Their name as you preferred to be called
    * Their preferred pronouns
+   * Their Github username (so we can figure out who FlamingUnicorn375
+   is in real life)
    * Their preferred way(s) for people to contact you, perhaps with some
    info on which one(s) people should use if they need to get in touch
    quickly
@@ -271,7 +273,7 @@ by people's names.
 
 This arguably isn't really necessary, but it will have the advantage of
 creating some merge conflicts so people will have a chance to see what
-that looks like and how to deal with it. :confused:
+that looks like and how to deal with it.
 
 There is a `team_info` directory that has three mostly empty
 Markdown files, `Team_A.md`, `Team_B.md`, and `Team_C.md`. At this point in
@@ -300,11 +302,12 @@ up it's (figurative) hands and tosses the problem back in your lap.
 
 :bangbang: _Any_ push can lead to merge
 conflicts, and merge conflicts often take a little time to deal with
-properly. Thus you should avoid trying to do "a quick push" right
+properly. Thus you should avoid trying to "do a quick push" right
 before you need to leave for class, or when it's late and you're really
 tired, or something similar. If a conflict results, people often end up
-getting stressed and doing something that will tick off a teammate or
-which they'll later regard for some other reason. So if you have an hour
+getting stressed, increasing the chances that they'll do something that
+will tick off a teammate or
+which they'll later regret for some other reason. So if you have an hour
 to work on something, for example, you probably want to save 10-15
 minutes of that for committing (so you have time to write good commit
 messages), pushing, and otherwise cleaning up after yourself.
@@ -318,7 +321,7 @@ look something like:
 * The dialogue that tells you this will include "Cancel", "Merge", and
 "Rebase". For the moment, choose "Merge".
 * That brings up a new dialogue listing each file that had a conflict.
-(There's likely just the one in this case, your team's file.)
+There's likely just the one in this case, your team's file.
 Select it and click "Merge".
 * That brings up a dialogue with the original version of the document
 in the middle pane, and your version and the version with the conflicting
@@ -329,7 +332,7 @@ the right merge. (If at any point you end up something icky, you can
 click the "Abort" button and try again. You can also directly edit
 the middle pane to tweak the results.)
 
-When that's all done then the merge conflict will be _resolve_ in `git`
+When that's all done then the merge conflict will be _resolved_ in `git`
 terminology, and you can try the `push` again. You should carefully
 proofread any code that's modified in resolving a merge conflict before
 `push`ing, though, as it's easy to introduce mistakes in that process.
