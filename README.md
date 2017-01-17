@@ -90,6 +90,8 @@ Each contact info page should:
 * Contain at least:
    * Their name as you preferred to be called
    * Their preferred pronouns
+   * Their Github username (so we can figure out who FlamingUnicorn375
+   is in real life)
    * Their preferred way(s) for people to contact you, perhaps with some
    info on which one(s) people should use if they need to get in touch
    quickly
