@@ -1,7 +1,7 @@
-# Group B
+# Team B
 
-People assigned to Group B should their contact info here in this
-cummulative document for that group.
+People assigned to Team B should their contact info here in this
+cumulative document for that group.
 
 ## Your name
 
