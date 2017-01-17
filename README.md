@@ -252,5 +252,95 @@ repository on Github and see your new contact info document.
 At this point logout and trade with your partner(s) as appropriate until
 everyone has gone through this part of the lab.
 
-:bangbang: Don't move on to the next part until _everyone_ is done with
-this part.
+# Bringing it all together!
+
+:bangbang: Don't move on to this next part until _everyone_ is done with
+the previous part.
+
+:bangbang: If we were doing more complicated changes we'd want these to
+each be in separate branches, but in order to keep things a little
+simpler, we'll do the rest of this directly on the `master` branch.
+Make sure that `master` is the branch you're currently working on.
+
+Once everyone is done with the previous part, we should have a bunch of
+separate Markdown files in the `contact_info` directory, one for each
+person in the class. Now we'll bring them together into a smaller set of
+cummulative documents with the ultimate goal of creating a single long-ish
+document with _everyone's_ contact info, organized in alphabetical order
+by people's names.
+
+This arguably isn't really necessary, but it will have the advantage of
+creating some merge conflicts so people will have a chance to see what
+that looks like and how to deal with it. :confused:
+
+There is a `team_info` directory that has three mostly empty
+Markdown files, `Team_A.md`, `Team_B.md`, and `Team_C.md`. At this point in
+the lab we'll split you into three teams, either `A`, `B`, or `C`.
+
+You should open the file associated with the team you were assigned to,
+and then enter (copy and paste is fine) all the contact info your partner
+in your group (i.e., Pat would enter Chris's info) :bangbang: in
+alphabetical order by people's names.
+
+Then commit (to `master`) that person's info and push those changes
+to Github, switch places (log out and in, etc.) again, and repeat
+until everyone in your group has added, committed, and pushed their
+partner's contact info.
+
+Unless you get really lucky, this will at a minimum require
+some pulling and merging before you get your push to work. It's quite
+likely (and nearly guaranteed when you do the second person in your group)
+that you'll get some sort of merge conflict when you pull down other
+people's changes.
+
+This is because multiple people will have almost certainly changed the
+same line of your team's file _in different ways_, and `git` doesn't
+pretend to be able to figure out whose changes should "win". So it throws
+up it's (figurative) hands and tosses the problem back in your lap.
+
+:bangbang: _Any_ push can lead to merge
+conflicts, and merge conflicts often take a little time to deal with
+properly. Thus you should avoid trying to do "a quick push" right
+before you need to leave for class, or when it's late and you're really
+tired, or something similar. If a conflict results, people often end up
+getting stressed and doing something that will tick off a teammate or
+which they'll later regard for some other reason. So if you have an hour
+to work on something, for example, you probably want to save 10-15
+minutes of that for committing (so you have time to write good commit
+messages), pushing, and otherwise cleaning up after yourself.
+
+Dealing with these kinds of merge conflicts can be a frustrating
+experience, but WebStorm has a nice GUI merge conflict tool that makes
+it a little easier. The sequence of events (in WebStorm) is likely to
+look something like:
+
+* An attempt to `push` will be rejected.
+* The dialogue that tells you this will include "Cancel", "Merge", and
+"Rebase". For the moment, choose "Merge".
+* That brings up a new dialogue listing each file that had a conflict.
+(There's likely just the one in this case, your team's file.)
+Select it and click "Merge".
+* That brings up a dialogue with the original version of the document
+in the middle pane, and your version and the version with the conflicting
+changes in the left and right panes. You can use the `>>`/`<<` symbols
+to copy changes from the left or right pane into the result, or click
+the little magic wand (?) icon to let WebStorm take it's best guess at
+the right merge. (If at any point you end up something icky, you can
+click the "Abort" button and try again. You can also directly edit
+the middle pane to tweak the results.)
+
+When that's all done then the merge conflict will be _resolve_ in `git`
+terminology, and you can try the `push` again. You should carefully
+proofread any code that's modified in resolving a merge conflict before
+`push`ing, though, as it's easy to introduce mistakes in that process.
+Later, when we're working with code instead of just text, you'll want to
+make sure you re-run the test suite to make sure that resolving the
+merge conflict didn't inadvertently break something.
+
+# Huzzah! We're done!
+
+Once everyone has added their group's info to the team files then we're
+done with the lab! If there's time, then we might merge the three
+team files into a single big "master" file in class; otherwise we'll do
+that after lab is done.
+
