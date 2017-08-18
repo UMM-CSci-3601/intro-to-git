@@ -1,3 +1,17 @@
+# Plan for the F17 rewrite
+
+We found that this was too long last semester, and we didn't
+really get to the merge conflict part, so we're going to
+completely rewrite this.
+
+Our plan is roughly as follows:
+
+* Encourage people to registere for the necessary tools in advance so we don't spend class time on it.
+* Skip the idea of having people log out and log back in again, since that takes a significant amount of time.
+* Have each team create their own file, commit, push, and merge it, much like the old version.
+* We should demo an engineered merge conflict to show them what that looks like.
+* Then have each group contribute a little bit of code to a Java program. This is likely to generate merge conflicts which they have to address.
+
 # Introduction to `git`
 
 This will be an in-lab exercise where we'll experience several of the
@@ -341,4 +355,3 @@ Once everyone has added their group's info to the team files then we're
 done with the lab! If there's time, then we might merge the three
 team files into a single big "master" file in class; otherwise we'll do
 that after lab is done.
-
