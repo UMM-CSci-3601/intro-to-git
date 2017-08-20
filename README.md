@@ -6,17 +6,23 @@ completely rewrite this.
 
 Our plan is roughly as follows:
 
-* Encourage people to registere for the necessary tools in advance so we don't spend class time on it.
+* Encourage people to register for the necessary tools in advance so we don't spend class time on it.
 * Skip the idea of having people log out and log back in again, since that takes a significant amount of time.
-* Have each team create their own file, commit, push, and merge it, much like the old version.
+* Have each team create their own file (that has their "real" names and Github names), commit, push, and merge it, much like the old version.
 * We should demo an engineered merge conflict to show them what that looks like.
+   * It might be useful to do a little screencast on this as well that they should watch before the lab.
 * Then have each group contribute a little bit of code to a Java program. This is likely to generate merge conflicts which they have to address.
 
 # Introduction to `git`
 
 This will be an in-lab exercise where we'll experience several of the
 key features of the `git` version control system, and the Github
-repository hosting service.
+repository hosting service. We'll provide command line means of accomplishing
+the various tasks in this lab, and will also provide info on how to
+accomplishing things using IntelliJ's IDEA software development tools since
+IDEA is what we'll be'll using this semester. There's nothing magic about
+IDEA here, and almost any reasonable software editor or development environment
+provides similar support for `git` commands.
 
 :bangbang: While in most labs it will be fine for groups to move ahead
 at their own pace, in this lab we'd like people to keep together
@@ -24,7 +30,7 @@ because there are moments where we're expecting certain things to
 happen (e.g., merge conflicts) and we want everyone to be in roughly
 the same place when that happens.
 
-This definitely will _not_ provide a comprehansive overview of the
+This definitely will _not_ provide a comprehensive overview of the
 _many_ features `git` provides. There are a lot of on-line resources
 that can provide additional information, including:
 
@@ -39,111 +45,137 @@ a single-page app that goes through the major features of `git`
 * [Git Essential Training](https://www.lynda.com/Git-tutorials/Git-Essential-Training/100222-2.html),
 an on-line Lynda.com course; it's free if you first authenticate
 with your U of M credentials via http://lynda.umn.edu
+* [A nice IntelliJ video on the different between _merging_ commits and _rebasing_ commits](https://www.youtube.com/watch?v=Nftif2ynvdA)
 
-The discussion below assumes that people are paired up in the lab, and
-there will be times where one person will need to log out and let their
-partner login so that everyone has a chance to go through all the
-activities.
+The discussion below assumes that people are paired up in the lab, but we want
+to make sure everyone has hands on experience with these tools and ideas.
+This sort of _pair programming_ will be common throughout the class and
+beyond, with two people working together. It is common in these settings for
+one person (the _driver_, say Pat) to be at the keyboard, while the other person (the
+_navigator_, say Chris) is actively engaged in working with Pat, suggesting ideas, noticing typos,
+and answering questions. For this process to work, both of you have to
+contribute and be involved, and it's extremely important for you to trade
+off the roles of driver and navigator now and then. Thus in this lab
+there will be times where we'll explicitly ask you to trade roles so that everyone has a chance to go through all the activities.
 
-:bangbang: This repository will be private so only people in the class
-(and the faculty and TAs) will have access to this contact info.
-Everyone in the class will have access to it, though, so you should
-put some thought in what you want to share.
+# How we're going to use `git`
 
-# Create a contact info page for (each of) you
+`git` is a piece of software provides distributed version control, allowing
+a team of developers to work together on a project, helping manage
+collaboration and change. `git` organizes projects into _repositories_,
+which are collections of files and histories of all the changes ever made
+to that project. _Github_ is a web-based software service that allows people
+to host, search, and use repositories created and managed with `git`. You
+could use `git` without ever Github, but Github is an extremely popular
+repository hosting service, and it's a good idea for computing folks to be
+familiar with it. We use it to manage
+[all the labs for this course](https://github.com/UMM-CSci-3601), and you'll
+use Github to manage all your labs and project iterations in this course.
 
-This repository has a `contact_info` directory, and in this part of the
-lab we'll create a new file in that directory for every person in the
-class, containing their personal contact info.
+When you use `git` and Github, you typically have a single "primary" copy
+of your repository hosted on Github; this will be visible to everyone in
+your group (and the world if the project is public),
+and will be the "copy of record". People will transmit changes through that
+copy, and use Github tools like _issues_, _pull requests_, and _code reviews_
+to discuss potential changes.
 
-In order to keep everyone engaged throughout, we'll model the ideas of
-a _driver_ and _navigator_ in [pair programming](https://en.wikipedia.org/wiki/Pair_programming).
-Imagine, for example, a group of two working together, Pat and Chris,
-and Pat is currently logged in. Then Pat would create the contact info
-document for _Chris_, asking Chris for the relevant information and
-entering it. When that's done, Pat will commit that work, and then log
-out, allowing Chris to log in and repeat the process creating _Pat's_
-contact info page.
+Each developer then has one or more private copies of the repository
+(called _clones_) that they make local changes to. They can pull changes
+from the Github repository into their local repository, as well as pushing
+local changes up to the Github repository so that other people can access them.
 
-## Creating a branch
+# `clone` a local copy of the repository
 
-`git` branches are frequently used as ways to isolate work (in progress)
-on a particular feature from other on-going work on the project.
-Creating and working in your own feature branch allows you to commit
-and share incomplete work without breaking the project for other people.
+Before we can start working on the lab proper, each group will need to
+`clone` the Github repository so they have a local copy to work with. There
+will only be one copy of the repository on Github, but each group will have
+a clone on whatever lab machine you're working on, so there will be lots of
+local copies. Each of those local copies will be completely independent, and
+will only share changes through explicit interactions with the Github
+repository.
 
-To illustrate the use of branches (which arguably aren't really needed
-for this simple project), we'll create a new branch for the creation
-of each contact info page. So in the example above, the first thing
-that Pat would do would be to create a branch for the creation of
-Chris's contact info page.
+To `clone` the respository using command line tools you'd do:
 
-In the command line this would be accomplished with
-```bash
-git checkout -b <branch_name>
 ```
-so Pat might use `git checkout -b chris_info` to create the branch for
-setting up Chris's info.
+git clone <url>
+```
 
-In WebStorm, you can accomplish this through the
-`VCS -> Git -> Branches…` dialogue, choosing the `New Branch` option.
+where `<url>` is the URL for the Github repository. You can get these URLs
+from the `Clone or download` on Gihub, and they tend to look something like
+this
+
+```
+https://github.com/UMM-CSci-3601/intro-to-git.git
+```
+
+If you're at the IDEA "Welcome" dialog, you can choose
+
+```
+Check out from Version Control -> Github
+```
+
+and enter the URL and then open the cloned project in IDEA.
+
+# Create an info page for each pair
+
+Now that we've cloned a local copy of the repository, we can start making
+and sharing changes.
+
+This repository has a `user_info` directory, and in this part of the
+lab we'll create a new file in that directory for pair in the
+class, containing your real names and your Github user names. Sometimes
+it's easy for us to figure out how those names relate, but if your
+Gihub user name is `UnicornWizard375` it's not always obvious who in the
+class that is, especially if you don't wear your wizarding regalia to lab.
+
+There will be several steps to this process, each of which is described in
+more detail below:
+
+* Create your contact info file/page
+* `commit` that to your local copy of the repository
+* `pull` down the changes other people may have made to the central repository on Github while you were working, `merging` them with your changes
+* `push` your (merged) changes back up to Github so they're available to everyone
 
 ## Creating a page
 
-Once you've created the branch it's time to create your partner's
-contact info page.
+You'll start by creating your group's contact info page. Each contact
+info page should:
 
-Each contact info page should:
-
-* Be named `<their_name>.md`, e.g., `Nic_McPhee.md`
+* Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
 * Contain at least:
-   * Their name as you preferred to be called
-   * Their preferred pronouns
-   * Their Github username (so we can figure out who FlamingUnicorn375
+   * Each of your names as you preferred to be called
+   * Your preferred pronouns
+   * Your Github usernames (so we can figure out who `UnicornWizard375`
    is in real life)
-   * Their preferred way(s) for people to contact you, perhaps with some
-   info on which one(s) people should use if they need to get in touch
-   quickly
-   * Any constraints on any of that info, e.g., "Don't call the
-   apartment phone after 10pm or my roommate won't do dishes for a week."
 
-The preferred contact methods is arguably the tricky part of this.
-You should _not_ feel that you
-need to share contact info you're not comfortable sharing. So if you
-want to include a phone number, that's fine, but it's _equally_ fine if
-you don't. Whatever you do share, though, it would be good if there is
-some way that your team can contact you quickly if something blows up.
-
-:bangbang: Remember to treat everyone's information with respect and use
-it in reasonable ways. Everyone's trusting us both individually and as
-a community to not do dumb or inappropriate things with this information,
-so let's be careful to not abuse that trust.
-
-Feel free to be creative about this. Do you obsessively follow your
-Twitter account, thereby making a Twitter direct message a pretty
-reasonable approach? Also feel free to come back and update this info
-as the semester progresses. People are probably most likely to look
-things up here in the second half of the semester when the groups are
-bigger and the team coordination gets more complex, so changes you
-make are likely to still be useful even if they're several weeks after
-we "complete" this lab.
-
-:bangbang: If you create the new file with WebStorm it's likely to
+:bangbang: If you create the new file with IDEA it's likely to
 ask you if you want to add it to the set of files that were being
 tracked by `git`. If that happens, say "Yes" to simplify things later,
 although it's not a big deal if you say "No".
 
-## Sharing that new page
+## `commit` your changes (locally)
 
-After a page is created, you need to share that with the class by
-adding it to the repository on Github.
+Before you can share your changes with the class via the Github repository,
+you need to `add` and `commit` these changes to your local `git` repository.
 
-Because you've created your own branch to work in, the beginning of
-this is easy:
+Before you `commit` you have to use `git add` to _stage_ files for the commit.
+You might think `git` should just commit any and all changes you've made
+since the last commit. That's actually not a great default behavior, though,
+because sometimes you've made changes to several files and you'd like to
+commit them separately; with the right tools you can even commit different
+changes to the same file in separate commits. This is useful because it makes
+it easier to have a commit message that is specific to the particular changes
+being committed (instead of a generic "changed a bunch of stuff" message that
+you often get when there have been a lot of changes). Perhaps more importantly,
+though, separate commits allows you to do things like _cherry pick_ individual
+commits as things you want to move from one place to another; that's a little
+complex for this lab, but know that it's out there as an option. All of this
+is why `git` allows you to specify through staging exactly what you wish to
+include in a commit.
 
 * Stage the new file so `git` knows you want to commit it
    * `git add <filename>` on the command line
-   * `VCS -> Git -> Add` in WebStorm (although if you used WebStorm to
+   * `VCS -> Git -> Add` in IDEA (although if you used IDEA to
    create the file, it probably asked you if you wanted to add it to
    the set of files that were being tracked by `git`, so you may not
    need to explicitly add it)
@@ -156,12 +188,12 @@ this is easy:
       * You can also use `git commit -m "Your cool commit message"` to
       avoid being sent to an editor. We _strongly_ discourage this,
       however, as people rarely enter useful one-line commit messages.
-      * So if `vi/vim` bugs you, you should probably set your default
+      * If `vi/vim` bugs you, you should probably set your default
       `git` editor to something you like. [This Github help page](https://help.github.com/articles/associating-text-editors-with-git/)
        shows you how to set various GUI editors like `atom`, but you
        could also use something like `git config --global core.editor nano`
        to set it to a command line editor like `nano`.
-   * `VCS -> Commit Changes…` in WebStorm. This gives you a nice
+   * `VCS -> Commit Changes…` in IDEA. This gives you a nice
     dialogue where you can select which files you actually
     want to include in this commit. This is useful because you may have
     made a few changes that are related to different issues – this dialogue
@@ -171,7 +203,76 @@ this is easy:
     which makes it easier to write
     [informative, complete commit messages](http://chris.beams.io/posts/git-commit/).
 
+## `push`ing your work to Github
+
+At this point you have your changes committed to your local copy of the
+repository, and want to _push_ those changes up to the Github copy of the
+repository. This is the potentially tricky part, but in this case things
+should be well behaved. :smile:
+
+The major issue is that other people may have made and `push`ed changes up
+to Github that could potentially conflict with the changes you've made.
+So your first step is to `pull` down any recent changes from Github:
+
+* `git pull` on the command line
+* `VCS -> Git -> Pull…` in IDEA
+
+If no one else is working on these files in this repository (which is
+likely in this case since you created a group-specific file for your
+information) then this should go smoothly. As we'll see below, though,
+if there have been changes in the same parts of the same files, a `pull`
+can lead to conflicts and confusion.
+
+Assuming that your `pull` works, then it's time to _push_ your
+work up to the Github repository:
+
+* `git push` on the command line
+* `VCS -> Git -> Push…` in IDEA
+
+This will push all your commits up to Github; if you refresh your view of
+the Github repository
+you should see your new file along with your contact info, probably along
+with a lot of other files.
+
+You're now done with the first major part of the lab!
+
+## Creating a branch
+
+`git` branches are a great tool for isolating work (in progress)
+on a particular feature from other on-going work on the project.
+Creating and working in your own feature branch allows you to commit,
+save, and share incomplete work without breaking the project for other people.
+
+To illustrate the use of branches, we'll create a new branch for the creation
+of each group's contact info page. So assuming we still have Pat and Chris,
+they would create a new branch called something like `pat_chris_info`.
+
+In the command line this would be accomplished with
+```bash
+git checkout -b <branch_name>
+```
+so they might use `git checkout -b pat_chris_info` to create the branch for
+setting up their group's info.
+
+In IntelliJ IDEA, you can accomplish this through the
+
+```
+VCS -> Git -> Branches…
+```
+
+dialogue, choosing the `New Branch` option.
+
 ## Pushing your branch to Github
+
+The main reason
+this is potentially tricky is that other people may have
+`push`ed commits up to Github, and those commits might conflict with your
+changes. Say, for example, Pat and Chris separately notice that someone
+(who shall remain unnamed) named a variable `foo`. They both wanted to replace
+that meaningless name with a more informative name, but they made different
+but reasonable choices: Pat renamed it to `sum` and Chris renamed it
+to `total`. There's no way for `git` to figure out what the "right" thing to
+do is, though, when asked to merge both of these commits.
 
 At this point you have your changes committed to your local copy of the
 repository, and want to _push_ that change up to the Github copy of the
@@ -181,8 +282,10 @@ If no one else is working on this branch in this repository (which is
 likely in this case since you're working on a special branch you created
 for this contact info document) all you'll need to do is _push_ your
 work up to the Github repository:
+
 * `git push` on the command line
-* `VCS -> Git -> Push…` in WebStorm
+* `VCS -> Git -> Push…` in IDEA
+
 This will push all commits on your current branch to a branch with the
 same name up on Github; if you refresh your view of the Github repository
 you should see your branch listed, probably along with a lot of other
@@ -207,10 +310,10 @@ repository, and you have to make sure you play nice with them.
 The basic process you'll typically want to follow is:
 * Make sure all your changes on your feature branch are committed locally.
    * `git status` on the command line
-   * The "Local Changes" tab in the "Version Control" window in WebStorm
+   * The "Local Changes" tab in the "Version Control" window in IDEA
 * Checkout the `master` branch
    * `git checkout master` on the command line
-   * `VCS -> Git -> Branches…` in WebStorm, and then choose `master ->
+   * `VCS -> Git -> Branches…` in IDEA, and then choose `master ->
    origin/master` followed by `Checkout`
 
 At this point you should be on the `master` branch, and all your work
@@ -224,7 +327,7 @@ other people have been committing and pushing changes. So you should
 first make sure to `pull` any changes other people have made into your
 copy:
 * `git pull` on the command line
-* `VCS -> Git -> Pull…` in WebStorm
+* `VCS -> Git -> Pull…` in IDEA
 If you're lucky, any changes you've made won't interact badly (_conflict_)
 with changes other people have made. That should be the case here because
 so far everyone's working on completely different files and you haven't
@@ -243,7 +346,7 @@ hit `Merge` and you should get your changes merged in.
 Now that your copy of `master` has your work on it, you want to push
 that up to Github:
 * `git push` on the command line
-* `VCS -> Git -> Push…` in WebStorm
+* `VCS -> Git -> Push…` in IDEA
 
 Normally this should just work because you did a pull on `master` just
 a few minutes ago. Occassionally, however, someone will manage to sneak
@@ -251,8 +354,8 @@ in a pushed change between your `pull` and `push`, and that's actually
 pretty likely today with so many people working in parallel on the same
 repository. If that happens you'll get some sort of error saying that
 your attempt to push `master` was rejected, and suggesting that you pull
-or merge remote changes before you push. WebStorm lets you do this from
-the error dialogue – if you click the `Merge` button WebStorm will pull
+or merge remote changes before you push. IDEA lets you do this from
+the error dialogue – if you click the `Merge` button IDEA will pull
 down the changes from Github and merge them into your `master`.
 
 At that point you would try to `push` again, repeating the pull/merge
@@ -322,8 +425,8 @@ minutes of that for committing (so you have time to write good commit
 messages), pushing, and otherwise cleaning up after yourself.
 
 Dealing with these kinds of merge conflicts can be a frustrating
-experience, but WebStorm has a nice GUI merge conflict tool that makes
-it a little easier. The sequence of events (in WebStorm) is likely to
+experience, but IDEA has a nice GUI merge conflict tool that makes
+it a little easier. The sequence of events (in IDEA) is likely to
 look something like:
 
 * An attempt to `push` will be rejected.
@@ -336,7 +439,7 @@ Select it and click "Merge".
 in the middle pane, and your version and the version with the conflicting
 changes in the left and right panes. You can use the `>>`/`<<` symbols
 to copy changes from the left or right pane into the result, or click
-the little magic wand (?) icon to let WebStorm take it's best guess at
+the little magic wand (?) icon to let IDEA take it's best guess at
 the right merge. (If at any point you end up something icky, you can
 click the "Abort" button and try again. You can also directly edit
 the middle pane to tweak the results.)
