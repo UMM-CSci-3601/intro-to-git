@@ -47,6 +47,12 @@ an on-line Lynda.com course; it's free if you first authenticate
 with your U of M credentials via http://lynda.umn.edu
 * [A nice IntelliJ video on the different between _merging_ commits and _rebasing_ commits](https://www.youtube.com/watch?v=Nftif2ynvdA)
 
+We also made [a screencast that
+walks through many of the key steps
+in this lab](https://www.youtube.com/watch?v=Am6xSrPVX98).
+You might find it useful
+to watch that before lab, especially if you find videos like that helpful.
+
 The discussion below assumes that people are paired up in the lab, but we want
 to make sure everyone has hands on experience with these tools and ideas.
 This sort of _pair programming_ will be common throughout the class and
@@ -96,7 +102,7 @@ repository.
 
 To `clone` the respository using command line tools you'd do:
 
-```
+```bash
 git clone <url>
 ```
 
@@ -236,23 +242,53 @@ with a lot of other files.
 
 You're now done with the first major part of the lab!
 
+# Editing a simple program
+
+In this second part each group will make a small change to a simple Java
+program, `Hellos.java` in the `program` directory. Each group will make a
+small extension to that program in a way that virtually guarantees some sort
+of merge conflict, so everyone will have the experience of dealing with
+conflicts.
+
 ## Creating a branch
 
-`git` branches are a great tool for isolating work (in progress)
+Before we get started on actually editing the program, we want to introduce
+the concept of _branches_ in `git`, as they are a powerful tool for
+isolating work (in progress)
 on a particular feature from other on-going work on the project.
 Creating and working in your own feature branch allows you to commit,
 save, and share incomplete work without breaking the project for other people.
+This is incredibly valuable; without it you'd be constantly worried about
+making commits of incomplete work that might mess things up for other people,
+or worrying that commits from other people in your group might mess up your
+work. If we're serious about _test driven development_, for example, we would
+frequently find ourselves writing and committing tests before we've written
+the code that will make those tests pass. If we committed those tests to the
+code that everyone was using, then all of a sudden they'd have breaking tests,
+the builds would fail, and the _continuous integration_ system would be all
+shout-y and mad at the whole team. If, on the other hand, you commit those
+tests to your development branch, then it will have no impact on people
+working in other branches or on the build system, so everything will be
+nice.
 
-To illustrate the use of branches, we'll create a new branch for the creation
-of each group's contact info page. So assuming we still have Pat and Chris,
-they would create a new branch called something like `pat_chris_info`.
+Every new `git` repository has one default branch called `master`; this is
+usually where the current "deployed" or "released" version of the project
+lives, while active development, bug fixes, and the like happen in other
+development branches that are merged into `master` when that work is deemed
+"done done" (passes the tests, has been through a code review, etc.).
+
+To illustrate the use of branches, we'll have each group create a new branch
+for their modification of the shared program. Assuming, for example, that
+we still have Pat and Chris, they would create a new branch called something like `pat_and_chris_greeting`.
 
 In the command line this would be accomplished with
+
 ```bash
 git checkout -b <branch_name>
 ```
-so they might use `git checkout -b pat_chris_info` to create the branch for
-setting up their group's info.
+
+so they might use `git checkout -b pat_and_chris_greeting` to create the
+branch for setting up their group's info.
 
 In IntelliJ IDEA, you can accomplish this through the
 
@@ -262,7 +298,76 @@ VCS -> Git -> Branches…
 
 dialogue, choosing the `New Branch` option.
 
-## Pushing your branch to Github
+Both of these create the new branch and perform a `checkout` on that branch.
+The `checkout` part of the process tells `git` to "switch over" to that new
+branch, so subsequent commits will happen on that branch. You use
+`git checkout` without the `-b` to just switch between existing branches;
+the `-b` tells `git` that this is a new branch that needs to be created. In
+IDEA you can switch between branches using `VCS -> Git -> Branches…` or
+the popup menu from the `Git: <branch>` button on the bottom right of the
+GUI.
+
+## Edit the program
+
+Now that you've created and switched to your new branch, it's time to edit
+the program. Open up `Hellos.java` and add another line in the `main()`
+method of the form
+
+```java
+builder.append(pat_and_chris_say_hello());
+```
+
+where you replace `pat_and_chris_say_hello` with a method name that
+reflects the names in your group.
+
+This will create a compiler error because your new method
+(`pat_and_chris_say_hello` in our example) isn't actually defined anywhere.
+So let's fix that, by adding a new method somewhere down amongst the example
+methods; it should look something like:
+
+```java
+    private static String pat_and_chris_say_hello() {
+        return "Pat and Chris say 'Hello!'\n";
+    }
+```
+
+(Make sure you include the `\n` (newline) in the string so we don't end up
+with one really super long line.)
+
+Once everything looks good, compile and run your program to make sure that
+everything is good before you commit your changes. In IDEA, you can
+right-click in the `Hellos.java` window and select `Run 'Hellos.main()'`;
+this will make sure everything compiles, and if it does it will run your
+program display the output in the `Run` pane at the bottom of the GUI.
+You should see the results of our sample greetings along with your new
+greeting from your team.
+If you have any problems here, definitely ask questions and get things
+working before you proceed; you don't want to merge broken code and mess
+things up for everyone else.
+
+## Commit and Push your branch to Github
+
+Now assuming that your code is all working and happy, let's use the same
+commands as before to
+
+* `commit` your work
+* `push` those changes to Github
+
+You could do a `pull` before the `push` like we did in the first half, but
+(a) you aren't expecting any changes on _your_ branch by another group (so
+the `pull` shouldn't bring in any changes) and (b) `push` actually checks
+for unpulled changes and forces you to deal with those if they exist (so it's
+safe to just `push` and see what happens).
+
+Assuming the `commit` and `push` worked, if you got to the project web page
+on Github (and refresh if necessary),
+your branch should be in the list of branches, and if you switch to your branch
+and go look at `Hellos.java` you should see your changes. Depending on how
+many other groups have gotten to this point before you, you may see a _lot_
+of new branches; these will start to clutter things up, but we can delete
+unused branches later.
+
+## Merging your branch into `master`
 
 The main reason
 this is potentially tricky is that other people may have
@@ -273,26 +378,6 @@ that meaningless name with a more informative name, but they made different
 but reasonable choices: Pat renamed it to `sum` and Chris renamed it
 to `total`. There's no way for `git` to figure out what the "right" thing to
 do is, though, when asked to merge both of these commits.
-
-At this point you have your changes committed to your local copy of the
-repository, and want to _push_ that change up to the Github copy of the
-repository. This is the potentially tricky part. :smile:
-
-If no one else is working on this branch in this repository (which is
-likely in this case since you're working on a special branch you created
-for this contact info document) all you'll need to do is _push_ your
-work up to the Github repository:
-
-* `git push` on the command line
-* `VCS -> Git -> Push…` in IDEA
-
-This will push all commits on your current branch to a branch with the
-same name up on Github; if you refresh your view of the Github repository
-you should see your branch listed, probably along with a lot of other
-branches. (All these branches will start to clutter things up, and we'll
-look later at cleaning house.)
-
-## Merging your branch into `master`
 
 The problem with the current situation is that your nifty new contact
 info document is "trapped" in the branch you created. If you look at that
