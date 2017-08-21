@@ -1,3 +1,0 @@
-Still more dummy text to better understand merge conflcits in WebStorm.
-
-I'll need to remember to delete these dummy files when I'm done.
