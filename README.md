@@ -244,6 +244,9 @@ You're now done with the first major part of the lab!
 
 # Editing a simple program
 
+:bangbang: Don't move on to this next part until _everyone_ is done with
+the previous part.
+
 In this second part each group will make a small change to a simple Java
 program, `Hellos.java` in the `program` directory. Each group will make a
 small extension to that program in a way that virtually guarantees some sort
@@ -423,9 +426,12 @@ your changes relate to and will affect changes other people have made,
 Badness is very likely to ensue.
 
 The basic process you'll typically want to follow is:
+
 * Make sure all your changes on your feature branch are committed locally.
-   * `git status` on the command line
-   * The "Local Changes" tab in the "Version Control" window in IDEA
+   * Use `git status` on the command line to confirm that everything you
+   mean to have committed is in fact committed.
+   * Use "Local Changes" tab in the "Version Control" window to do the
+   same in IDEA
 * Checkout the `master` branch
    * `git checkout master` on the command line
    * `VCS -> Git -> Branches…` in IDEA, and then choose `master ->
@@ -441,135 +447,87 @@ probably out of date with `master` on Github (`origin/master`) since
 other people have been committing and pushing changes. So you should
 first make sure to `pull` any changes other people have made into your
 copy:
+
 * `git pull` on the command line
 * `VCS -> Git -> Pull…` in IDEA
-If you're lucky, any changes you've made won't interact badly (_conflict_)
-with changes other people have made. That should be the case here because
-so far everyone's working on completely different files and you haven't
-made any changes to the `master` branch, so we'll ignore
-merge conflicts for now and return to them in later in the lab.
 
-You've now got the latest version of `master`, which may include various
-changes other people have made. You need to _merge_ your changes from
-your feature branch into the `master` branch.
-* `git merge <feature branch>` on the command line
-* `VCS -> Git -> Merge Changes…` brings up a dialogue where you can then
-choose the branch(es) you want to merge into your currently checked out
-branch (`master` in this case). Check the box by your feature branch and
-hit `Merge` and you should get your changes merged in.
+Assuming you've _only_ made changes to your group's special development
+branch, this `pull` should succeed with no difficulties, and `git` will
+merge in whatever changes other people have `push`ed up to `master` on
+Github into your copy of `master`.
 
-Now that your copy of `master` has your work on it, you want to push
-that up to Github:
-* `git push` on the command line
-* `VCS -> Git -> Push…` in IDEA
+Now we have the moment of truth, where you merge your changes from your
+development branch (`pat_and_chris_greeting` in our example) into your
+newly updated copy of `master`.
 
-Normally this should just work because you did a pull on `master` just
-a few minutes ago. Occassionally, however, someone will manage to sneak
-in a pushed change between your `pull` and `push`, and that's actually
-pretty likely today with so many people working in parallel on the same
-repository. If that happens you'll get some sort of error saying that
-your attempt to push `master` was rejected, and suggesting that you pull
-or merge remote changes before you push. IDEA lets you do this from
-the error dialogue – if you click the `Merge` button IDEA will pull
-down the changes from Github and merge them into your `master`.
+* On the command line `git merge <branch_name>` will merge the changes in
+the specified branch onto whatever branch is currently checked out (`master`)
+in this case.
+* In IDEA `VCS -> Git -> Merge Changes…` brings up a "Merge Branches" dialog.
+This shows your current branch (which should be `master`) and lets you select
+one or more branches you'd like to merge onto `master`. You should select
+your group's development branch. You can leave everything else alone, and
+then click the "Merge" button.
 
-At that point you would try to `push` again, repeating the pull/merge
-step yet again if someone has once again snuck in on you. Eventually,
-though, your `push` should work, and you should be able to look at the
-repository on Github and see your new contact info document.
-
-At this point logout and trade with your partner(s) as appropriate until
-everyone has gone through this part of the lab.
-
-# Bringing it all together!
-
-:bangbang: Don't move on to this next part until _everyone_ is done with
-the previous part.
-
-:bangbang: If we were doing more complicated changes we'd want these to
-each be in separate branches, but in order to keep things a little
-simpler, we'll do the rest of this directly on the `master` branch.
-Make sure that `master` is the branch you're currently working on.
-
-Once everyone is done with the previous part, we should have a bunch of
-separate Markdown files in the `contact_info` directory, one for each
-person in the class. Now we'll bring them together into a smaller set of
-cummulative documents with the ultimate goal of creating a single long-ish
-document with _everyone's_ contact info, organized in alphabetical order
-by people's names.
-
-This arguably isn't really necessary, but it will have the advantage of
-creating some merge conflicts so people will have a chance to see what
-that looks like and how to deal with it.
-
-There is a `team_info` directory that has three mostly empty
-Markdown files, `Team_A.md`, `Team_B.md`, and `Team_C.md`. At this point in
-the lab we'll split you into three teams, either `A`, `B`, or `C`.
-
-You should open the file associated with the team you were assigned to,
-and then enter (copy and paste is fine) all the contact info your partner
-in your group (i.e., Pat would enter Chris's info) :bangbang: in
-alphabetical order by people's names.
-
-Then commit (to `master`) that person's info and push those changes
-to Github, switch places (log out and in, etc.) again, and repeat
-until everyone in your group has added, committed, and pushed their
-partner's contact info.
-
-Unless you get really lucky, this will at a minimum require
-some pulling and merging before you get your push to work. It's quite
-likely (and nearly guaranteed when you do the second person in your group)
-that you'll get some sort of merge conflict when you pull down other
-people's changes.
-
-This is because multiple people will have almost certainly changed the
-same line of your team's file _in different ways_, and `git` doesn't
-pretend to be able to figure out whose changes should "win". So it throws
-up it's (figurative) hands and tosses the problem back in your lap.
-
-:bangbang: _Any_ push can lead to merge
-conflicts, and merge conflicts often take a little time to deal with
-properly. Thus you should avoid trying to "do a quick push" right
-before you need to leave for class, or when it's late and you're really
-tired, or something similar. If a conflict results, people often end up
-getting stressed, increasing the chances that they'll do something that
-will tick off a teammate or
-which they'll later regret for some other reason. So if you have an hour
-to work on something, for example, you probably want to save 10-15
-minutes of that for committing (so you have time to write good commit
-messages), pushing, and otherwise cleaning up after yourself.
+If you're lucky, any changes you've made won't conflict
+with changes other people have made. That likely won't be the case here,
+as the changes other groups have made to the program (or changes we made
+while you were working on the first part of the lab) will almost certainly
+conflict with your work.
 
 Dealing with these kinds of merge conflicts can be a frustrating
 experience, but IDEA has a nice GUI merge conflict tool that makes
 it a little easier. The sequence of events (in IDEA) is likely to
 look something like:
 
-* An attempt to `push` will be rejected.
-* The dialogue that tells you this will include "Cancel", "Merge", and
-"Rebase". For the moment, choose "Merge".
-* That brings up a new dialogue listing each file that had a conflict.
-There's likely just the one in this case, your team's file.
-Select it and click "Merge".
+* The attempt to `merge` will be rejected.
+* The "Files Merged With Conflicts" dialogue that tells you this will list
+all files that had conflicts, and give you the options to "Accept Yours",
+"Accept Theirs", or "Merge". You _rarely_ want to just accept yours or theirs,
+as that throws away either your work or theirs. So click "Merge".
 * That brings up a dialogue with the original version of the document
 in the middle pane, and your version and the version with the conflicting
 changes in the left and right panes. You can use the `>>`/`<<` symbols
-to copy changes from the left or right pane into the result, or click
-the little magic wand (?) icon to let IDEA take it's best guess at
-the right merge. (If at any point you end up something icky, you can
-click the "Abort" button and try again. You can also directly edit
-the middle pane to tweak the results.)
+to copy changes from the left or right pane into the result.
+If at any point you end up
+something icky, you can click the "Abort" button and try again.
+You can also directly edit the middle pane to tweak the results. When
+you're happy with your work, click "Apply".
 
 When that's all done then the merge conflict will be _resolved_ in `git`
-terminology, and you can try the `push` again. You should carefully
+terminology. You will, however, need to `commit` those changes into your
+`master` branch with `git commit` or `VCS -> Git -> Commit…` as before.
+
+You should carefully
 proofread any code that's modified in resolving a merge conflict before
-`push`ing, though, as it's easy to introduce mistakes in that process.
-Later, when we're working with code instead of just text, you'll want to
-make sure you re-run the test suite to make sure that resolving the
-merge conflict didn't inadvertently break something.
+`commit`ting, though, as it's easy to introduce mistakes in that process.
+You'll want to make sure you re-run the test suite, for example, to make
+sure that resolving the merge conflict didn't inadvertently break something.
+
+Now that your copy of `master` has your work on it, you want to push
+that up to Github:
+
+* `git push` on the command line
+* `VCS -> Git -> Push…` in IDEA
+
+Normally this should just work because you did a pull on `master` just
+a few minutes ago. Occasionally, however, someone will manage to sneak
+in a pushed change between your `pull` and `push`, and that's actually
+pretty likely today with so many people working in parallel on the same
+file. If that happens you'll get some sort of error saying that
+your attempt to push `master` was rejected, and suggesting that you pull
+or merge remote changes before you push. IDEA lets you do this from
+the error dialogue – if you click the `Merge` button IDEA will pull
+down the changes from Github and merge them into your `master`.
+At that point you would try to `push` again, repeating the pull/merge
+step yet again if someone has once again snuck in on you.
+
+Eventually your `push` will work, and you should be able to look at the
+repository on Github and see the changes you made to `Hellos.java` on the
+`master` branch of the repository, presumably along with numerous changes
+made by other groups.
 
 # Huzzah! We're done!
 
-Once everyone has added their group's info to the team files then we're
-done with the lab! If there's time, then we might merge the three
-team files into a single big "master" file in class; otherwise we'll do
-that after lab is done.
+Once everyone has added their changes to `Hellos.java` then we're
+done with the lab! Well done! :smile:
