@@ -353,13 +353,13 @@ commands as before to
 * `commit` your work
 * `push` those changes to Github
 
-You could do a `pull` before the `push` like we did in the first half, but
+You could do a `pull` before the `push` like we did before, but
 (a) you aren't expecting any changes on _your_ branch by another group (so
 the `pull` shouldn't bring in any changes) and (b) `push` actually checks
 for unpulled changes and forces you to deal with those if they exist (so it's
 safe to just `push` and see what happens).
 
-Assuming the `commit` and `push` worked, if you got to the project web page
+Assuming the `commit` and `push` worked, if you go to the project web page
 on Github (and refresh if necessary),
 your branch should be in the list of branches, and if you switch to your branch
 and go look at `Hellos.java` you should see your changes. Depending on how
@@ -369,28 +369,58 @@ unused branches later.
 
 ## Merging your branch into `master`
 
-The main reason
-this is potentially tricky is that other people may have
-`push`ed commits up to Github, and those commits might conflict with your
-changes. Say, for example, Pat and Chris separately notice that someone
-(who shall remain unnamed) named a variable `foo`. They both wanted to replace
-that meaningless name with a more informative name, but they made different
-but reasonable choices: Pat renamed it to `sum` and Chris renamed it
-to `total`. There's no way for `git` to figure out what the "right" thing to
-do is, though, when asked to merge both of these commits.
+It's cool that your changes are visible in your branch on Github, but if
+you switch back to `master` on Github and look at `Hellos.java`, your code
+won't be there. The problem with the current situation is that your nifty
+new contact info document is "trapped" in the branch you created.
+This is sad, because your code is _spectacular_ and really
+should be part of the "production" version of the project on the `master`
+branch. Right? **Right?**
 
-The problem with the current situation is that your nifty new contact
-info document is "trapped" in the branch you created. If you look at that
-branch on Github, you'll see your new document, but if you're on any
-other branch (such as `master`, which is the "default" branch people
-see when they go to the project), your file won't be there.
-
-So you need to _merge_ your work onto the `master` branch.
+So you need to merge your branch into `master`.
 
 If no one else was working on this repository it would be easy, and all
 you'd need to do is _merge_ into `master` and then _push_ your work up
 to the Github repository. But there are other people working on the
 repository, and you have to make sure you play nice with them.
+
+And that can be tricky because other people may have
+`push`ed commits up to Github, and those commits might conflict with your
+changes. Say, for example, Pat and Chris separately notice that someone
+(who shall remain unnamed) named a variable `foo`. Chris and Pat both
+replace
+that content-free name with a more informative name without realizing the
+other person was changing the same piece of code. They made different
+but reasonable choices: Pat renamed it to `sum` and Chris renamed it
+to `total`. If Pat merges the change to `sum` in first, then when Chris
+tries to merge in the change to `total`, there will be a merge conflict.
+`git` will realize that the commits from both Pat and Chris changed the
+same piece of code, but there's no way for `git` to figure out what
+the "right" thing to do is, though. So `git` will block the second
+merge (from Chris), generate a _merge conflict_, and ask Chris to _resolve_
+the conflict by deciding which change to use.
+
+Dealing with merge conflicts, especially complex ones, can be a real headache,
+but these tips can help reduce the likelihood of pain here:
+
+* `pull` changes into your development branch(es) early and often. The
+more consistent your branch is with `master` (or whatever branch you're going to
+merge into), the less likely conflicts will be, and they'll tend to be smaller
+when they do happen.
+* Break your work into small, manageable stories/tasks/chunks. Small,
+well-defined bits of work tend to touch less code and be completed more
+quickly, both of which reduce the likelihood of a nasty conflict surprise
+when you come to merge.
+* Give yourself plenty of time to merge into `master`. You don't want to decide
+you're going to merge into `master` at 2am or 15 minutes before Food Service
+closes for dinner; if there's an unexpected conflict you don't have the
+time and energy to deal with it properly and your chances go way up that
+you'll do something you'll regret.
+* Don't do (big) merges alone (or at least make sure other folks are around).
+This relates to the previous one. If you're caught off guard by a conflict,
+and you're in a hurry, and there's no one around to help you understand how
+your changes relate to and will affect changes other people have made,
+Badness is very likely to ensue.
 
 The basic process you'll typically want to follow is:
 * Make sure all your changes on your feature branch are committed locally.
