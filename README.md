@@ -105,7 +105,7 @@ https://github.com/UMM-CSci-3601/intro-to-git.git
 Check out from Version Control -> Github
 ```
 
-Create an API Token using your github username and password and Login.
+Login using your github username and password and press Login.
 Enter the Repository URL and then open the cloned project in IDEA.
 ### If you are not at the "Welcome" dialog, another way is to go to
 
