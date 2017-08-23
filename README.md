@@ -57,7 +57,7 @@ collaboration and change. `git` organizes projects into _repositories_,
 which are collections of files and histories of all the changes ever made
 to that project. _Github_ is a web-based software service that allows people
 to host, search, and use repositories created and managed with `git`. You
-could use `git` without ever Github, but Github is an extremely popular
+could use `git` without ever using Github. Github is an extremely popular
 repository hosting service, and it's a good idea for computing folks to be
 familiar with it. We use it to manage
 [all the labs for this course](https://github.com/UMM-CSci-3601), and you'll
@@ -72,40 +72,46 @@ to discuss potential changes.
 
 Each developer then has one or more private copies of the repository
 (called _clones_) that they make local changes to. They can pull changes
-from the Github repository into their local repository, as well as pushing
+from the Github repository into their local repository, as well as push
 local changes up to the Github repository so that other people can access them.
 
 # `clone` a local copy of the repository
 
 Before we can start working on the lab proper, each group will need to
 `clone` the Github repository so they have a local copy to work with. There
-will only be one copy of the repository on Github, but each group will have
-a clone on whatever lab machine you're working on, so there will be lots of
+will only be one copy of the repository on Github, but each group should obtain
+a clone on whatever lab machine they're working on, so there will be lots of
 local copies. Each of those local copies will be completely independent, and
 will only share changes through explicit interactions with the Github
-repository.
+repository through git.
 
-To `clone` the respository using command line tools you'd do:
+## To `clone` the respository using command line tools you'd do:
 
 ```bash
 git clone <url>
 ```
 
 where `<url>` is the URL for the Github repository. You can get these URLs
-from the `Clone or download` on Gihub, and they tend to look something like
-this
+from the `Clone or download` button visible on a repository on Github.
+The URL should look like this:
 
 ```
 https://github.com/UMM-CSci-3601/intro-to-git.git
 ```
 
-If you're at the IDEA "Welcome" dialog, you can choose
+## To `clone` from within IDEA, if you're at the IDEA "Welcome" dialog, you can choose
 
 ```
 Check out from Version Control -> Github
 ```
 
-and enter the URL and then open the cloned project in IDEA.
+Create an API Token using your github username and password and Login.
+Enter the Repository URL and then open the cloned project in IDEA.
+### If you are not at the "Welcome" dialog, another way is to go to
+
+```
+File -> New -> Project from Version Control -> GitHub
+```
 
 # Create an info page for each pair
 
@@ -113,8 +119,8 @@ Now that we've cloned a local copy of the repository, we can start making
 and sharing changes.
 
 This repository has a `user_info` directory, and in this part of the
-lab we'll create a new file in that directory for pair in the
-class, containing your real names and your Github user names. Sometimes
+lab we'll create a new file in that directory for each pair in the
+class containing your real names and your Github user names. Sometimes
 it's easy for us to figure out how those names relate, but if your
 Gihub user name is `UnicornWizard375` it's not always obvious who in the
 class that is, especially if you don't wear your wizarding regalia to lab.
@@ -141,7 +147,7 @@ info page should:
 
 :bangbang: If you create the new file with IDEA it's likely to
 ask you if you want to add it to the set of files that were being
-tracked by `git`. If that happens, say "Yes" to simplify things later,
+tracked by `git`. If that happens say "Yes" to simplify things later,
 although it's not a big deal if you say "No".
 
 ## `commit` your changes (locally)
@@ -272,7 +278,7 @@ we still have Pat and Chris, they would create a new branch called something lik
 In the command line this would be accomplished with
 
 ```bash
-git checkout -b <branch_name>
+git checkout -b <new_branch_name>
 ```
 
 so they might use `git checkout -b pat_and_chris_greeting` to create the
@@ -474,7 +480,7 @@ as that throws away either your work or theirs. So click "Merge".
 in the middle pane, and your version and the version with the conflicting
 changes in the left and right panes. You can use the `>>`/`<<` symbols
 to copy changes from the left or right pane into the result.
-If at any point you end up
+If at any point you end up with 
 something icky, you can click the "Abort" button and try again.
 You can also directly edit the middle pane to tweak the results. When
 you're happy with your work, click "Apply".
