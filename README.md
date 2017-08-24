@@ -238,7 +238,7 @@ You're now done with the first major part of the lab!
 :bangbang: Don't move on to this next part until _everyone_ is done with
 the previous part.
 
-:banbang: You should definitely change _driver_ and _navigator_ roles now.
+:bangbang: You should definitely change _driver_ and _navigator_ roles now.
 
 In this second part each group will make a small change to a simple Java
 program, `Hellos.java` in the `program` directory. Each group will make a
