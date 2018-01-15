@@ -105,7 +105,7 @@ happens when different people make inconsistent changes to the same files.
 So follow the link in the Canvas assignment and join the __Everyone__ team;
 that should take you to the shared repository on Github. From there
 you can get the URL for that repository. You can get these URLs
-from the `Clone or download` button visit on the "home page" for each
+from the `Clone or download` button visible on the "home page" for each
 repository on Github. The URL should look like this:
 
 ```
