@@ -7,7 +7,8 @@ the various tasks in this lab, and will also provide info on how to
 accomplishing things using IntelliJ's IDEA software development tools since
 IDEA is what we'll be'll using this semester. There's nothing magic about
 IDEA here, and almost any reasonable software editor or development environment
-provides similar support for `git` commands.
+like [Eclipse][eclipse] or [Atom][atom] provides similar support for `git` 
+commands.
 
 :bangbang: While in most labs it will be fine for groups to move ahead
 at their own pace, in this lab we'd like people to keep together
@@ -19,8 +20,8 @@ This definitely will _not_ provide a comprehensive overview of the
 _many_ features `git` provides. There are a lot of on-line resources
 that can provide additional information, including:
 
+* A very nice [on-line tutorial from Code School][CodeSchool]
 * The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
-* A very nice [on-line tutorial from Code School](https://try.github.io/levels/1/challenges/1)
 * [The "standard" `git` documentation site](https://git-scm.com/documentation),
 which also includes links to videos, cheat sheets, and such
 * [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
@@ -32,11 +33,12 @@ an on-line Lynda.com course; it's free if you first authenticate
 with your U of M credentials via http://lynda.umn.edu
 * [A nice IntelliJ video on the different between _merging_ commits and _rebasing_ commits](https://www.youtube.com/watch?v=Nftif2ynvdA)
 
-We also made [a screencast that
-walks through many of the key steps
-in this lab](https://www.youtube.com/watch?v=Am6xSrPVX98).
+We also made 
+[a screencast that walks through many of the key steps in this lab][screencast].
 You might find it useful
 to watch that before lab, especially if you find videos like that helpful.
+You might also want to at least skim one or two of the tutorials listed
+above; we would definitely encourage at least [the first one][CodeSchool].
 
 The discussion below assumes that people are paired up in the lab, but we want
 to make sure everyone has hands on experience with these tools and ideas.
@@ -47,17 +49,18 @@ _navigator_, say Chris) is actively engaged in working with Pat, suggesting idea
 and answering questions. For this process to work, both of you have to
 contribute and be involved, and it's extremely important for you to trade
 off the roles of driver and navigator now and then. Thus in this lab
-there will be times where we'll explicitly ask you to trade roles so that everyone has a chance to go through all the activities.
+there will be times where we'll explicitly ask you to trade roles so that 
+everyone has a chance to go through all the activities.
 
-# How we're going to use `git`
+## How we're going to use `git`
 
-`git` is a piece of software provides distributed version control, allowing
+`git` is a piece of software which provides distributed version control, allowing
 a team of developers to work together on a project, helping manage
 collaboration and change. `git` organizes projects into _repositories_,
 which are collections of files and histories of all the changes ever made
 to that project. _Github_ is a web-based software service that allows people
 to host, search, and use repositories created and managed with `git`. You
-could use `git` without ever using Github. Github is an extremely popular
+could use `git` without ever using Github; Github is an extremely popular
 repository hosting service, and it's a good idea for computing folks to be
 familiar with it. We use it to manage
 [all the labs for this course](https://github.com/UMM-CSci-3601), and you'll
@@ -75,7 +78,7 @@ Each developer then has one or more private copies of the repository
 from the Github repository into their local repository, as well as push
 local changes up to the Github repository so that other people can access them.
 
-# `clone` a local copy of the repository
+## `clone` a local copy of the repository
 
 Before we can start working on the lab proper, each group will need to
 `clone` the Github repository so they have a local copy to work with. There
@@ -85,21 +88,47 @@ local copies. Each of those local copies will be completely independent, and
 will only share changes through explicit interactions with the Github
 repository through git.
 
-## To `clone` the respository using command line tools you'd do:
+### Join our Github Classroom team; get your clone URL
+
+We'll be using Github Classroom all semester to manage team repositories.
+For each project we'll post a Github Classroom URL on the assignment on Canvas;
+you'll use that to create/join your team for that lab. Github Classroom
+will create a _fork_ (essentially a copy on Github for your team) of our starter 
+repository that your team will use as the starting part for your work.
+
+This lab is unusual in that we will all be on a single large team called
+__Everyone__, all making changes to a single shared repository. This will
+help illustrate the value of version control systems like `git` in managing
+this kind of shared resource, and also give us opportunities to see what
+happens when different people make inconsistent changes to the same files.
+
+So follow the link in the Canvas assignment and join the __Everyone__ team;
+that should take you to the shared repository on Github. From there
+you can get the URL for that repository. You can get these URLs
+from the `Clone or download` button visible on the "home page" for each
+repository on Github. The URL should look like this:
+
+```
+https://github.com/YOUR-ORG-OR-NAME/REPO.git
+```
+
+where `YOUR-ORG-OR-NAME` is the a user name or (in our case) an organization name
+and `REPO` is the name of the repository.
+
+### Command line `clone`
+
+To `clone` the respository using command line tools you'd do:
 
 ```bash
 git clone <url>
 ```
 
-where `<url>` is the URL for the Github repository. You can get these URLs
-from the `Clone or download` button visible on a repository on Github.
-The URL should look like this:
+where `<url>` is the URL for the Github repository. 
 
-```
-https://github.com/UMM-CSci-3601/intro-to-git.git
-```
+### IntelliJ IDEA `clone`
 
-## To `clone` from within IDEA, if you're at the IDEA "Welcome" dialog, you can choose
+To `clone` from within IDEA, if you're at the IDEA "Welcome" dialog, you 
+can choose
 
 ```
 Check out from Version Control -> Github
@@ -107,13 +136,15 @@ Check out from Version Control -> Github
 
 Login using your github username and password and press Login.
 Enter the Repository URL and then open the cloned project in IDEA.
-### If you are not at the "Welcome" dialog, another way is to go to
+
+If you are not at the "Welcome" dialog (i.e., you're looking at a
+project page), an alternative way to clone a Github repository is
 
 ```
 File -> New -> Project from Version Control -> GitHub
 ```
 
-# Create an info page for each pair
+## Create an info page for each pair
 
 Now that we've cloned a local copy of the repository, we can start making
 and sharing changes.
@@ -133,7 +164,7 @@ more detail below:
 * `pull` down the changes other people may have made to the central repository on Github while you were working, `merging` them with your changes
 * `push` your (merged) changes back up to Github so they're available to everyone
 
-## Creating a page
+### Creating a page
 
 You'll start by creating your group's contact info page. Each contact
 info page should:
@@ -150,7 +181,7 @@ ask you if you want to add it to the set of files that were being
 tracked by `git`. If that happens say "Yes" to simplify things later,
 although it's not a big deal if you say "No".
 
-## `commit` your changes (locally)
+### `commit` your changes (locally)
 
 Before you can share your changes with the class via the Github repository,
 you need to `add` and `commit` these changes to your local `git` repository.
@@ -200,7 +231,7 @@ include in a commit.
     which makes it easier to write
     [informative, complete commit messages](http://chris.beams.io/posts/git-commit/).
 
-## `push`ing your work to Github
+### `push`ing your work to Github
 
 At this point you have your changes committed to your local copy of the
 repository, and want to _push_ those changes up to the Github copy of the
@@ -233,7 +264,7 @@ with a lot of other files.
 
 You're now done with the first major part of the lab!
 
-# Editing a simple program
+## Editing a simple program
 
 :bangbang: Don't move on to this next part until _everyone_ is done with
 the previous part.
@@ -246,7 +277,7 @@ small extension to that program in a way that virtually guarantees some sort
 of merge conflict, so everyone will have the experience of dealing with
 conflicts.
 
-## Creating a branch
+### Creating a branch
 
 Before we get started on actually editing the program, we want to introduce
 the concept of _branches_ in `git`, as they are a powerful tool for
@@ -303,7 +334,7 @@ IDEA you can switch between branches using `VCS -> Git -> Branches…` or
 the popup menu from the `Git: <branch>` button on the bottom right of the
 GUI.
 
-## Edit the program
+### Edit the program
 
 Now that you've created and switched to your new branch, it's time to edit
 the program. Open up `Hellos.java` and add another line in the `main()`
@@ -341,7 +372,7 @@ If you have any problems here, definitely ask questions and get things
 working before you proceed; you don't want to merge broken code and mess
 things up for everyone else.
 
-## Commit and Push your branch to Github
+### Commit and Push your branch to Github
 
 Now assuming that your code is all working and happy, let's use the same
 commands as before to
@@ -363,7 +394,7 @@ many other groups have gotten to this point before you, you may see a _lot_
 of new branches; these will start to clutter things up, but we can delete
 unused branches later.
 
-## Merging your branch into `master`
+### Merging your branch into `master`
 
 It's cool that your changes are visible in your branch on Github, but if
 you switch back to `master` on Github and look at `Hellos.java`, your code
@@ -520,7 +551,12 @@ repository on Github and see the changes you made to `Hellos.java` on the
 `master` branch of the repository, presumably along with numerous changes
 made by other groups.
 
-# Huzzah! We're done!
+## Huzzah! We're done!
 
 Once everyone has added their changes to `Hellos.java` then we're
 done with the lab! Well done! :smile:
+
+[eclipse]: http://www.eclipse.org
+[atom]: https://atom.io
+[CodeSchool]: https://try.github.io/levels/1/challenges/1
+[screencast]: https://www.youtube.com/watch?v=Am6xSrPVX98
