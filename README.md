@@ -88,25 +88,31 @@ local copies. Each of those local copies will be completely independent, and
 will only share changes through explicit interactions with the Github
 repository through git.
 
-### Join our Github Classroom team
+### Join our Github Classroom team; get your clone URL
 
 We'll be using Github Classroom all semester to manage team repositories.
-For each project we'll post a URL on the assignment on Canvas that you
-should use to join the __Everyone__ team. In future labs each group will
-create your own separate Github Classroom team your group, but we're all
-sharing a single repository in this lab, so there's just the one team.
+For each project we'll post a Github Classroom URL on the assignment on Canvas;
+you'll use that to create/join your team for that lab. Github Classroom
+will create a _fork_ (essentially a copy on Github for your team) of our starter 
+repository that your team will use as the starting part for your work.
 
-So follow the link in the assignment to join the __Everyone__ team, and
+This lab is unusual in that we will all be on a single large team called
+__Everyone__, all making changes to a single shared repository. This will
+help illustrate the value of version control systems like `git` in managing
+this kind of shared resource, and also give us opportunities to see what
+happens when different people make inconsistent changes to the same files.
+
+So follow the link in the Canvas assignment and join the __Everyone__ team;
 that should take you to the shared repository on Github. From there
 you can get the URL for that repository. You can get these URLs
-from the `Clone or download` button visible on a repository on Github.
-The URL should look like this:
+from the `Clone or download` button visit on the "home page" for each
+repository on Github. The URL should look like this:
 
 ```
-https://github.com/YOUR-ORG/REPO.git
+https://github.com/YOUR-ORG-OR-NAME/REPO.git
 ```
 
-where `YOUR-ORG` is the a user name or (in our case) an organization name
+where `YOUR-ORG-OR-NAME` is the a user name or (in our case) an organization name
 and `REPO` is the name of the repository.
 
 ### Command line `clone`
