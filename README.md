@@ -78,6 +78,33 @@ Each developer then has one or more private copies of the repository
 from the Github repository into their local repository, as well as push
 local changes up to the Github repository so that other people can access them.
 
+## Configuring your `git` e-mail
+
+Before we actually start to _use_ `git`, you should [configure your `git`
+email so work you do in our lab properly connects to your GitHub 
+account](https://help.github.com/articles/setting-your-commit-email-address-in-git/).
+You only need to do this once and it will "stick" throughout the lab
+in all systems that use `git`.
+
+* Open a terminal window
+* Type `git config --global user.email "email@example.com"` where
+you replace `email@example.com` with the email you used to set up
+your GitHub account.
+* Verify that everything's good by typing `git config --global user.email`;
+you should get the address you just configured as the response.
+
+If you want to use a different e-mail address than the one you
+signed up for GitHub with (e.g., you signed up with a non-U
+email but you'd like to use your UMM email now) you can 
+[set your commit email address on GitHub](https://help.github.com/articles/setting-your-commit-email-address-on-github/)
+so that they match.
+
+If you'll be using any non-lab machines (like your own computer)
+to do work, make sure you [set your `git` email](https://help.github.com/articles/setting-your-commit-email-address-in-git/) 
+on those machines as well. This will ensure that no matter where
+you commit from, `git` and GitHub will "know" it's you and properly
+credit you for your work.
+
 ## `clone` a local copy of the repository
 
 Before we can start working on the lab proper, each group will need to
