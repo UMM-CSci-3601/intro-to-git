@@ -337,24 +337,31 @@ GUI.
 ### Edit the program
 
 Now that you've created and switched to your new branch, it's time to edit
-the program. Open up `Hellos.java` and add another line in the `main()`
+the program. Open up `Hellos.java` and add more lines in the `main()`
 method of the form
 
 ```java
-builder.append(pat_and_chris_say_hello());
+builder.append(pat_says_hello());
 ```
 
-where you replace `pat_and_chris_say_hello` with a method name that
-reflects the names in your group.
-
-This will create a compiler error because your new method
-(`pat_and_chris_say_hello` in our example) isn't actually defined anywhere.
-So let's fix that, by adding a new method somewhere down amongst the example
-methods; it should look something like:
+where you replace `pat_says_hello` with method names that
+reflects the names in your group. You should create one new method for
+_every_ person in your group. If your group is Pat and Chris, then you
+want
 
 ```java
-    private static String pat_and_chris_say_hello() {
-        return "Pat and Chris say 'Hello!'\n";
+builder.append(chris_says_hello());
+builder.append(pat_says_hello());
+```
+
+This will create a compiler error because your new methods
+(e.g., `pat_says_hello`) aren't actually defined anywhere.
+So let's fix that, by adding a new methods somewhere down amongst the example
+methods; they should look something like:
+
+```java
+    private static String chris_says_hello() {
+        return "Chris says 'Hello!'\n";
     }
 ```
 
@@ -371,6 +378,17 @@ greeting from your team.
 If you have any problems here, definitely ask questions and get things
 working before you proceed; you don't want to merge broken code and mess
 things up for everyone else.
+
+We also have some simple JUnit tests that will confirm that all the lines
+in the output have the right form, and you should run the tests before you
+commit as another way of making sure that your work is "done done". To
+run the tests find `HellosTest` in the Project view in IDEA (in the `tests` 
+folder), and right click on it. Choose `Run 'HellosTest'`, and IDEA will
+run all the JUnit tests it finds in that file, displaying the results in a
+new pane (probably along the bottom). You should get green checkmarks on
+the only test (`testLineStructure()`). If you get a red X, you should
+look at the error message and see if you can figure out why the test failed
+and how to fix it. If you get stuck there definitely ask a question!
 
 ### Commit and Push your branch to Github
 
