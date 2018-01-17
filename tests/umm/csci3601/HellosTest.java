@@ -15,7 +15,9 @@ public class HellosTest {
         String[] lines = output.split("\n");
         Hellos.WELCOME_LINE.equals(lines[0]);
 
-        String linePattern = "\\w+ says 'Hello!'";
+        // This regex supports unicode letters spaces, apostrophes, and hyphens
+        // Taken from https://stackoverflow.com/questions/15805555/java-regex-to-validate-full-name-allow-only-spaces-and-letters
+        String linePattern = "[\\p{L} .'-]+ says 'Hello!'";
 
         for (int i=1; i<lines.length; ++i) {
             assertTrue(lines[i].matches(linePattern),
