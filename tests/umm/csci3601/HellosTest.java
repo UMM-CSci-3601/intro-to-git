@@ -2,9 +2,6 @@ package umm.csci3601;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,7 +10,7 @@ public class HellosTest {
     public void testLineStructure() {
         String output = Hellos.generateOutput();
         String[] lines = output.split("\n");
-        Hellos.WELCOME_LINE.equals(lines[0]);
+        assertEquals(Hellos.WELCOME_LINE, lines[0], "Welcome line isn't correct.");
 
         // This regex supports unicode letters spaces, apostrophes, and hyphens
         // Taken from https://stackoverflow.com/questions/15805555/java-regex-to-validate-full-name-allow-only-spaces-and-letters
