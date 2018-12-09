@@ -171,6 +171,8 @@ project page), an alternative way to clone a Github repository is
 File -> New -> Project from Version Control -> GitHub
 ```
 
+## Add something about importing/running with Gradle
+
 ## Create an info page for each pair
 
 Now that we've cloned a local copy of the repository, we can start making
