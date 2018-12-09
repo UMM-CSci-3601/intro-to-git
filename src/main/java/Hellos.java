@@ -4,21 +4,28 @@
  */
 public class Hellos {
 
+    public static final String WELCOME_LINE = "Hello, folks!";
+
     public static void main(String[] args) {
-        StringBuilder builder = new StringBuilder();
-
-        builder.append("Hello, folks!\n");
-        builder.append(nic_says_hello());
-        builder.append(kk_says_hello());
-
-        System.out.println(builder.toString());
+        String output = generateOutput();
+        System.out.println(output);
     }
 
-    private static String nic_says_hello() {
+    public static String generateOutput() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(WELCOME_LINE + "\n");
+        builder.append(kkSaysHello());
+        builder.append(nicSaysHello());
+
+        return builder.toString();
+    }
+
+    private static String nicSaysHello() {
         return "Nic says 'Howdy!'\n";
     }
 
-    private static String kk_says_hello() {
+    private static String kkSaysHello() {
         return "KK says 'Hello!'\n";
     }
 
