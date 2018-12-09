@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/UMM-CSci-3601/intro-to-git.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/intro-to-git)
+
 # Introduction to `git`
 
 This will be an in-lab exercise where we'll experience several of the
