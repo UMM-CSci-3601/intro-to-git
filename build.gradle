@@ -6,11 +6,13 @@
  * user guide available at https://docs.gradle.org/3.3/userguide/tutorial_java_projects.html
  */
 
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-
-// Apply the application plugin to add support for building an application
-apply plugin: 'application'
+// Adding these plugins tells Gradle we want
+// tasks for building, running, testing, and
+// deploying Java applications.
+plugins {
+    id 'java'
+    id 'application'
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -22,9 +24,6 @@ repositories {
 dependencies {
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
-    
-	testCompile group: 'junit-addons', name: 'junit-addons', version: '1.4'
-    
 }
 
 // Define the main class for the application

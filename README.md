@@ -161,7 +161,7 @@ git clone <url>
 
 where `<url>` is the URL for the GitHub repository. 
 
-### IntelliJ IDEA `clone`
+### IntelliJ IDEA `clone` and `gradle` setup
 
 To `clone` from within IDEA, if you're at the IDEA "Welcome" dialog, you 
 can choose
@@ -180,7 +180,13 @@ project page), an alternative way to clone a GitHub repository is
 File -> New -> Project from Version Control -> GitHub
 ```
 
-## Add something about importing/running with Gradle
+We're using the `gradle` build tool in our labs, and IDEA "recognizes" that
+when we clone the project. It then gives a large and fairly complicated dialog
+asking how we want to handle the IDEA/`gradle` interaction. Happily you can just
+click "OK" on that big dialog as the defaults will all do the correct thing.
+
+See [our Gradle README](docs/Gradle_README.md) for more info on what Gradle is and
+how we're using it.
 
 ## Create an info page for each pair
 
@@ -379,7 +385,7 @@ the program. Open up `Hellos.java` and add more lines in the `generateOutput()`
 method of the form
 
 ```java
-builder.append(pat_says_hello());
+builder.append(patSaysHello());
 ```
 
 where you replace `pat_says_hello` with method names that
@@ -388,17 +394,36 @@ _every_ person in your group. If your group is Pat and Chris, then you
 want
 
 ```java
-builder.append(chris_says_hello());
-builder.append(pat_says_hello());
+builder.append(chrisSaysHello());
+builder.append(patSaysHello());
+```
+
+However, instead of just adding them wherever you want, you need to add them so that
+everyone's greetings come out in alphabetical order, otherwise the tests won't pass.
+So if you started with
+
+```java
+        builder.append(kkSaysHello());
+        builder.append(nicSaysHello());
+```
+
+and you wanted to add Chris and Pat, you'd need to put Chris at the front, and Pat at
+the end to maintain alphabetical order:
+
+```java
+        builder.append(chrisSaysHello());
+        builder.append(kkSaysHello());
+        builder.append(nicSaysHello());
+        builder.append(patSaysHello());
 ```
 
 This will create a compiler error because your new methods
-(e.g., `pat_says_hello`) aren't actually defined anywhere.
+(e.g., `patSaysHello`) aren't actually defined anywhere.
 So let's fix that, by adding a new methods somewhere down amongst the example
 methods; they should look something like:
 
 ```java
-    private static String chris_says_hello() {
+    private static String chrisSaysHello() {
         return "Chris says 'Hello!'\n";
     }
 ```
@@ -413,20 +438,30 @@ this will make sure everything compiles, and if it does it will run your
 program display the output in the `Run` pane at the bottom of the GUI.
 You should see the results of our sample greetings along with your new
 greeting from your team.
+
+If you want to run the program from the command line `./gradlew run` should
+do the trick.
+
 If you have any problems here, definitely ask questions and get things
 working before you proceed; you don't want to merge broken code and mess
 things up for everyone else.
 
 We also have some simple JUnit tests that will confirm that all the lines
-in the output have the right form, and you should run the tests before you
-commit as another way of making sure that your work is "done done". To
-run the tests find `HellosTest` in the Project view in IDEA (in the `tests` 
+in the output have the right form and are in alphabetical order, 
+and you should run the tests before you
+commit as another way of making sure that your work is "done done". 
+
+To run the tests in IDEA find `HellosTest` in the Project view (in the `tests` 
 folder), and right click on it. Choose `Run 'HellosTest'`, and IDEA will
 run all the JUnit tests it finds in that file, displaying the results in a
 new pane (probably along the bottom). You should get green checkmarks on
 the only test (`testLineStructure()`). If you get a red X, you should
 look at the error message and see if you can figure out why the test failed
-and how to fix it. If you get stuck there definitely ask a question!
+and how to fix it. 
+
+Run `./gradlew test` to run the tests on the command line. 
+
+If you get stuck there definitely ask questions!
 
 ### Commit and Push your branch to GitHub
 
