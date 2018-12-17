@@ -1,11 +1,14 @@
+[![Build Status](https://travis-ci.org/UMM-CSci-3601/intro-to-git.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/intro-to-git)
+
 # Introduction to `git`
 
 This will be an in-lab exercise where we'll experience several of the
-key features of the `git` version control system, and the Github
+key features of the `git` version control system, and the GitHub
 repository hosting service. We'll provide command line means of accomplishing
 the various tasks in this lab, and will also provide info on how to
 accomplishing things using IntelliJ's IDEA software development tools since
-IDEA is what we'll be'll using this semester. There's nothing magic about
+IDEA is what we'll be'll using this semester. IDEA provides ways to interact 
+with GitHub without leaving the IDE using menu options in the version control system (VCS) menu. There's nothing magic about
 IDEA here, and almost any reasonable software editor or development environment
 like [Eclipse][eclipse] or [Atom][atom] provides similar support for `git` 
 commands.
@@ -58,25 +61,25 @@ everyone has a chance to go through all the activities.
 a team of developers to work together on a project, helping manage
 collaboration and change. `git` organizes projects into _repositories_,
 which are collections of files and histories of all the changes ever made
-to that project. _Github_ is a web-based software service that allows people
+to that project. _GitHub_ is a web-based software service that allows people
 to host, search, and use repositories created and managed with `git`. You
-could use `git` without ever using Github; Github is an extremely popular
+could use `git` without ever using GitHub; GitHub is an extremely popular
 repository hosting service, and it's a good idea for computing folks to be
 familiar with it. We use it to manage
 [all the labs for this course](https://github.com/UMM-CSci-3601), and you'll
-use Github to manage all your labs and project iterations in this course.
+use GitHub to manage all your labs and project iterations in this course.
 
-When you use `git` and Github, you typically have a single "primary" copy
-of your repository hosted on Github; this will be visible to everyone in
+When you use `git` and GitHub, you typically have a single "primary" copy
+of your repository hosted on GitHub; this will be visible to everyone in
 your group (and the world if the project is public),
 and will be the "copy of record". People will transmit changes through that
-copy, and use Github tools like _issues_, _pull requests_, and _code reviews_
+copy, and use GitHub tools like _issues_, _pull requests_, and _code reviews_
 to discuss potential changes.
 
 Each developer then has one or more private copies of the repository
 (called _clones_) that they make local changes to. They can pull changes
-from the Github repository into their local repository, as well as push
-local changes up to the Github repository so that other people can access them.
+from the GitHub repository into their local repository, as well as push
+local changes up to the GitHub repository so that other people can access them.
 
 ## Configuring your `git` e-mail
 
@@ -108,19 +111,25 @@ credit you for your work.
 ## `clone` a local copy of the repository
 
 Before we can start working on the lab proper, each group will need to
-`clone` the Github repository so they have a local copy to work with. There
-will only be one copy of the repository on Github, but each group should obtain
+`clone` the GitHub repository so they have a local copy to work with. There
+will only be one copy of the repository on GitHub, but each group should obtain
 a clone on whatever lab machine they're working on, so there will be lots of
 local copies. Each of those local copies will be completely independent, and
-will only share changes through explicit interactions with the Github
+will only share changes through explicit interactions with the GitHub
 repository through git.
 
-### Join our Github Classroom team; get your clone URL
+When you are getting started on a new project in IDEA using GitHub and wish
+to clone a repository, you will first be prompted to log in to GitHub. By
+default, IDEA will offer to let you log in using a token. At that point, you
+should choose the password option for providing your credentials to GitHub.
+Read further to find more instructions for cloning the repository for this lab.
 
-We'll be using Github Classroom all semester to manage team repositories.
-For each project we'll post a Github Classroom URL on the assignment on Canvas;
-you'll use that to create/join your team for that lab. Github Classroom
-will create a _fork_ (essentially a copy on Github for your team) of our starter 
+### Join our GitHub Classroom team; get your clone URL
+
+We'll be using GitHub Classroom all semester to manage team repositories.
+For each project we'll post a GitHub Classroom URL on the assignment on Canvas;
+you'll use that to create/join your team for that lab. GitHub Classroom
+will create a _fork_ (essentially a copy on GitHub for your team) of our starter 
 repository that your team will use as the starting part for your work.
 
 This lab is unusual in that we will all be on a single large team called
@@ -130,10 +139,10 @@ this kind of shared resource, and also give us opportunities to see what
 happens when different people make inconsistent changes to the same files.
 
 So follow the link in the Canvas assignment and join the __Everyone__ team;
-that should take you to the shared repository on Github. From there
+that should take you to the shared repository on GitHub. From there
 you can get the URL for that repository. You can get these URLs
 from the `Clone or download` button visible on the "home page" for each
-repository on Github. The URL should look like this:
+repository on GitHub. The URL should look like this:
 
 ```
 https://github.com/YOUR-ORG-OR-NAME/REPO.git
@@ -150,26 +159,34 @@ To `clone` the respository using command line tools you'd do:
 git clone <url>
 ```
 
-where `<url>` is the URL for the Github repository. 
+where `<url>` is the URL for the GitHub repository. 
 
-### IntelliJ IDEA `clone`
+### IntelliJ IDEA `clone` and `gradle` setup
 
 To `clone` from within IDEA, if you're at the IDEA "Welcome" dialog, you 
 can choose
 
 ```
-Check out from Version Control -> Github
+Check out from Version Control -> GitHub
 ```
 
 Login using your github username and password and press Login.
 Enter the Repository URL and then open the cloned project in IDEA.
 
 If you are not at the "Welcome" dialog (i.e., you're looking at a
-project page), an alternative way to clone a Github repository is
+project page), an alternative way to clone a GitHub repository is
 
 ```
 File -> New -> Project from Version Control -> GitHub
 ```
+
+We're using the `gradle` build tool in our labs, and IDEA "recognizes" that
+when we clone the project. It then gives a large and fairly complicated dialog
+asking how we want to handle the IDEA/`gradle` interaction. Happily you can just
+click "OK" on that big dialog as the defaults will all do the correct thing.
+
+See [our Gradle README](docs/Gradle_README.md) for more info on what Gradle is and
+how we're using it.
 
 ## Create an info page for each pair
 
@@ -178,7 +195,7 @@ and sharing changes.
 
 This repository has a `user_info` directory, and in this part of the
 lab we'll create a new file in that directory for each pair in the
-class containing your real names and your Github user names. Sometimes
+class containing your real names and your GitHub user names. Sometimes
 it's easy for us to figure out how those names relate, but if your
 Gihub user name is `UnicornWizard375` it's not always obvious who in the
 class that is, especially if you don't wear your wizarding regalia to lab.
@@ -188,8 +205,8 @@ more detail below:
 
 * Create your contact info file/page
 * `commit` that to your local copy of the repository
-* `pull` down the changes other people may have made to the central repository on Github while you were working, `merging` them with your changes
-* `push` your (merged) changes back up to Github so they're available to everyone
+* `pull` down the changes other people may have made to the central repository on GitHub while you were working, `merging` them with your changes
+* `push` your (merged) changes back up to GitHub so they're available to everyone
 
 ### Creating a page
 
@@ -200,7 +217,7 @@ info page should:
 * Contain at least:
    * Each of your names as you preferred to be called
    * Your preferred pronouns
-   * Your Github usernames (so we can figure out who `UnicornWizard375`
+   * Your GitHub usernames (so we can figure out who `UnicornWizard375`
    is in real life)
 
 :bangbang: If you create the new file with IDEA it's likely to
@@ -210,7 +227,7 @@ although it's not a big deal if you say "No".
 
 ### `commit` your changes (locally)
 
-Before you can share your changes with the class via the Github repository,
+Before you can share your changes with the class via the GitHub repository,
 you need to `add` and `commit` these changes to your local `git` repository.
 
 Before you `commit` you have to use `git add` to _stage_ files for the commit.
@@ -244,7 +261,7 @@ include in a commit.
       avoid being sent to an editor. We _strongly_ discourage this,
       however, as people rarely enter useful one-line commit messages.
       * If `vi/vim` bugs you, you should probably set your default
-      `git` editor to something you like. [This Github help page](https://help.github.com/articles/associating-text-editors-with-git/)
+      `git` editor to something you like. [This GitHub help page](https://help.github.com/articles/associating-text-editors-with-git/)
        shows you how to set various GUI editors like `atom`, but you
        could also use something like `git config --global core.editor nano`
        to set it to a command line editor like `nano`.
@@ -258,16 +275,16 @@ include in a commit.
     which makes it easier to write
     [informative, complete commit messages](http://chris.beams.io/posts/git-commit/).
 
-### `push`ing your work to Github
+### `push`ing your work to GitHub
 
 At this point you have your changes committed to your local copy of the
-repository, and want to _push_ those changes up to the Github copy of the
+repository, and want to _push_ those changes up to the GitHub copy of the
 repository. This is the potentially tricky part, but in this case things
 should be well behaved. :smile:
 
 The major issue is that other people may have made and `push`ed changes up
-to Github that could potentially conflict with the changes you've made.
-So your first step is to `pull` down any recent changes from Github:
+to GitHub that could potentially conflict with the changes you've made.
+So your first step is to `pull` down any recent changes from GitHub:
 
 * `git pull` on the command line
 * `VCS -> Git -> Pull…` in IDEA
@@ -279,13 +296,13 @@ if there have been changes in the same parts of the same files, a `pull`
 can lead to conflicts and confusion.
 
 Assuming that your `pull` works, then it's time to _push_ your
-work up to the Github repository:
+work up to the GitHub repository:
 
 * `git push` on the command line
 * `VCS -> Git -> Push…` in IDEA
 
-This will push all your commits up to Github; if you refresh your view of
-the Github repository
+This will push all your commits up to GitHub; if you refresh your view of
+the GitHub repository
 you should see your new file along with your contact info, probably along
 with a lot of other files.
 
@@ -364,11 +381,11 @@ GUI.
 ### Edit the program
 
 Now that you've created and switched to your new branch, it's time to edit
-the program. Open up `Hellos.java` and add more lines in the `main()`
+the program. Open up `Hellos.java` and add more lines in the `generateOutput()`
 method of the form
 
 ```java
-builder.append(pat_says_hello());
+builder.append(patSaysHello());
 ```
 
 where you replace `pat_says_hello` with method names that
@@ -377,17 +394,36 @@ _every_ person in your group. If your group is Pat and Chris, then you
 want
 
 ```java
-builder.append(chris_says_hello());
-builder.append(pat_says_hello());
+builder.append(chrisSaysHello());
+builder.append(patSaysHello());
+```
+
+However, instead of just adding them wherever you want, you need to add them so that
+everyone's greetings come out in alphabetical order, otherwise the tests won't pass.
+So if you started with
+
+```java
+        builder.append(kkSaysHello());
+        builder.append(nicSaysHello());
+```
+
+and you wanted to add Chris and Pat, you'd need to put Chris at the front, and Pat at
+the end to maintain alphabetical order:
+
+```java
+        builder.append(chrisSaysHello());
+        builder.append(kkSaysHello());
+        builder.append(nicSaysHello());
+        builder.append(patSaysHello());
 ```
 
 This will create a compiler error because your new methods
-(e.g., `pat_says_hello`) aren't actually defined anywhere.
+(e.g., `patSaysHello`) aren't actually defined anywhere.
 So let's fix that, by adding a new methods somewhere down amongst the example
 methods; they should look something like:
 
 ```java
-    private static String chris_says_hello() {
+    private static String chrisSaysHello() {
         return "Chris says 'Hello!'\n";
     }
 ```
@@ -402,28 +438,38 @@ this will make sure everything compiles, and if it does it will run your
 program display the output in the `Run` pane at the bottom of the GUI.
 You should see the results of our sample greetings along with your new
 greeting from your team.
+
+If you want to run the program from the command line `./gradlew run` should
+do the trick.
+
 If you have any problems here, definitely ask questions and get things
 working before you proceed; you don't want to merge broken code and mess
 things up for everyone else.
 
 We also have some simple JUnit tests that will confirm that all the lines
-in the output have the right form, and you should run the tests before you
-commit as another way of making sure that your work is "done done". To
-run the tests find `HellosTest` in the Project view in IDEA (in the `tests` 
+in the output have the right form and are in alphabetical order, 
+and you should run the tests before you
+commit as another way of making sure that your work is "done done". 
+
+To run the tests in IDEA find `HellosTest` in the Project view (in the `tests` 
 folder), and right click on it. Choose `Run 'HellosTest'`, and IDEA will
 run all the JUnit tests it finds in that file, displaying the results in a
 new pane (probably along the bottom). You should get green checkmarks on
 the only test (`testLineStructure()`). If you get a red X, you should
 look at the error message and see if you can figure out why the test failed
-and how to fix it. If you get stuck there definitely ask a question!
+and how to fix it. 
 
-### Commit and Push your branch to Github
+Run `./gradlew test` to run the tests on the command line. 
+
+If you get stuck there definitely ask questions!
+
+### Commit and Push your branch to GitHub
 
 Now assuming that your code is all working and happy, let's use the same
 commands as before to
 
 * `commit` your work
-* `push` those changes to Github
+* `push` those changes to GitHub
 
 You could do a `pull` before the `push` like we did before, but
 (a) you aren't expecting any changes on _your_ branch by another group (so
@@ -432,7 +478,7 @@ for unpulled changes and forces you to deal with those if they exist (so it's
 safe to just `push` and see what happens).
 
 Assuming the `commit` and `push` worked, if you go to the project web page
-on Github (and refresh if necessary),
+on GitHub (and refresh if necessary),
 your branch should be in the list of branches, and if you switch to your branch
 and go look at `Hellos.java` you should see your changes. Depending on how
 many other groups have gotten to this point before you, you may see a _lot_
@@ -441,8 +487,8 @@ unused branches later.
 
 ### Merging your branch into `master`
 
-It's cool that your changes are visible in your branch on Github, but if
-you switch back to `master` on Github and look at `Hellos.java`, your code
+It's cool that your changes are visible in your branch on GitHub, but if
+you switch back to `master` on GitHub and look at `Hellos.java`, your code
 won't be there. The problem with the current situation is that your nifty
 new contact info document is "trapped" in the branch you created.
 This is sad, because your code is _spectacular_ and really
@@ -453,11 +499,11 @@ So you need to merge your branch into `master`.
 
 If no one else was working on this repository it would be easy, and all
 you'd need to do is _merge_ into `master` and then _push_ your work up
-to the Github repository. But there are other people working on the
+to the GitHub repository. But there are other people working on the
 repository, and you have to make sure you play nice with them.
 
 And that can be tricky because other people may have
-`push`ed commits up to Github, and those commits might conflict with your
+`push`ed commits up to GitHub, and those commits might conflict with your
 changes. Say, for example, Pat and Chris separately notice that someone
 (who shall remain unnamed) named a variable `foo`. Chris and Pat both
 replace
@@ -512,7 +558,7 @@ there in your feature branch, but it's not part of `master` so it's not
 visible when we have `master` checked out.
 
 The trick is that this is _your_ copy of the `master` branch, which is
-probably out of date with `master` on Github (`origin/master`) since
+probably out of date with `master` on GitHub (`origin/master`) since
 other people have been committing and pushing changes. So you should
 first make sure to `pull` any changes other people have made into your
 copy:
@@ -523,7 +569,7 @@ copy:
 Assuming you've _only_ made changes to your group's special development
 branch, this `pull` should succeed with no difficulties, and `git` will
 merge in whatever changes other people have `push`ed up to `master` on
-Github into your copy of `master`.
+GitHub into your copy of `master`.
 
 Now we have the moment of truth, where you merge your changes from your
 development branch (`pat_and_chris_greeting` in our example) into your
@@ -574,7 +620,7 @@ You'll want to make sure you re-run the test suite, for example, to make
 sure that resolving the merge conflict didn't inadvertently break something.
 
 Now that your copy of `master` has your work on it, you want to push
-that up to Github:
+that up to GitHub:
 
 * `git push` on the command line
 * `VCS -> Git -> Push…` in IDEA
@@ -587,12 +633,12 @@ file. If that happens you'll get some sort of error saying that
 your attempt to push `master` was rejected, and suggesting that you pull
 or merge remote changes before you push. IDEA lets you do this from
 the error dialogue – if you click the `Merge` button IDEA will pull
-down the changes from Github and merge them into your `master`.
+down the changes from GitHub and merge them into your `master`.
 At that point you would try to `push` again, repeating the pull/merge
 step yet again if someone has once again snuck in on you.
 
 Eventually your `push` will work, and you should be able to look at the
-repository on Github and see the changes you made to `Hellos.java` on the
+repository on GitHub and see the changes you made to `Hellos.java` on the
 `master` branch of the repository, presumably along with numerous changes
 made by other groups.
 
