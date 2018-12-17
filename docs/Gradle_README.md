@@ -60,8 +60,39 @@ run our application. These can be done through IDEA or on the command line.
 
 ### Gradle in IDEA
 
-In IDEA you get ...
+In IDEA you get a Gradle view, usually along the right-hand side of the display.
+(If you're not seeing it, go to _View -> Tool Windows -> Gradle_ to bring it up.)
+That will have a "folder" calls "Tasks", which will contain many other folders
+containing specific tasks. Some of particular interest:
+
+   * _application -> run_ will run your application
+   * _build -> build_ will compile all your files
+   * _build -> clean_ will delete all the generated files (e.g., `.class` files),
+     which can be helpful when it looks like you need to force a rebuild.
+   * _build -> jar_ will generate a standalone JAR file for your application
+   * _verification -> check_ will make sure everything builds and the tests
+     all pass
 
 ### Gradle on the command line
 
-...
+You can also run Gradle on the command line, which is extremely useful since
+you don't want to have to start up IDEA to run anything. Worse, if you're
+logged in to a server via a terminal, you probably _can't_ run IDEA, so
+Gradle is a real win there.
+
+If you've got Gradle installed locally, you can use the `gradle` command
+to run tasks, e.g., `gradle check`. That makes you dependent on having
+(the right version of) Gradle installed locally, which can be a problem.
+So instead we're using `gradlew` (Gradle Wrapper), which is a script which
+downloads the correct version of `gradle` if necessary and then runs that.
+This ensures that you'll always be running the same version of Gradle no
+matter which machine you're using.
+
+To run tasks with Gradle Wrapper, use `./gradlew <task>` in the top-level
+directory of the project. Thus all the actions listed above in "Gradle in IDEA"
+can be run via:
+
+   * `./gradlew run`
+   * `./gradlew build`
+   * `./gradlew check`
+   * etc., etc.
