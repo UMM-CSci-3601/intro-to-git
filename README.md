@@ -5,13 +5,8 @@
 This will be an in-lab exercise where we'll experience several of the
 key features of the `git` version control system, and the GitHub
 repository hosting service. We'll provide command line means of accomplishing
-the various tasks in this lab, and will also provide info on how to
-accomplishing things using IntelliJ's IDEA software development tools since
-IDEA is what we'll be'll using this semester. IDEA provides ways to interact 
-with GitHub without leaving the IDE using menu options in the version control system (VCS) menu. There's nothing magic about
-IDEA here, and almost any reasonable software editor or development environment
-like [Eclipse][eclipse] or [Atom][atom] provides similar support for `git` 
-commands.
+the various tasks in the first part of this lab. For the second part of the lab, we'll provide info on how to use GitKraken along with Visual Studio Code (VS Code) since
+those tools will be part of our primary workflow this semester. VS Code provides ways to interact with GitHub without leaving the IDE using various menu options. There's nothing magic about VS Code here, and almost any reasonable software editor or development environment like [IDEA][idea], [Eclipse][eclipse], or [Atom][atom] provides similar support for `git` commands. We use GitKraken to interact with `git` and GitHub because we find it quite helpful for understanding what's going on, and we use VS Code for handling merge conflicts because it provides some very nice support for that.
 
 :bangbang: While in most labs it will be fine for groups to move ahead
 at their own pace, in this lab we'd like people to keep together
@@ -37,9 +32,8 @@ with your U of M credentials via http://lynda.umn.edu
 * [A nice IntelliJ video on the different between _merging_ commits and _rebasing_ commits](https://www.youtube.com/watch?v=Nftif2ynvdA)
 
 We also made 
-[a screencast that walks through many of the key steps in this lab][screencast].
-You might find it useful
-to watch that before lab, especially if you find videos like that helpful.
+[a screencast that walks through many of the key steps in this lab][screencast] in [IDEA][idea]. You might find it useful
+to watch that before lab, especially if you find videos like that helpful, even though our tools and workflow will be different; the concepts are similar.
 You might also want to at least skim one or two of the tutorials listed
 above; we would definitely encourage at least [the first one][CodeSchool].
 
@@ -118,10 +112,8 @@ local copies. Each of those local copies will be completely independent, and
 will only share changes through explicit interactions with the GitHub
 repository through git.
 
-When you are getting started on a new project in IDEA using GitHub and wish
-to clone a repository, you will first be prompted to log in to GitHub. By
-default, IDEA will offer to let you log in using a token. At that point, you
-should choose the password option for providing your credentials to GitHub.
+When you are getting started on a new project in VS Code using GitHub and wish
+to clone a repository, you can either use the command line or GitKraken to do so.
 Read further to find more instructions for cloning the repository for this lab.
 
 ### Join our GitHub Classroom team; get your clone URL
@@ -161,24 +153,7 @@ git clone <url>
 
 where `<url>` is the URL for the GitHub repository. 
 
-### IntelliJ IDEA `clone` and `gradle` setup
-
-To `clone` from within IDEA, if you're at the IDEA "Welcome" dialog, you 
-can choose
-
-```
-Check out from Version Control -> GitHub
-```
-
-Login using your github username and password and press Login.
-Enter the Repository URL and then open the cloned project in IDEA.
-
-If you are not at the "Welcome" dialog (i.e., you're looking at a
-project page), an alternative way to clone a GitHub repository is
-
-```
-File -> New -> Project from Version Control -> GitHub
-```
+### VS Code `gradle` setup
 
 We're using the `gradle` build tool in our labs, and IDEA "recognizes" that
 when we clone the project. It then gives a large and fairly complicated dialog
@@ -647,6 +622,7 @@ made by other groups.
 Once everyone has added their changes to `Hellos.java` then we're
 done with the lab! Well done! :smile:
 
+[idea]: https://www.jetbrains.com/idea/
 [eclipse]: http://www.eclipse.org
 [atom]: https://atom.io
 [CodeSchool]: https://try.github.io/levels/1/challenges/1
