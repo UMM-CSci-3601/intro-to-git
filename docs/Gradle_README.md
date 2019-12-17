@@ -12,19 +12,26 @@ like (minus all the comments):
 
 ```groovy
 plugins {
-    id 'java'
-    id 'application'
+  id 'java'
+  id 'application'
 }
 
 repositories {
-    jcenter()
+  jcenter()
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
 }
 
-mainClassName = 'Hellos'
+application {
+  mainClassName = 'Hellos'
+}
+
+test {
+  useJUnitPlatform()
+}
 ```
 
 The first two `apply plugin` lines tell Gradle that this is a Java project
@@ -40,7 +47,7 @@ another common option is [`mavenCentral()`](https://search.maven.org/).
 
 The
 `dependencies` entry below that tells Gradle that in order to compile our
-_test_ code (i.e., `testCompile`) we need version 4.12 of the JUnit test
+_test_ code (i.e., `testImplementation`) we need version 5.5.2 of the JUnit test
 library.
 
 This management of dependencies is
