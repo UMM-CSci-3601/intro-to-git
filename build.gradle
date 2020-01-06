@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
   // Use JUnit test framework
-  testCompile 'junit:junit:4.12'
+  testCompile 'junit:junit:4.13'
 }
 
 // Define the main class for the application
