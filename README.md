@@ -1,6 +1,16 @@
-[![Build Status](https://travis-ci.org/UMM-CSci-3601/intro-to-git.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/intro-to-git)
-
 # Introduction to `git`
+
+![](https://img.shields.io/badge/FIX_BADGES-Badges_below_need_to_be_updated-red)
+
+:bangbang: Each semester _after forking this into that semester's
+organization, we need to fix (in the fork) the URLs in the badges
+below so they point to that semester's repository instead of the
+"master" repo. Then remove this note and the broken badge above in
+the fork. (We should leave this in the copy in the "master"
+repository so it's there each semester when we fork this.)
+
+![Continuous integration status](https://github.com/UMM-CSci-3601/intro-to-git/workflows/Java%20CI/badge.svg)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
 This will be an in-lab exercise where we'll experience several of the
 key features of the `git` version control system, and the GitHub
