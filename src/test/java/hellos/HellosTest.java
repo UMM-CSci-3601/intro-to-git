@@ -1,9 +1,10 @@
+package hellos;
+
 import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class HellosTest {
 
@@ -17,7 +18,6 @@ public class HellosTest {
 
   @Test
   public void testLineStructure() {
-
     assertEquals(Hellos.WELCOME_LINE, lines[0], "Welcome line isn't correct.");
 
     // This regex supports unicode letters spaces, apostrophes, and hyphens
