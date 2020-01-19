@@ -1,3 +1,5 @@
+package hellos;
+
 /**
  * A simple Java program used to demonstrate merge conflicts when
  * multiple people edit the same piece of code.
