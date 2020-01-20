@@ -481,7 +481,22 @@ Where we used command line commands to do all the `git` work in the previous
 half, in this half we'll use `GitKraken`, which provides a nice GUI and
 visualization of things like our commit history and branching.
 
-Open up GitKraken. Then selec `File -> Open` and navigate to the directory
+Open up GitKraken. If this is your first time starting GitKraken it will ask you
+to sign in, providing several options. You want to sign in with your GitHub account
+as this will do two important things:
+
+- It will allow GitKraken to push/pull/etc. with GitHub on your behalf.
+- [**Assuming you've set up your GitHub Student Pack**](https://education.github.com/pack),
+  this will automagically give you a Pro account on GitKraken, which includes
+  some nice features that you'll want to have, like an interactive tool
+  for resolving merge conflicts. :bangbang: _If you haven't set up your
+  GitHub Student Pack, you should do so before setting up GitKraken._
+
+After you've authenticated with GitHub, GitKraken will ask to setup
+your `git` info ([like you did at the start for the command line](#configuring-your-git-e-mail));
+you should enter your name and whatever email you've used for GitHub.
+
+Once all the setup is finished, select `File -> Open` and navigate to the directory
 containing your local clone, and open that up. There's a lot of information
 here, but you can ignore most of it for now. One thing you should stand out
 is the commit history graph. You should see all the commits you and all the
