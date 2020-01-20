@@ -274,7 +274,17 @@ Now we'll want to open VS Code and see how we can use it to edit and run our cod
 Launch VS Code, and then choose `File -> Open…`. Navigate to your clone of the repo
 and choose `Open`.
 
-When we open the project, VS Code "recognizes" that this project uses Gradle and is
+We've included a file in the project which specifies some VS Code extensions that
+you should go ahead and install. VS Code will see that file automatically and give
+a dialog on the bottom right that looks something like:
+
+![Dialog suggesting installation of recommended extensions](https://user-images.githubusercontent.com/1300395/72710961-bf767500-3b2d-11ea-8ea4-fbbd39c78da5.png)
+
+You can just click "Install All", but feel free to click "Show Recommendations" and
+install them one at a time if you want to know more about what we're doing here.
+
+The other thing that happens when we open the project is that VS Code "recognizes"
+that this project uses Gradle and is
 able to use that to determine important things like where the project code is. It
 can take a minute for it to finish setting up the project from scratch the first
 time (look for a spinning circle in the blue status bar at the bottom of the
