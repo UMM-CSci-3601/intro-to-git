@@ -43,7 +43,7 @@ key features of [the `git` version control system](https://git-scm.com/),
 and [the GitHub repository hosting service](https://github.com/).
 We'll provide command line means of accomplishing
 the various tasks in the first part of this lab. For the second part of the lab, we'll
-provide info on how to use [GitKraken](https://www.gitkraken.com/) along with
+provide info on how to use [GitKraken](https://www.gitkraken.com/git-client) along with
 [Visual Studio Code (VS Code)](https://code.visualstudio.com/) since
 those tools will be part of our primary workflow this semester. `git` is essentially
 a command line tool, and it can be difficult to visualize branching and history;
