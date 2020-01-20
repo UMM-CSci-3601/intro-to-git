@@ -1,6 +1,20 @@
 
-# Created by https://www.gitignore.io/api/vim,java,emacs,gradle,intellij+all
-# Edit at https://www.gitignore.io/?templates=vim,java,emacs,gradle,intellij+all
+# Created by https://www.gitignore.io/api/vim,code,java,emacs,gradle,code-java,intellij+all
+# Edit at https://www.gitignore.io/?templates=vim,code,java,emacs,gradle,code-java,intellij+all
+
+### Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Code-Java ###
+# Language Support for Java(TM) by Red Hat extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=redhat.java
+
+.project
+.classpath
+factoryConfiguration.json
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -87,6 +101,8 @@ flycheck_*.el
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
+# *.iml
+# *.ipr
 
 # CMake
 cmake-build-*/
@@ -134,6 +150,9 @@ modules.xml
 .idea/misc.xml
 *.ipr
 
+# Sonarlint plugin
+.idea/sonarlint
+
 ### Java ###
 # Compiled class file
 *.class
@@ -169,17 +188,23 @@ hs_err_pid*
 
 # Session
 Session.vim
+Sessionx.vim
 
 # Temporary
 .netrwhist
+
 # Auto-generated tag files
 tags
+
 # Persistent undo
 [._]*.un~
 
+# Coc configuration directory
+.vim
+
 ### Gradle ###
 .gradle
-/build/
+build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -196,4 +221,8 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-# End of https://www.gitignore.io/api/vim,java,emacs,gradle,intellij+all
+# End of https://www.gitignore.io/api/vim,code,java,emacs,gradle,code-java,intellij+all
+
+# Aditional custom ignores
+
+.settings/
