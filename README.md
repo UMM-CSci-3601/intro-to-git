@@ -227,7 +227,7 @@ where you replace `<url>` with the URL for the GitHub repository.
 ### Using `gradle` to run tasks
 
 We're using the `gradle` build tool in our labs. We're not going to talk a lot about
-Grade here, but see [our Gradle README](docs/Gradle_README.md) for more info on
+Gradle here, but see [our Gradle README](docs/Gradle_README.md) for more info on
 what Gradle is and how we're using it.
 
 For the moment there are two things to try on the command line. Make sure you're
