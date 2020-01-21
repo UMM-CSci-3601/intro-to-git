@@ -77,7 +77,7 @@ As circunstances allow, you might also want to at least skim one or two of the
 tutorials listed above.
 
 We'll also be using _Gradle_, a tool for building and running programs. We'll be
-using Gradle throughout the course, so its useful to see it a bit here. We also
+using Gradle throughout the course, so it's useful to see it a bit here. We also
 use it to automate the tests for this project, which allows GitHub Actions to
 automatically run our tests whenever someone makes a change, and holler at us if
 someone breaks the tests.
@@ -658,7 +658,7 @@ commit and push your work.
 
 #### Commit with GitKraken
 
-To commit in GitKraken click the top line in the history graph; it's circle
+To commit in GitKraken click the top line in the history graph; its circle
 should be an empty with a dotted line, and it should have `// WIP` where the
 commit summary is. On the right you should then have panels labelled
 "Unstaged Files", "Staged Files", and "Commit Message". Where you use
