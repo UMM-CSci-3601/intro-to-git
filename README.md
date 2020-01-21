@@ -284,14 +284,6 @@ a dialog on the bottom right that looks something like:
 You can just click "Install All", but feel free to click "Show Recommendations" and
 install them one at a time if you want to know more about what we're doing here.
 
-The other thing that happens when we open the project is that VS Code "recognizes"
-that this project uses Gradle and is
-able to use that to determine important things like where the project code is. It
-can take a minute for it to finish setting up the project from scratch the first
-time (look for a spinning circle in the blue status bar at the bottom of the
-window), but once everything is settled you should have a file explorer on the left
-and some sort of "welcome" screen occupying most of the space.
-
 Open up `src -> main/java -> Hellos.java` and you should see a small Java program.
 Right above `public static void main` should be `Run | Debug` in light gray. These
 aren't part of the code, but are action buttons being inserted by VS Code. Click
