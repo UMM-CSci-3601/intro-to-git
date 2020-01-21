@@ -254,7 +254,7 @@ BUILD SUCCESSFUL in 3s
 To run the tests try
 
 ```bash
-./gradle test
+./gradlew test
 ```
 
 which should generate output something like
