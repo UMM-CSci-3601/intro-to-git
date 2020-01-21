@@ -6,11 +6,11 @@
  * user guide available at https://docs.gradle.org/3.3/userguide/tutorial_java_projects.html
  */
 
-// Adding these plugins tells Gradle we want
-// tasks for building, running, testing, and
-// deploying Java applications.
 plugins {
+  // Apply the java plugin to add support for Java
   id 'java'
+
+  // Apply the application plugin to add support for building a CLI application
   id 'application'
 }
 
@@ -22,10 +22,19 @@ repositories {
 }
 
 dependencies {
-  // Use JUnit test framework
-  testCompile 'junit:junit:4.13'
+  // JUnit Jupiter API for testing.
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+
+  // JUnit Jupiter Engine for testing.
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
 }
 
-// Define the main class for the application
-mainClassName = 'Hellos'
+application {
+  // Define the main class for the application
+  mainClassName = 'hellos.Hellos'
+}
 
+test {
+  // Use junit platform for unit tests
+  useJUnitPlatform()
+}
