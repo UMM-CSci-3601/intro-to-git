@@ -41,7 +41,7 @@ public class HellosTest {
     // Don't check the first line since we do that elsewhere, but compare the rest to be sure
     // the actual list matches the sorted list
     for (int i = 1; i < lines.length; ++i) {
-      assertTrue(lines[i].equals(sortedLines[i]),
+      assertEquals(sortedLines[i], lines[i],
         "Line " + i + " doesn't match: lines[" + i + "] is: " + lines[i] + " and sortedLines[" + i + "] is: " + sortedLines[i]);
     }
   }
