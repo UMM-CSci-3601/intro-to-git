@@ -8,11 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HellosTest {
 
-  String[] lines;
+  private String[] lines;
+  private String output;
 
   @BeforeEach
   public void setUp() {
-    String output = Hellos.generateOutput();
+    Hellos helloRunner = new Hellos();
+    output = helloRunner.generateOutput();
     lines = output.split("\n");
   }
 
@@ -33,14 +35,13 @@ public class HellosTest {
 
   @Test
   public void testAlphabetization() {
-    // Make another list that will be sorted except for the first line
-    String output = Hellos.generateOutput();
+    // Make another list that will be sorted
     String[] sortedLines = output.split("\n");
-    Arrays.sort(sortedLines, 1, sortedLines.length);
+    Arrays.sort(sortedLines);
 
-    // Don't check the first line since we do that elsewhere, but compare the rest to be sure
-    // the actual list matches the sorted list
-    for (int i = 1; i < lines.length; ++i) {
+    // Check that each line matches the line in the sorted list, i.e.,
+    // confirm that the generated output is in alphabetical order.
+    for (int i = 0; i < lines.length; ++i) {
       assertEquals(sortedLines[i], lines[i],
         "Line " + i + " doesn't match: lines[" + i + "] is: " + lines[i] + " and sortedLines[" + i + "] is: " + sortedLines[i]);
     }
