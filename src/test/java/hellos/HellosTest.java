@@ -27,7 +27,7 @@ public class HellosTest {
     String linePattern = "[\\p{L} .'-]+ says '+[\\p{L} .'-]+!'";
 
     for (int i = 1; i < lines.length; ++i) {
-      assertTrue(lines[i].matches(linePattern), "Line <" + lines[i] + "> doesn't match");
+      assertTrue(lines[i].matches(linePattern), "Line <" + lines[i] + "> doesn't match pattern '<Name> says <greeting>!'");
     }
   }
 
