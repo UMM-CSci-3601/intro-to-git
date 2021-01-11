@@ -77,7 +77,7 @@ As circunstances allow, you might also want to at least skim one or two of the
 tutorials listed above.
 
 We'll also be using _Gradle_, a tool for building and running programs. We'll be
-using Gradle throughout the course, so its useful to see it a bit here. We also
+using Gradle throughout the course, so it's useful to see it a bit here. We also
 use it to automate the tests for this project, which allows GitHub Actions to
 automatically run our tests whenever someone makes a change, and holler at us if
 someone breaks the tests.
@@ -227,7 +227,7 @@ where you replace `<url>` with the URL for the GitHub repository.
 ### Using `gradle` to run tasks
 
 We're using the `gradle` build tool in our labs. We're not going to talk a lot about
-Grade here, but see [our Gradle README](docs/Gradle_README.md) for more info on
+Gradle here, but see [our Gradle README](docs/Gradle_README.md) for more info on
 what Gradle is and how we're using it.
 
 For the moment there are two things to try on the command line. Make sure you're
@@ -254,7 +254,7 @@ BUILD SUCCESSFUL in 3s
 To run the tests try
 
 ```bash
-./gradle test
+./gradlew test
 ```
 
 which should generate output something like
@@ -271,8 +271,8 @@ in a bit.)
 ### Opening our project in VS Code
 
 Now we'll want to open VS Code and see how we can use it to edit and run our code.
-Launch VS Code, and then choose `File -> Open…`. Navigate to your clone of the repo
-and choose `Open`.
+Launch VS Code, and then choose `File -> Open Folder…`. Navigate to your clone 
+of the repo and choose `Open`.
 
 We've included a file in the project which specifies some VS Code extensions that
 you should go ahead and install. VS Code will see that file automatically and give
@@ -282,14 +282,6 @@ a dialog on the bottom right that looks something like:
 
 You can just click "Install All", but feel free to click "Show Recommendations" and
 install them one at a time if you want to know more about what we're doing here.
-
-The other thing that happens when we open the project is that VS Code "recognizes"
-that this project uses Gradle and is
-able to use that to determine important things like where the project code is. It
-can take a minute for it to finish setting up the project from scratch the first
-time (look for a spinning circle in the blue status bar at the bottom of the
-window), but once everything is settled you should have a file explorer on the left
-and some sort of "welcome" screen occupying most of the space.
 
 Open up `src -> main/java -> Hellos.java` and you should see a small Java program.
 Right above `public static void main` should be `Run | Debug` in light gray. These
@@ -665,7 +657,7 @@ commit and push your work.
 
 #### Commit with GitKraken
 
-To commit in GitKraken click the top line in the history graph; it's circle
+To commit in GitKraken click the top line in the history graph; its circle
 should be an empty with a dotted line, and it should have `// WIP` where the
 commit summary is. On the right you should then have panels labelled
 "Unstaged Files", "Staged Files", and "Commit Message". Where you use
