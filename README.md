@@ -270,8 +270,7 @@ in a bit.)
 
 ### Opening our project in VS Code
 
-Now we'll want to open VS Code (search for "Visual Studio Code" in the application
-launcher) and see how we can use it to edit and run our code.
+Now we'll want to open VS Code and see how we can use it to edit and run our code.
 Launch VS Code, and then choose `File -> Open Folder…`. Navigate to your clone 
 of the repo and choose `Open`.
 
