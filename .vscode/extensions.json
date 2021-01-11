@@ -19,9 +19,6 @@
     // Gradle language support
     "naco-siren.gradle-language",
 
-    // Gradle Tasks
-    "richardwillis.vscode-gradle",
-
     // Markdown All in One
     "yzhang.markdown-all-in-one",
 
