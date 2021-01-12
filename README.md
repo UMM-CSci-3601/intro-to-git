@@ -169,7 +169,7 @@ You only need to do this once and it will "stick" throughout the course
 (and beyond) in all systems that use `git`.
 
 * Open a terminal window
-  * :mask: On Macs and Linux boxes use the Terminal app. On Windows use Powershell.
+  * :mask: On Macs and Linux boxes use the Terminal app. On Windows use PowerShell.
 * Type `git config --global user.email "email@example.com"` where
   you replace `email@example.com` with the email you used to set up
   your GitHub account.
