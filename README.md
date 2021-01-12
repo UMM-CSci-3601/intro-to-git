@@ -2,7 +2,7 @@
 
 !["Broken" badge to remind us to fix the URLs on the "real" badges](https://img.shields.io/badge/FIX_BADGES-Badges_below_need_to_be_updated-red)
 
-:bangbang: Each semester _after creating the instance in GitHub Classroom_, 
+:bangbang: Each semester _after creating the instance in GitHub Classroom_,
 we need to fix (in the GitHub Classroom "fork") the URLs in the badges
 below so they point to that semester's repository instead of the
 "master" repo. Then remove this note and the broken badge above in
@@ -13,29 +13,29 @@ repository so it's there each semester when we fork this.)
 [![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=master)](https://bettercodehub.com/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
-- [Introduction to `git`](#introduction-to-git)
-  - [Background](#background)
-    - [How we're going to use `git`](#how-were-going-to-use-git)
-    - [Configuring your `git` e-mail](#configuring-your-git-e-mail)
-  - [The first half: Adding our names](#the-first-half-adding-our-names)
-    - [`clone` a local copy of the repository](#clone-a-local-copy-of-the-repository)
-      - [Join our GitHub Classroom team; get your clone URL](#join-our-github-classroom-team-get-your-clone-url)
-      - [Command line `clone`](#command-line-clone)
-    - [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
-    - [Opening our project in VS Code](#opening-our-project-in-vs-code)
-    - [Create an info page for each pair](#create-an-info-page-for-each-pair)
-      - [Creating a page](#creating-a-page)
-      - [`commit` your changes (locally)](#commit-your-changes-locally)
-      - [`push`ing your work to GitHub](#pushing-your-work-to-github)
-  - [The second half: Collectively editing a program](#the-second-half-collectively-editing-a-program)
-    - [Open GitKraken](#open-gitkraken)
-    - [Creating a branch](#creating-a-branch)
-    - [Edit the program](#edit-the-program)
-    - [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
-      - [Commit with GitKraken](#commit-with-gitkraken)
-      - [Push with GitKraken](#push-with-gitkraken)
-    - [Merging your branch into `master`](#merging-your-branch-into-master)
-  - [Huzzah! We're done! :-)](#huzzah-were-done)
+* [Introduction to `git`](#introduction-to-git)
+  * [Background](#background)
+    * [How we're going to use `git`](#how-were-going-to-use-git)
+    * [Configuring your `git` e-mail](#configuring-your-git-e-mail)
+  * [The first half: Adding our names](#the-first-half-adding-our-names)
+    * [`clone` a local copy of the repository](#clone-a-local-copy-of-the-repository)
+      * [Join our GitHub Classroom team; get your clone URL](#join-our-github-classroom-team-get-your-clone-url)
+      * [Command line `clone`](#command-line-clone)
+    * [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
+    * [Opening our project in VS Code](#opening-our-project-in-vs-code)
+    * [Create an info page for each pair](#create-an-info-page-for-each-pair)
+      * [Creating a page](#creating-a-page)
+      * [`commit` your changes (locally)](#commit-your-changes-locally)
+      * [`push`ing your work to GitHub](#pushing-your-work-to-github)
+  * [The second half: Collectively editing a program](#the-second-half-collectively-editing-a-program)
+    * [Open GitKraken](#open-gitkraken)
+    * [Creating a branch](#creating-a-branch)
+    * [Edit the program](#edit-the-program)
+    * [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
+      * [Commit with GitKraken](#commit-with-gitkraken)
+      * [Push with GitKraken](#push-with-gitkraken)
+    * [Merging your branch into `master`](#merging-your-branch-into-master)
+  * [Huzzah! We're done! :-)](#huzzah-were-done--)
 
 ## Background
 
@@ -62,19 +62,19 @@ This definitely will _not_ provide a comprehensive overview of the
 _many_ features `git` provides. There are a lot of on-line resources
 that can provide additional information, including:
 
-- [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
-- The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
-- [The "standard" `git` documentation site](https://git-scm.com/documentation),
+* [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
+* The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
+* [The "standard" `git` documentation site](https://git-scm.com/documentation),
 which also includes links to videos, cheat sheets, and such
-- [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
+* [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
 a single-page app that goes through the major features of `git`
-- Several on-line courses on `git` from Lynda.com; it's free if you first authenticate with your U of M credentials via <http://lynda.umn.edu>
-  - [Git Essential Training: The Basics](https://www.lynda.com/Git-tutorials/Git-Essential-Training-Basics-REVISION-2019-Q1/5030978-2.html)
-  - [Git: Branches, Merges, and Remotes](https://www.lynda.com/Git-tutorials/Git-Branches-Merges-Remotes/5030980-2.html)
-  - [Git for Teams](https://www.lynda.com/Git-tutorials/Git-Teams/711821-2.html)
-- [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
+* Several on-line courses on `git` from Lynda.com; it's free if you first authenticate with your U of M credentials via <http://lynda.umn.edu>
+  * [Git Essential Training: The Basics](https://www.lynda.com/Git-tutorials/Git-Essential-Training-Basics-REVISION-2019-Q1/5030978-2.html)
+  * [Git: Branches, Merges, and Remotes](https://www.lynda.com/Git-tutorials/Git-Branches-Merges-Remotes/5030980-2.html)
+  * [Git for Teams](https://www.lynda.com/Git-tutorials/Git-Teams/711821-2.html)
+* [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
 
-As circunstances allow, you might also want to at least skim one or two of the
+As circumstances allow, you might also want to at least skim one or two of the
 tutorials listed above.
 
 We'll also be using _Gradle_, a tool for building and running programs. We'll be
@@ -101,14 +101,14 @@ everyone has a chance to go through all the activities.
 a team of developers to work together on a project, helping manage
 collaboration and change. We're going to use three related tools:
 
-- `git` is the fundamental program (developed to help manage the Linux
+* `git` is the fundamental program (developed to help manage the Linux
   operating system codebase) that underlies the next two tools. It
   organizes projects into _repositories_, which are collections of files and
   histories of all the changes ever made to that project. It is a command
   line tool.
-- GitKraken is a GUI for `git` that provides a nice visual interface to `git`
+* GitKraken is a GUI for `git` that provides a nice visual interface to `git`
   and display of complex things like `git` histories and branching.
-- _GitHub_ is a web-based software service that allows people
+* _GitHub_ is a web-based software service that allows people
   to host, search, and use repositories created and managed with `git`.
   
 You could use `git` without ever using GitKraken or GitHub. We've found that a
@@ -120,8 +120,8 @@ use GitHub to manage all your labs and project iterations in this course.
 
 This lab essentially has two halves:
 
-- Adding your names in separate Markdown files
-- Adding your greetings in the Java code
+* Adding your names in separate Markdown files
+* Adding your greetings in the Java code
 
 We'll use command line `git` for the first half so you have some exposure to
 using `git` on the command line. This is important because you don't always
@@ -149,11 +149,11 @@ account](https://help.github.com/articles/setting-your-commit-email-address-in-g
 You only need to do this once and it will "stick" throughout the lab
 in all systems that use `git`.
 
-- Open a terminal window
-- Type `git config --global user.email "email@example.com"` where
+* Open a terminal window
+* Type `git config --global user.email "email@example.com"` where
   you replace `email@example.com` with the email you used to set up
   your GitHub account.
-- Verify that it worked by typing `git config --global user.email`;
+* Verify that it worked by typing `git config --global user.email`;
   you should get the address you just configured as the response.
 
 If you want to use a different e-mail address than the one you
@@ -206,7 +206,7 @@ repository on GitHub.
 See [GitHub's "Cloning a repository" tutorial](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 for examples. The URL should look like this:
 
-```
+```text
 https://github.com/YOUR-ORG-OR-NAME/REPO.git
 ```
 
@@ -217,7 +217,7 @@ and `REPO` is the name of the repository.
 
 We'll make our local clones via the command line, so open a terminal (or just the one
 from before if it's still open). Go to whatever directory seems appropriate. Then to
-`clone` the respository using command line tools you'd do:
+`clone` the repository using command line tools you'd do:
 
 ```bash
 git clone <url>
@@ -241,7 +241,7 @@ _in_ the directory containing your clone of the repo (i.e., you're in the
 
 This will run our program, which should generate output that looks something like
 
-```
+```text
 > Task :run
 Hello, folks!
 KK says 'Hello!'
@@ -260,7 +260,7 @@ To run the tests try
 
 which should generate output something like
 
-```
+```text
 BUILD SUCCESSFUL in 827ms
 3 actionable tasks: 3 up-to-date
 ```
@@ -272,7 +272,7 @@ in a bit.)
 ### Opening our project in VS Code
 
 Now we'll want to open VS Code and see how we can use it to edit and run our code.
-Launch VS Code, and then choose `File -> Open Folder…`. Navigate to your clone 
+Launch VS Code, and then choose `File -> Open Folder…`. Navigate to your clone
 of the repo and choose `Open`.
 
 We've included a file in the project which specifies some VS Code extensions that
@@ -298,7 +298,7 @@ in various places. Click `Run Test` just about `public class HellosTest` to
 run _all_ the tests in the class.
 
 Assuming the tests all passed (& they should), it won't really look like anything
-actually happened. There will, however, be a checkmark to the right of
+actually happened. There will, however, be a check mark to the right of
 `Debug Test` that wasn't there before. That tells you the tests passed. If any of
 the tests had failed, there'd be an `x` there, and VS Code would open up another
 pane providing a list of all the tests and details on the failures to help you
@@ -316,29 +316,29 @@ This repository has a `user_info` directory, and in this part of the
 lab we'll create a new file in that directory for each pair in the
 class containing your real names and your GitHub user names. Sometimes
 it's easy for us to figure out how those names relate, but if your
-Gihub user name is `UnicornWizard375` it's not always obvious who in the
+GitHub user name is `UnicornWizard375` it's not always obvious who in the
 class that is, especially if you don't always wear your wizarding regalia to lab.
 
 There will be several steps to this process, each of which is described in
 more detail below:
 
-- Create your contact info file/page
-- `commit` that to your local copy of the repository
-- `pull` down the changes other people may have made to the central repository on
+* Create your contact info file/page
+* `commit` that to your local copy of the repository
+* `pull` down the changes other people may have made to the central repository on
   GitHub while you were working, `merging` them with your changes
-- `push` your (merged) changes back up to GitHub so they're available to everyone
+* `push` your (merged) changes back up to GitHub so they're available to everyone
 
 #### Creating a page
 
 You'll start by creating your group's contact info page. Each contact
 info page should:
 
-- Be created in the `user_info` directory.
-- Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
-- Contain at least:
-  - Each of your names as you preferred to be called
-  - Your preferred pronouns
-  - Your GitHub usernames (so we can figure out who `UnicornWizard375`
+* Be created in the `user_info` directory.
+* Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
+* Contain at least:
+  * Each of your names as you preferred to be called
+  * Your preferred pronouns
+  * Your GitHub usernames (so we can figure out who `UnicornWizard375`
     is in real life)
 
 Feel free to use the file `KK_and_Nic.md` as a model.
@@ -351,7 +351,7 @@ you need to `add` and `commit` these changes to your local `git` repository.
 On the command line type `git status`. That should tell you that something
 like:
 
-```
+```text
 On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -380,7 +380,7 @@ told you that `git add <file>` was likely a useful thing to do at that point.)
 **Check your status** again with `git status`. Now the output should be
 something like:
 
-```
+```text
 On branch master
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
@@ -394,14 +394,14 @@ accident.
 **Commit the change** _to your local copy of the repository_ with `git commit`
 on the command line.
 
-- This will bring up a (command line) editor for you to enter
+* This will bring up a (command line) editor for you to enter
   your commit message. By default this is `vi/vim` for most people;
   ask for help if you find yourself [trapped in `vim`](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/) and [can't seem
   to escape](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
-- You can also use `git commit -m "Your cool commit message"` to
+* You can also use `git commit -m "Your cool commit message"` to
   avoid being sent to an editor. We _strongly_ discourage this,
   however, as people rarely enter useful one-line commit messages.
-- If `vi/vim` bugs you, you should probably set your default
+* If `vi/vim` bugs you, you should probably set your default
   `git` editor to something you like. [This GitHub help page](https://help.github.com/articles/associating-text-editors-with-git/)
   shows you how to set various GUI editors like `atom`, but you
   could also use something like `git config --global core.editor nano`
@@ -411,7 +411,7 @@ After entering a commit message that is [properly formatted](https://chris.beams
 you can exit the editor. That should finalize the commit, and you should get
 output that looks something like:
 
-```
+```text
 [master 47d9c89] Adding the info for Pat and Chris.
  1 file changed, 11 insertions(+)
  create mode 100644 user_info/Pat_and_Chris.md
@@ -488,8 +488,8 @@ Open up GitKraken. If this is your first time starting GitKraken it will ask you
 to sign in, providing several options. You want to sign in with your GitHub account
 as this will do two important things:
 
-- It will allow GitKraken to push/pull/etc. with GitHub on your behalf.
-- [**Assuming you've set up your GitHub Student Pack**](https://education.github.com/pack),
+* It will allow GitKraken to push/pull/etc. with GitHub on your behalf.
+* [**Assuming you've set up your GitHub Student Pack**](https://education.github.com/pack),
   this will automagically give you a Pro account on GitKraken, which includes
   some nice features that you'll want to have, like an interactive tool
   for resolving merge conflicts. :bangbang: _If you haven't set up your
@@ -625,11 +625,11 @@ Make sure you include the `\n` (newline) in the string so we don't end up
 with one really super long line. In fact our tests require that every greeting
 have the form
 
-```
+```text
    <name> says <greeting>!
 ```
 
-so make sure you use the word "says" and end the greeting with an exclaimation
+so make sure you use the word "says" and end the greeting with an exclamation
 mark.
 
 You can put your methods wherever you want in the `Hellos` class, but probably
@@ -683,14 +683,14 @@ HEAD of `master`, with your summary message. Now we'll push!
 You could do a `pull` before the `push` like we did before, but
 (a) you aren't expecting any changes on _your_ branch by another group (so
 the `pull` shouldn't bring in any changes) and (b) `push` actually checks
-for unpulled changes and forces you to deal with those if they exist (so it's
+for un-pulled changes and forces you to deal with those if they exist (so it's
 safe to just `push` and see what happens).
 
 So hit `Push` in the GitKraken toolbar. It won't look like anything happened,
 but there will be a question where the toolbar used to be. That should be something
 like:
 
-```
+```text
 What remote/branch should "pat-and-chris-greetings" push to and pull from?
 ```
 
@@ -699,7 +699,7 @@ what _remote_ repository to connect that two, and with what name. It will defaul
 to `origin` (which is in this case another name for the GitHub repository we
 cloned from) and our branch name (e.g., `pat-and-chris-greetings`). Those are
 what we want, so hit `Submit`. After a second you should get a bubble in the
-bottom left corner thays that the `push` was successful.
+bottom left corner says that the `push` was successful.
 
 Assuming the `commit` and `push` worked, if you go to the project web page
 on GitHub (and refresh if necessary),
@@ -712,11 +712,11 @@ unused branches later.
 If you go to the GitHub repo in the web, you should see your branch in the
 branch dropdown. If you select it you should see your last commit just below
 that. Next to the "Latest commit" label should either be a yellow dot, a
-green checkmark, or a red x. These show you the build status of that commit.
+green check mark, or a red x. These show you the build status of that commit.
 Every time you (or anyone else) pushes to GitHub, we have GitHub Actions
 set up so they run the JUnit tests against that version of the code. The
 yellow dot means that it's still building and running the code. A green
-checkmark means it's done and everything was great (the code compiled and
+check mark means it's done and everything was great (the code compiled and
 the tests passed). A red x means that something bad happened. If you click
 on the symbol, you can get more information, including links to pages with
 details on, e.g., failed tests.
@@ -757,21 +757,21 @@ the conflict by deciding which change to use.
 Dealing with merge conflicts, especially complex ones, can be a real headache,
 but these tips can help reduce the likelihood of pain here:
 
-- `pull` changes into your development branch(es) early and often. The
+* `pull` changes into your development branch(es) early and often. The
   more consistent your branch is with `master` (or whatever branch you're going to
   merge into), the less likely conflicts will be, and they'll tend to be smaller
   when they do happen. The history/branch visualization in GitKraken can
   give you a sense of how far your branch is from what's on `master`.
-- Break your work into small, manageable stories/tasks/chunks. Small,
+* Break your work into small, manageable stories/tasks/chunks. Small,
   well-defined bits of work tend to touch less code and be completed more
   quickly, both of which reduce the likelihood of a nasty conflict surprise
   when you come to merge.
-- Give yourself plenty of time to merge into `master`. You don't want to decide
+* Give yourself plenty of time to merge into `master`. You don't want to decide
   you're going to merge into `master` at 2am or 15 minutes before Food Service
   closes for dinner; if there's an unexpected conflict you don't have the
   time and energy to deal with it properly and your chances are much higher that
   you'll do something you'll regret.
-- Don't do (big) merges alone (or at least make sure other folks are around).
+* Don't do (big) merges alone (or at least make sure other folks are around).
   This relates to the previous one. If you're caught off guard by a conflict,
   and you're in a hurry, and there's no one around to help you understand how
   your changes relate to and will affect changes other people have made,
@@ -779,17 +779,17 @@ but these tips can help reduce the likelihood of pain here:
 
 The basic process you'll typically want to follow is:
 
-- Make sure all your changes on your feature branch are committed locally.
-  - In GitKraken if there's no `WIP` entry then you know all your changes are
+* Make sure all your changes on your feature branch are committed locally.
+  * In GitKraken if there's no `WIP` entry then you know all your changes are
     committed. If there is an `WIP` entry, you can click on it to see what's
     not yet committed. (There can be times where you have changes you don't
     yet want to commit.)
-  - Or use `git status` on the command line to confirm that everything you
+  * Or use `git status` on the command line to confirm that everything you
     mean to have committed is in fact committed.
-- Checkout the `master` branch
-  - Double click on `master` in the branch listing on the lefthand side
+* Checkout the `master` branch
+  * Double click on `master` in the branch listing on the left-hand side
     of GitKraken.
-  - Or `git checkout master` on the command line
+  * Or `git checkout master` on the command line
 
 At this point you should be on the `master` branch, and all your work
 on your new contact info page should "disappear" in VS Code. Don't worry, it's still
@@ -802,8 +802,8 @@ other people have been committing and pushing changes. So you should
 first make sure to `pull` any changes other people have made into your
 copy:
 
-- The `Pull` button in GitKraken
-- `git pull` on the command line
+* The `Pull` button in GitKraken
+* `git pull` on the command line
 
 Assuming you've _only_ made changes to your group's special development
 branch, this `pull` should succeed with no difficulties, and `git` will
@@ -815,11 +815,11 @@ Now we have the moment of truth, where you merge your changes from your
 development branch (`pat_and_chris_greeting` in our example) into your
 newly updated copy of `master`.
 
-- In GitKraken, drag the label with the branch name that you want to merge
+* In GitKraken, drag the label with the branch name that you want to merge
   (e.g., `pat-and-chris-greetings`) onto the branch you want to merge into
   (in this case `master`). That will bring up a dialog with several options.
   Go with the first one (probably "Fast-forward", but possible "Merge").
-- On the command line `git merge <branch_name>` will merge the changes in
+* On the command line `git merge <branch_name>` will merge the changes in
   the specified branch onto whatever branch is currently checked out (`master`)
   in this case.
 
@@ -837,20 +837,20 @@ VS Code here, but you should feel free to use whichever you find most useful.
 
 The sequence of events in GitKraken is likely to look something like:
 
-- The attempt to `merge` will lead to a conflict; you'll have a message like
+* The attempt to `merge` will lead to a conflict; you'll have a message like
   "A file conflict was found when attempting to merge" up at the top of the
   commit history graph.
-- All the files with merge conflicts will be listed in the "Conflicted Files"
+* All the files with merge conflicts will be listed in the "Conflicted Files"
   panel on the right hand side.
-- Select a file with a conflict. That should bring up a GUI for resolving
+* Select a file with a conflict. That should bring up a GUI for resolving
   merge conflicts with one version (`master` in this case) on the top left,
   the version were trying to merge in (e.g., `pat-and-chris-greetings`) on
   the top right, and the `Output` (the result of the merge) at the bottom.
-- You can then choose sections (using the checkboxes) that you want to include
+* You can then choose sections (using the checkboxes) that you want to include
   in the finished result. You can even choose to include (or not include)
   individual lines if you wish.
-- When you're done click `Save`.
-- That will move that file to "Staged Files", and you can move on to a
+* When you're done click `Save`.
+* That will move that file to "Staged Files", and you can move on to a
   commit like normal.
 
 When that's all done then the merge conflict will be _resolved_ in `git`
@@ -881,7 +881,7 @@ rounds before you get your changes pushed, but it will eventually happen.
 When your `push` eventually works, and you should be able to look at the
 repository on GitHub and see the changes you made to `Hellos.java` on the
 `master` branch of the repository, presumably along with numerous changes
-made by other groups. Check that the build is still successful (green checkmark)
+made by other groups. Check that the build is still successful (green check mark)
 and raise an alarm if it's not. (:bangbang: It's **never** a good thing
 if your build on `master` is breaking, and everyone should stop what they're
 doing to try to fix it when it does break.)
