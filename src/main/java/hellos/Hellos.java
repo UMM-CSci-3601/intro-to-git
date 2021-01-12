@@ -9,11 +9,16 @@ public class Hellos {
   public static final String WELCOME_LINE = "Hello, folks!";
 
   public static void main(String[] args) {
+    Hellos helloRunner = new Hellos();
+    helloRunner.run();
+  }
+
+  public void run() {
     String output = generateOutput();
     System.out.println(output);
   }
 
-  public static String generateOutput() {
+  public String generateOutput() {
     StringBuilder builder = new StringBuilder();
 
     builder.append(WELCOME_LINE + "\n");
@@ -23,11 +28,11 @@ public class Hellos {
     return builder.toString();
   }
 
-  private static String nicSaysHello() {
+  private String nicSaysHello() {
     return "Nic says 'Howdy!'\n";
   }
 
-  private static String kkSaysHello() {
+  private String kkSaysHello() {
     return "KK says 'Hello!'\n";
   }
 
