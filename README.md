@@ -9,7 +9,8 @@ below so they point to that semester's repository instead of the
 the fork. (We should leave this in the copy in the "master"
 repository so it's there each semester when we fork this.)
 
-![Continuous integration status](https://github.com/UMM-CSci-3601/intro-to-git/workflows/Java%20CI/badge.svg)
+[![Continuous integration status](../../workflows/Java%20CI/badge.svg)](../../actions?query=workflow%3A"Java+CI")
+[![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=master)](https://bettercodehub.com/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
 - [Introduction to `git`](#introduction-to-git)
