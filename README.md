@@ -1,4 +1,4 @@
-# Introduction to `git`
+# Introduction to `git` <!-- omit in toc -->
 
 !["Broken" badge to remind us to fix the URLs on the "real" badges](https://img.shields.io/badge/FIX_BADGES-Badges_below_need_to_be_updated-red)
 
@@ -13,31 +13,30 @@ repository so it's there each semester when we fork this.)
 [![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=master)](https://bettercodehub.com/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
-* [Introduction to `git`](#introduction-to-git)
-  * [Background](#background)
-    * [How we're going to use `git`](#how-were-going-to-use-git)
-    * [Configuring your `git` e-mail](#configuring-your-git-e-mail)
-  * [The first half: Adding our names](#the-first-half-adding-our-names)
-    * [`clone` a local copy of the repository](#clone-a-local-copy-of-the-repository)
-      * [Join our GitHub Classroom team; get your clone URL](#join-our-github-classroom-team-get-your-clone-url)
-      * [Command line `clone`](#command-line-clone)
-    * [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
-    * [Opening our project in VS Code](#opening-our-project-in-vs-code)
-      * [Install recommended extensions](#install-recommended-extensions)
-      * [Have a look at the project](#have-a-look-at-the-project)
-    * [Create an info page :zzz: ~~for each pair~~](#create-an-info-page-zzz-for-each-pair)
-      * [Creating a page](#creating-a-page)
-      * [`commit` your changes (locally)](#commit-your-changes-locally)
-      * [`push`ing your work to GitHub](#pushing-your-work-to-github)
-  * [The second half: Collectively editing a program](#the-second-half-collectively-editing-a-program)
-    * [Open GitKraken](#open-gitkraken)
-    * [Creating a branch](#creating-a-branch)
-    * [Edit the program](#edit-the-program)
-    * [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
-      * [Commit with GitKraken](#commit-with-gitkraken)
-      * [Push with GitKraken](#push-with-gitkraken)
-    * [Merging your branch into `main`](#merging-your-branch-into-main)
-  * [Huzzah! We're done! :-)](#huzzah-were-done--)
+* [Background](#background)
+  * [How we're going to use `git`](#how-were-going-to-use-git)
+  * [Configuring your `git` e-mail](#configuring-your-git-e-mail)
+* [The first half: Adding our names](#the-first-half-adding-our-names)
+  * [`clone` a local copy of the repository](#clone-a-local-copy-of-the-repository)
+    * [Join our GitHub Classroom team; get your clone URL](#join-our-github-classroom-team-get-your-clone-url)
+    * [Command line `clone`](#command-line-clone)
+  * [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
+  * [Opening our project in VS Code](#opening-our-project-in-vs-code)
+    * [Install recommended extensions](#install-recommended-extensions)
+    * [Have a look at the project](#have-a-look-at-the-project)
+  * [Create an info page :zzz: ~~for each pair~~](#create-an-info-page-zzz-for-each-pair)
+    * [Creating a page](#creating-a-page)
+    * [`commit` your changes (locally)](#commit-your-changes-locally)
+    * [`push`ing your work to GitHub](#pushing-your-work-to-github)
+* [The second half: Collectively editing a program](#the-second-half-collectively-editing-a-program)
+  * [Open GitKraken](#open-gitkraken)
+  * [Creating a branch](#creating-a-branch)
+  * [Edit the program](#edit-the-program)
+  * [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
+    * [Commit with GitKraken](#commit-with-gitkraken)
+    * [Push with GitKraken](#push-with-gitkraken)
+  * [Merging your branch into `main`](#merging-your-branch-into-main)
+* [Huzzah! We're done! :-)](#huzzah-were-done--)
 
 ## Background
 
@@ -434,10 +433,13 @@ accident.
 git commit
 ```
 
-* This will bring up a (command line) editor for you to enter
-  your commit message. By default this is `vi/vim` for most people;
-  ask for help if you find yourself [trapped in `vim`](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/) and [can't seem
-  to escape](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
+* This will bring up an editor for you to enter
+  your commit message.
+  * What editor you get will depend on the configuration of your system, and you
+    can configure `git` to use the editor of your choice (see below).
+  * This may be the command line `vi/vim` editor for many people;
+    ask for help if you find yourself [trapped in `vim`](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/) and [can't seem
+    to escape](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
 * You can also use `git commit -m "Your cool commit message"` to
   avoid being sent to an editor. We _strongly_ discourage this,
   however, as people rarely enter useful one-line commit messages.
@@ -584,6 +586,10 @@ development branches that are merged into `main` when that work is deemed
 > been [calls to change from `master` to the more neutral `main`](https://dev.to/afrodevgirl/replacing-master-with-main-in-github-2fjf).
 > GitHub is in fact working to change the default naming for new projects,
 > and provide tools to help automate changing the name of the default branch.
+> (See [their renaming repo](https://github.com/github/renaming) for the
+> current state of this work. New, blank repos will, for example, now
+> have `main` as their default branch name.)
+>
 > I'm working to make this change on all my course repositories, but may not
 > have them all converted by the time we need them for a lab or other exercise;
 > I apologize in advance if any slip through.
