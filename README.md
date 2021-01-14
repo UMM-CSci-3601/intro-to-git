@@ -14,6 +14,7 @@ repository so it's there each semester when we fork this.)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
 * [Background](#background)
+  * [Resources for learning `git` and friends](#resources-for-learning-git-and-friends)
   * [How we're going to use `git`](#how-were-going-to-use-git)
   * [Configuring your `git` e-mail](#configuring-your-git-e-mail)
 * [The first half: Adding our names](#the-first-half-adding-our-names)
@@ -75,20 +76,43 @@ because there are moments where we're expecting certain things to
 happen (e.g., merge conflicts) and we want everyone to be in roughly
 the same place when that happens.
 
-This definitely will _not_ provide a comprehensive overview of the
-_many_ features `git` provides. There are a lot of on-line resources
-that can provide additional information, including:
+### Resources for learning `git` and friends
 
+This lab experience definitely will _not_ provide a comprehensive overview of the
+_many_ features `git` provides, and there are a _lot_ of on-line resources
+that can provide additional information.
+
+Some that you might want to look at right away
+to help you get up to speed on `git` and its
+friends include:
+
+* A few of the _many_ GitHub tutorials and
+  docs. There are a _lot_ more than just these, but these are short and pretty easy to spin through, and cover the key concepts we’ll need at the beginning of the semester.
+  * [GitHub Hello World](https://guides.github.com/activities/hello-world/) (a really nice,
+    short introduction to the key ideas)
+  * [Getting started with GitHub](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github)
+  * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+  * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) 
+    (Markdown is the markup language used
+    by Slack, GitHub, and _many_ other
+    online tools, so understanding at least
+    the basics is really valuable.)
 * [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
+  * The beginner tutorials would be the
+    obvious place to start; over time,
+    though, we’d encourage you to work through
+    the more advanced ones.
+
+Below are some additional resources that you might
+want to (re)visit over time as you become more
+experienced with `git` and want to use some of
+its more advanced features.
+
 * The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
 * [The "standard" `git` documentation site](https://git-scm.com/documentation),
 which also includes links to videos, cheat sheets, and such
 * [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
 a single-page app that goes through the major features of `git`
-* Several on-line courses on `git` from Lynda.com; it's free if you first authenticate with your U of M credentials via <http://lynda.umn.edu>
-  * [Git Essential Training: The Basics](https://www.lynda.com/Git-tutorials/Git-Essential-Training-Basics-REVISION-2019-Q1/5030978-2.html)
-  * [Git: Branches, Merges, and Remotes](https://www.lynda.com/Git-tutorials/Git-Branches-Merges-Remotes/5030980-2.html)
-  * [Git for Teams](https://www.lynda.com/Git-tutorials/Git-Teams/711821-2.html)
 * [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
 
 As circumstances allow, you might also want to at least skim one or two of the
