@@ -567,6 +567,17 @@ work up to the GitHub repository:
 git push
 ```
 
+:warning: You'll need to authenticate with GitHub at this point. So far all
+you've been doing with things like `git clone` and `git pull` is "reading" info
+from Github, and anyone can do that on a public repository (which this is).
+Now, however, you want to _change_ something, so you need to prove that you
+have permission to make changes to the contents of the repository. How exactly
+this will play out depends on your setup and what exactly GitHub is doing at
+the moment. Hopefully it'll be fairly "obvious" how to authenticate after you
+enter `git push`, but if not definitely ask! If it asks for a username and
+password at some point, that will almost certainly need to be the info you
+used when setting up your GitHub account.
+
 Again, look for errors in the output of `git push`. If someone else managed
 to do a `git push` between when you did `git pull` and tried `git push`, `git`
 will complain and force you to do `git pull` again. Essentially you can never
