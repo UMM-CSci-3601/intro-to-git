@@ -378,7 +378,7 @@ window. That terminal is just like an "external" terminal and you can use it
 to do anything you could have done in an "external" terminal window. This
 includes things like:
 
-```
+```bash
    ./gradlew test
 ```
 
@@ -408,8 +408,23 @@ more detail below:
 
 #### Creating a page
 
-You'll start by creating your :zzz: ~~group's~~ contact info page. Each contact
-info page should:
+You'll start by creating your :zzz: ~~group's~~ contact info page (i.e., a
+new file with the appropriate contact info).
+
+There are a number of different ways to create a new file in VS Code. A nice
+approach is:
+
+* Go to the Explorer (top icon in the left tool bar).
+* Open up directories (i.e., folders) until you can see the directory
+  you want the new file to go in.
+* Right click on that directory and choose "New File".
+* Enter its name (see below for naming rules for this step). Make sure
+  to include the appropriate extension (e.g., `.md` or `java`) so
+  VS Code will know how to color code and check the file's contents.
+* Press Enter/Return and VS Code will create your new (empty) file
+  and open an editing pane for you to start working in it.
+
+Each contact info page should:
 
 * Be created in the `user_info` directory.
 * :zzz: ~~Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`~~
