@@ -185,6 +185,32 @@ local changes up to the GitHub repository so that other people can access them.
 
 ### Configuring your `git` e-mail
 
+:mask::warning::exclamation::warning::mask:
+This whole section may be irrelevant for home set ups. It looks like
+GitKraken may set all this stuff up for you. To check that run these
+two commands and confirm that they return the email you used when
+you created your GitHub account, and your user name as you'd like it
+to be displayed in things like commit messages and on GitHub:
+
+* `git config --global user.email`
+* `git config --global user.name`
+
+If both of those look right, ignore the rest of this. You're done
+with the setup and ready to start the first half of the lab exercise!
+
+If either or both don't return the values you want, then follow along
+below to set that up.
+
+:exclamation: You _will_ need to set these on your account in the CSci
+lab in order for your name and email to work properly there. Assuming
+you'll eventually be taking classes in the lab again, you'll probably want
+to set these in the CSci Lab at some point as well.
+
+:zzz: Ignore everything from here to the end of this section if your
+settings are correct. :zzz:
+
+---
+
 Before we actually start to _use_ `git`, you should [configure your `git`
 email so work you do in our lab properly connects to your GitHub
 account](https://help.github.com/articles/setting-your-commit-email-address-in-git/).
