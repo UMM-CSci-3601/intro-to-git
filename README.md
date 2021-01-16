@@ -361,29 +361,29 @@ install them one at a time if you want to know more about what we're doing here.
 
 #### Have a look at the project
 
-Open up `src -> main/java/hellos -> Hellos.java` and you should see a small Java program.
-Right above `public static void main` should be `Run | Debug` in light gray. These
-aren't part of the code, but are action buttons being inserted by VS Code. Click
-`Run` and it should run the program, opening up a terminal window in a pane along
-the bottom to display the output. The output should look similar to what you got
-with Gradle on the command line, but with some other info at the start before
-the program's output is displayed.
+Open up `src -> main/java/hellos -> Hellos.java` and you should see a small
+Java program. Now open up `src -> test/java/hellos -> HellosTest.java` and you
+should see our JUnit tests.
 
-Now open up `src -> test/java/hellos -> HellosTest.java` and you should see our JUnit
-tests. Again, VS Code has inserted a few text `Run Test | Debug Test` "buttons"
-in various places. Click `Run Test` just about `public class HellosTest` to
-run _all_ the tests in the class.
+> [JUnit is a widely used testing framework for Java](https://junit.org/junit5/docs/current/user-guide/#writing-tests).
+> A Junit test is a method that has the special `@Test` annotation and contains
+> one or more _assertions_ like `assertTrue` or `assertEquals`. Tests _pass_
+> if all the assertions in a test method are true; they _fail_ if any assertion
+> is false.
 
-Assuming the tests all passed (& they should), it won't really look like anything
-actually happened. There will, however, be a check mark to the right of
-`Debug Test` that wasn't there before. That tells you the tests passed. If any of
-the tests had failed, there'd be an `x` there, and VS Code would open up another
-pane providing a list of all the tests and details on the failures to help you
-debug the problem. (You can click on the little check mark, and it'll open the
-test results pane so you can see what that looks like if you want.)
+As well as running tests from an "external" terminal window, you can also run
+them from a terminal inside VS Code. Go to the "Terminal" menu and select
+"New Terminal". That should bring up a terminal along the bottom of your VS Code
+window. That terminal is just like an "external" terminal and you can use it
+to do anything you could have done in an "external" terminal window. This
+includes things like:
 
-You can also run individual tests by clicking `Run Test` above the appropriate
-test method.
+```
+   ./gradlew test
+```
+
+to run your tests from "inside" VS Code; you should get the same output you
+got earlier when you ran Gradle commands in an external terminal.
 
 ### Create an info page :zzz: ~~for each pair~~
 
