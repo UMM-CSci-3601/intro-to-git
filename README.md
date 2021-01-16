@@ -92,7 +92,7 @@ friends include:
     short introduction to the key ideas)
   * [Getting started with GitHub](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github)
   * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-  * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) 
+  * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
     (Markdown is the markup language used
     by Slack, GitHub, and _many_ other
     online tools, so understanding at least
@@ -361,7 +361,7 @@ install them one at a time if you want to know more about what we're doing here.
 
 #### Have a look at the project
 
-Open up `src -> main/java -> Hellos.java` and you should see a small Java program.
+Open up `src -> main/java/hellos -> Hellos.java` and you should see a small Java program.
 Right above `public static void main` should be `Run | Debug` in light gray. These
 aren't part of the code, but are action buttons being inserted by VS Code. Click
 `Run` and it should run the program, opening up a terminal window in a pane along
@@ -369,7 +369,7 @@ the bottom to display the output. The output should look similar to what you got
 with Gradle on the command line, but with some other info at the start before
 the program's output is displayed.
 
-Now open up `src -> test/java -> HellosTest.java` and you should see our JUnit
+Now open up `src -> test/java/hellos -> HellosTest.java` and you should see our JUnit
 tests. Again, VS Code has inserted a few text `Run Test | Debug Test` "buttons"
 in various places. Click `Run Test` just about `public class HellosTest` to
 run _all_ the tests in the class.
@@ -391,7 +391,7 @@ We'll come back to this Java code again in the second half of the lab, but
 for now we're going to return to how we'll use `git` to make and share changes.
 
 This repository has a `user_info` directory, and in this part of the
-lab we'll create a new file in that directory for each :mask ~~pair~~ person in the
+lab we'll create a new file in that directory for each :mask: ~~pair~~ person in the
 class containing your real names and your GitHub user names. Sometimes
 it's easy for us to figure out how those names relate, but if your
 GitHub user name is `UnicornWizard375` it's not always obvious who in the
@@ -500,11 +500,18 @@ git commit
   to set it to a command line editor like `nano`.
 
 After entering a commit message that is [properly formatted](https://chris.beams.io/posts/git-commit/), [organized](https://dev.to/jacobherrington/how-to-write-useful-commit-messages-my-commit-message-template-20n9), [meaningful](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/) and [helpful](https://github.com/erlang/otp/wiki/writing-good-commit-messages)
-you can exit the editor. That should finalize the commit, and you should get
+you can save and exit the editor.
+
+> If you've set up a GUI editor like VS Code
+> to be your editor for `git` commit messages, then you may need to save
+> and close the editor window for the commit message before `git` will
+> recognize that you're done editing the message.
+
+That should finalize the commit, and you should get
 output that looks something like:
 
 ```text
-[main 47d9c89] Adding the info for Pat and Chris.
+[main 47d9c89] Add the info for Pat and Chris to `user_info/KK_and_Nic.md`.
  1 file changed, 11 insertions(+)
  create mode 100644 user_info/Pat_and_Chris.md
 ```
@@ -637,7 +644,7 @@ development branches that are merged into `main` when that work is deemed
 > GitHub is in fact working to change the default naming for new projects,
 > and provide tools to help automate changing the name of the default branch.
 > (See [their renaming repo](https://github.com/github/renaming) for the
-> current state of this work. New, blank repos will, for example, now
+> current state of this work. New, blank repositories will, for example, now
 > have `main` as their default branch name.)
 >
 > I'm working to make this change on all my course repositories, but may not
