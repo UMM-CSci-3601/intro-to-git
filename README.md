@@ -2,12 +2,22 @@
 
 !["Broken" badge to remind us to fix the URLs on the "real" badges](https://img.shields.io/badge/FIX_BADGES-Badges_below_need_to_be_updated-red)
 
-:bangbang: Each semester _after creating the instance in GitHub Classroom_,
-we need to fix (in the GitHub Classroom "fork") the URLs in the badges
-below so they point to that semester's repository instead of the
-"starter" repo. Then remove this note and the broken badge above in
-the fork. (We should leave this in the copy in the "starter"
-repository so it's there each semester when we fork this.)
+> :bangbang: :mage_woman: **Faculty**
+>
+> Each semester _after creating the instance in GitHub Classroom_,
+> we need to (in the GitHub Classroom "fork"):
+>
+> * [ ] Fix the URLs in the badges
+> below so they point to that semester's repository instead of the
+> "starter" repo.
+> * [ ] Make sure we've added every student in the current semester
+> to that semester's organization so they'll have permission to push to
+> this repo.
+> * [ ] Turn off branch protection so that students can `push`.
+> * [ ] Remove this note and the broken badge above in the fork.
+>
+> We should leave these notes in the copy in the "starter"
+> repository so it's there each semester when we fork this.
 
 [![Continuous integration status](../../workflows/Java%20CI/badge.svg)](../../actions?query=workflow%3A"Java+CI")
 [![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=master)](https://bettercodehub.com/)
