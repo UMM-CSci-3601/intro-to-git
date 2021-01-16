@@ -173,6 +173,12 @@ In this part of the lab we'll add everyone's names and GitHub usernames to the
 repository so we'll be able to figure out who GitHub user `MightyWombat259`
 is in real life.
 
+> :exclamation: :mage_woman: **Faculty** need to make sure that
+> [branch protection is turned _off_](settings/branches)
+> for this first part of the lab. If
+> you don't then students won't be able to commit directly to `main`, which
+> is what we're expecting in the first part of the lab.
+
 ### `clone` a local copy of the repository
 
 Before we can start working on the lab proper, each group will need to
@@ -476,6 +482,11 @@ program, `Hellos.java` in the `program` directory. Each group will make a
 small extension to that program in a way that virtually guarantees some sort
 of merge conflict, so everyone will have the experience of dealing with
 conflicts.
+
+> :exclamation: :mage_woman: **Faculty** may want to
+> [turn _on_ branch protection](settings/branches) for this
+> half of the lab so that tests will be run against pull requests will and
+> merging will be blocked if the tests failed or there isn't review.
 
 ### Open GitKraken
 
