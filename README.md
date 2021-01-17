@@ -613,6 +613,18 @@ You're now done with the first major part of the lab!
 :bangbang: Don't move on to this next part until _everyone_ is done with
 the previous part.
 
+> :bangbang: :mage_woman: **Faculty**
+>
+> When the students get this part of the lab, we'll need to turn on branch
+> protections. Go to `Settings > Branches` and either add a rule for `main`
+> or edit the existing rule for `main` if there is one. We want:
+>
+> * [ ] Require 2 code reviews before merging
+>   * [ ] Dismiss stale reviews
+> * [ ] Require status checks
+>   * [ ] Require branches to be up to date
+>   * [ ] Enable all the checks
+
 :zzz: ~~:bangbang: You should definitely change _driver_ and _navigator_ roles now.~~
 
 In this second part each group will make a small change to a simple Java
