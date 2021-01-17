@@ -24,6 +24,7 @@ public class Hellos {
     builder.append(WELCOME_LINE + "\n");
     builder.append(kkSaysHello());
     builder.append(nicSaysHello());
+    builder.append(patSaysHello());
 
     return builder.toString();
   }
@@ -34,6 +35,10 @@ public class Hellos {
 
   private String kkSaysHello() {
     return "KK says 'Hello!'\n";
+  }
+
+  private String patSaysHello() {
+    return "Pat says 'Howdy!'\n";
   }
 
 }
