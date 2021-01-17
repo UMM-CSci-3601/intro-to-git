@@ -928,6 +928,13 @@ more information, including links to pages with details on, e.g., failed tests.
 
 ### Create a pull request to merge your changes into `main`
 
+> :information_desk_person: For the next several sections, we'll be doing most
+> of the work in GitHub's web interface. Most of this could also be done in GitKraken,
+> or even on the command line with some additional tools. We won't
+> go over all those other options here in an effort to keep things
+> under control, but it's good to know that these things are at least
+> possible.
+
 It's cool that your changes are visible in your branch on GitHub, but if
 you switch back to `main` on GitHub and look at `Hellos.java`, your code
 won't be there. The problem with the current situation is that your nifty
