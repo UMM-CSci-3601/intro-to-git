@@ -6,8 +6,6 @@ package hellos;
  */
 public class Hellos {
 
-  public static final String WELCOME_LINE = "Hello, folks!";
-
   public static void main(String[] args) {
     Hellos helloRunner = new Hellos();
     helloRunner.run();
@@ -21,7 +19,6 @@ public class Hellos {
   public String generateOutput() {
     StringBuilder builder = new StringBuilder();
 
-    builder.append(WELCOME_LINE + "\n");
     builder.append(kkSaysHello());
     builder.append(nicSaysHello());
 
