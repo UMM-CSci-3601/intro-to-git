@@ -1086,8 +1086,12 @@ have a section that looks something like:
 
 What this rather odd syntax says is that Chris's `chris-greeting` branch has
 a line that calls `chrisSaysHello()`, where `main` (which has Pat's changes)
-has a line that calls `patSaysHello()`. `git can't tell which of these (and
-possibly more) options explains this situation:
+has a line that calls `patSaysHello()`. Everything between the `<<<<` line
+and the `====` line is what things look like in the `chris-greeting` branch,
+and everything between the `====` line and the `>>>>` line are what things
+look like in the `main` branch.
+
+There are numerous ways this conflict could have come about, such as:
 
 * Chris wants to change the line from calling `patSaysHello()` to
   instead called the (supposedly different) method `chrisSaysHello()`.
@@ -1096,11 +1100,25 @@ possibly more) options explains this situation:
 * Chris wants to make _both_ function calls (in some order, which `git` couldn't
   begin to guess).
 
+Here `git can't tell which of these happened, and thus can't "know" how to
+handle the merge. Thus it punts it to us, the human users to sort out. Sometimes
+it's obvious to us what to do, but sometimes it's really _not_ clear what the
+right course of action is. :warning: DO NOT JUST THROW AWAY OTHER PEOPLE'S
+WORK TO RESOLVE A MERGE CONFLICT. This is a place where you really want to
+take a moment and contact other people on your team to decide what is the best course
+of action.
+
 In this case the last option is the case, and we better call `chrisSaysHello()`
 first so that at least those two calls are in alphabetical order.
 
-Chris would use the web editor to make those changes, and when things look good
-click "Mark as resolved", and then the button to commit the merged changes.
+Chris would use the web editor to make those changes, deleting the `<<<<`, `====`,
+and `>>>>` lines, leaving the two calls in the desired order. When things look good,
+Chris clicks "Mark as resolved", and then the button to commit the merged changes.
+
+:warning: This is a _very_ simple example of a merge conflict. They can be much more
+complex than this, and trickier to resolve. The Pro version of GitKraken (which you
+got through the GitHub Student Pack) actually has a very nice GUI for resolving merge
+conflicts, and you'd probably rather use that for more complex conflicts.
 
 :warning: :bangbang: At this point Chris (or you if you've been doing something
 similar) will need to pull these changes back down to your copy if you want
@@ -1192,7 +1210,7 @@ done with the lab! Well done! :smile:
 
 Let's assume you've _finally_ gotten all the checks to pass, you're up to date
 with `main`, and you've gotten a positive pull request. Now the green
-"Merge Pull Requst" should enabled, so push that button! Make any updates
+"Merge Pull Request" should enabled, so push that button! Make any updates
 you want, and then click "Confirm merge".
 
 At this point your pull request should be merged in and your changes should now
