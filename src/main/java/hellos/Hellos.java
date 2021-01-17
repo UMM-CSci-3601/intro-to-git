@@ -24,8 +24,13 @@ public class Hellos {
     builder.append(WELCOME_LINE + "\n");
     builder.append(kkSaysHello());
     builder.append(nicSaysHello());
+    builder.append(chrisSaysHello());
 
     return builder.toString();
+  }
+
+  private String chrisSaysHello() {
+    return "Chris says 'Hello!'\n";
   }
 
   private String nicSaysHello() {
