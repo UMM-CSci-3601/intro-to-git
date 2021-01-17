@@ -46,8 +46,16 @@
   * [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
     * [Commit with GitKraken](#commit-with-gitkraken)
     * [Push with GitKraken](#push-with-gitkraken)
-  * [Merging your branch into `main`](#merging-your-branch-into-main)
+  * [Create a pull request to merge your changes into `main`](#create-a-pull-request-to-merge-your-changes-into-main)
+    * [Create a pull request](#create-a-pull-request)
+    * [You can't merge yet](#you-cant-merge-yet)
+      * [Automated checks](#automated-checks)
+      * [You might need to merge in changes from `main`](#you-might-need-to-merge-in-changes-from-main)
+      * [You need a review](#you-need-a-review)
+      * [Review some other pull requests](#review-some-other-pull-requests)
+      * [Process the code reviews you receive](#process-the-code-reviews-you-receive)
 * [Huzzah! We're done! :-)](#huzzah-were-done--)
+    * [Now you can merge](#now-you-can-merge)
 
 ## Background
 
@@ -613,6 +621,16 @@ small extension to that program in a way that virtually guarantees some sort
 of merge conflict, so everyone will have the experience of dealing with
 conflicts.
 
+We'll also introduce the important idea of
+[_pull requests_](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+here in this half. A pull request is a GitHub tool that brings together the
+changes on a branch into an entity that supports conversations and
+[_code review_](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-proposed-changes-in-a-pull-request).
+Quality code reviews can be a vital part of maintaining and improving
+the quality of code in a project, so it's important to seriously engage
+in the code review process. :mask: This is likely to be doubly important
+with the entire course being online.
+
 ### Open GitKraken
 
 Where we used command line commands to do all the `git` work in the previous
@@ -908,7 +926,7 @@ The meaning of these symbols is:
 If you click on any of these symbols on the GitHub page, you can get
 more information, including links to pages with details on, e.g., failed tests.
 
-### Merging your branch into `main`
+### Create a pull request to merge your changes into `main`
 
 It's cool that your changes are visible in your branch on GitHub, but if
 you switch back to `main` on GitHub and look at `Hellos.java`, your code
@@ -919,6 +937,251 @@ should be part of the "production" version of the project on the `main`
 branch. Right? **Right?**
 
 So you need to merge your branch into `main`.
+
+We don't, however, want to just smash our stuff into `main`. We want to
+take advantage of our very clever colleagues and have at least one other
+person perform a code review on our proposed changes. A code review is
+essentially an online conversation where members of the team build a
+shared understanding of these changes, proposing fixes and improvements,
+and generally working together to make the code base as good as you
+collectively can.
+
+#### Create a pull request
+
+Go this repo on GitHub (on the web) and there's likely to be one or
+more messages in a light yellow box near the top that say something like:
+
+> **\<branch name\>** had recent pushes \<some recent time frame\>
+
+If you pushed recently, then one of these messages may will be about your
+branch.
+
+* If there is such a message for your branch, click "Compare & pull request".
+* If there isn't a message for your branch:
+  * Select your branch from the branch dropdown. Then there should be a message
+    for your branch.
+  * Click "Compare & pull request".
+
+That will bring up the page for creating pull requests, filling in some of the
+information based on your commits on that branch. You want to fill in the title
+and body of the pull request in a way that describes the goals and actions of
+this pull request – what are you trying to accomplish and how did you do it?
+
+When all that's ready, click the green "Create pull request" button to actually
+create the pull request.
+
+Once that's done, you want to request two or three reviewers. Click the gear
+icon to the right of "Reviewers" in the right hand column of actions. Hopefully
+there will be several people in the drop-down list; if so pick two or three at
+random. You should always be able to just type in "NicMcPhee" to add me as a
+reviewer, but you want to get a few other people in case I'm swamped.
+
+#### You can't merge yet
+
+What you _want_ to do is merge this into `main` so your wonderful changes are
+an official part of the project. You can't do it yet, though – the "Merge pull
+request" button down at the bottom is grayed out. Before you can merge, at least
+two things must be true:
+
+* A set of automated checks have to pass
+* Your pull request/branch has to be up-to-date with `main`
+* At least one person has to review _and accept_ your pull request
+
+##### Automated checks
+
+We use a feature called GitHub Actions to automate a set of checks on the lab
+and project repositories in this course. All those checks have to pass before
+you can merge in your pull request. For this lab we have three checks:
+
+* "Java_CI/build": This automatically runs the tests (essentially doing
+  `./gradlew test`) and passes (gives you a green check mark) if the tests
+  pass, and fails (gives you a red x) if the tests fail.
+* "LGTM analysis: Java": This performs an automated "statement-level" analysis
+  of the Java code.
+* "Better Code Hub": This performs a more "big picture" analysis of the
+  project's code.
+
+So have a look at the bottom of your pull request and you should see info on
+all three of these checks. If any of them have an orange/yellow dot next to them,
+then that tells you that check is still being processed (e.g., the tests are still
+being run) so you'll need to wait a bit for the check to finish. The checks can
+take a few minutes, depending on their complexity and how busy the various services
+are. That's one of several reasons you should usually run the tests locally before
+you push.
+
+If any of the checks fail (give you a red x), then you probably want to click on
+"Details" by that check to learn more about what might have failed.
+
+* If the tests failed, it's likely that you either didn't structure your
+  greeting correctly, or you didn't put it in the correct place so that all
+  greetings are in alphabetical order. You should probably run the tests again
+  on your computer, where you'll get more information on which test failed and
+  why. If you're unsure how to proceed _definitely ask for some help!_
+* If either LGTM or Better Code Hub is grumpy, definitely click the "Details"
+  link, and you'll see more information about what they're not happy about.
+  If you understand the problem and how to possibly fix it, that's great.
+  If you don't, however, that's totally fine and you should definitely ask
+  for a hand!
+
+##### You might need to merge in changes from `main`
+
+Another thing that will block merging a pull request is if there have been
+changes made to `main` that you don't have in your pull request branch. Consider,
+for example, the case where Pat and Chris both create branches from `main`
+at about the same time. They both add their greetings, push their work, and
+create their pull requests. Let's imagine that (for whatever reason) Pat gets
+their changes merged into `main` a little before Chris. Now `main` will have
+Pat's changes, but those won't be in Chris's code; this will block Chris from
+merging into `main`.
+
+What does that look like on GitHub?
+
+One option is that When Chris looks at their pull request on GitHub they'll
+see a message that's something like:
+
+> This branch is out-of-date with the base branch
+
+In that case GitHub can merge the changes from `main` into Chris's branch
+automatically. If Chris is OK with that option, they can just press the
+"Update branch" button, and GitHub will do that merge.
+
+The more complicated option is when GitHub can't automatically merge the
+changes from `main` into Chris's branch, because there's a _merge conflict_.
+Merge conflicts happen when two branches both change the same bit of the code,
+and `git` isn't able to determine how to combine those changes. If that
+happens the message will be something like:
+
+> This branch has conflicts that must be resolved
+
+Here, if Chris clicks the "Resolve conflicts" button, GitHub will put Chris in
+a (web) editor where they can resolve the conflicts. That editor will likely
+have a section that looks something like:
+
+```java
+<<<<<<< chris-greeting
+    builder.append(chrisSaysHello());
+=======
+    builder.append(patSaysHello());
+>>>>>>> main
+```
+
+What this rather odd syntax says is that Chris's `chris-greeting` branch has
+a line that calls `chrisSaysHello()`, where `main` (which has Pat's changes)
+has a line that calls `patSaysHello()`. `git can't tell which of these (and
+possibly more) options explains this situation:
+
+* Chris wants to change the line from calling `patSaysHello()` to
+  instead called the (supposedly different) method `chrisSaysHello()`.
+* Chris has renamed `patSaysHello()` to `chrisSaysHello()`, and wants to change
+  the call to match this renaming.
+* Chris wants to make _both_ function calls (in some order, which `git` couldn't
+  begin to guess).
+
+In this case the last option is the case, and we better call `chrisSaysHello()`
+first so that at least those two calls are in alphabetical order.
+
+Chris would use the web editor to make those changes, and when things look good
+click "Mark as resolved", and then the button to commit the merged changes.
+
+:warning: :bangbang: At this point Chris (or you if you've been doing something
+similar) will need to pull these changes back down to your copy if you want
+or need to make changes to your branch. If, for example, Chris realizes here
+that the tests are failing because they have the alphabetical order wrong,
+they'll need to pull down these changes, fix the alphabetical order, push back
+up, and attempt to merge again.
+
+##### You need a review
+
+Now you've finally gotten your code up-to-date and all the checks pass. You
+still can't merge because of a big red X and the message "Review required".
+This is because we're following a common "best practice" and requiring at
+least one code review _by another person_ for each pull request.
+
+So you need to get someone to review your code! In the upper right there's
+a "Reviewers" section. Click on the gear there and you should get a drop down
+with the (GitHub) names of the other people in the class. Choose two or three
+and click their names to invite them to review your code. _Don't just choose
+the top three – if everyone does that the same few people will be asked to do
+_all_ the reviews. Instead, try choosing the two or three names right after yours
+on the list – that should spread the load around.
+
+At this point, you can't really do anything until folks have approved your
+pull request, so now's a good time to review some other people's pull requests!
+
+##### Review some other pull requests
+
+While you're waiting for feedback from other people, let's do some code reviews
+on other people's work. You might have been invited to provide some code reviews;
+check your notifications (the bell in the far top right) to see if there are any
+code review invitations there. Otherwise you can click on the project's "Pull
+requests" tab at the top, and pick any option pull request.
+
+If you had been invited to review this pull request, then there should be a note
+to that effect near the top, and a green "Add your review" button which you can
+click to start your review. If you haven't been invited, you can just click on the
+"Files changed" tab of the pull request, and that will take you to the same place.
+
+You'll now be looking at all the changes (old on the left, new on the right).
+There's a _lot_ you can do here (read up on this), but for the moment we'll just
+look over the code and make sure the changes look reasonable. Some things to
+check for:
+
+* [ ] Does it look (by eye) that this will print all the greetings in alphabetical
+  order? (The tests check that for sure, but you should always be thinking about
+  correctness as well.)
+* [ ] Do any new methods they're adding have reasonable names that convey useful
+  info to the reader?
+* [ ] Are new method names in camel cases, starting in lowercase (the Java standard
+  for method names)?.
+* [ ] Is the implementation of the any new methods reasonable?
+* [ ] Is the spacing and indentation uniform and consistent with the rest of the file?
+
+Etc., etc.
+
+When you've looked over the code, click the green "Review changes" button on the
+top right. From there you can type a comment and decide whether it's just a comment,
+or whether you want to accept this pull request or request changes before this
+gets merged in. _Don't be shy about requesting changes._ It can seem kind of mean,
+and it definitely slows things down, but it can significantly improve the quality
+of the overall work, which benefits everyone in the long run.
+
+##### Process the code reviews you receive
+
+Once you receive a positive review you can proceed to merge. If, however, you
+received a request to make some changes, look those over. Does the request make
+sense? Do you understand what (and why) it's being made? If not, _definitely_
+ask them for further information or explanation. You can post your own comment
+on the pull request and/or contact them by other means (e.g., Slack, email). You
+probably want any important info to be captured in the pull request, but sometimes
+it's useful to poke someone on another channel to get their attention.
+
+While you're waiting for them to re-review your pull request, check and make sure
+no one else is waiting for you to re-review code reviews you left on their pull
+requests!
+
+## Huzzah! We're done! :-)
+
+Once everyone has added their changes to `Hellos.java` then we're
+done with the lab! Well done! :smile:
+
+---
+
+> :bangbang: I think everything from here down is no longer strictly necessary.
+> I don't know if we want to save some of these (maybe in another document?)
+
+#### Now you can merge
+
+Let's assume you've _finally_ gotten all the checks to pass, you're up to date
+with `main`, and you've gotten a positive pull request. Now the green
+"Merge Pull Requst" should enabled, so push that button! Make any updates
+you want, and then click "Confirm merge".
+
+At this point your pull request should be merged in and your changes should now
+be visible in `main` – your work is officially part of the project! You'll
+be given the option to "Delete branch", which will delete your work branch.
+Since the changes on that branch are now all merged into `main` it should be
+safe to delete that branch, but you can leave it there if you prefer and
+remove it later in a "branch housekeeping" session.
 
 If no one else was working on this repository it would be easy, and all
 you'd need to do is _merge_ into `main` and then _push_ your work up
@@ -1074,11 +1337,6 @@ made by other groups. Check that the build is still successful (green check mark
 and raise an alarm if it's not. (:bangbang: It's **never** a good thing
 if your build on `main` is breaking, and everyone should stop what they're
 doing to try to fix it when it does break.)
-
-## Huzzah! We're done! :-)
-
-Once everyone has added their changes to `Hellos.java` then we're
-done with the lab! Well done! :smile:
 
 [orange-circle]: https://icongr.am/octicons/dot-fill.svg?size=16&color=dbab09 "Orange 'in progress' circle"
 [green-check]: https://icongr.am/octicons/check.svg?size=16&color=22863a "Green 'success' check mark"
