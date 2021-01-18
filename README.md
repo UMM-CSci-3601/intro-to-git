@@ -111,10 +111,10 @@ friends include:
   * [Getting started with GitHub](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github)
   * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
   * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-    (Markdown is the markup language used
-    by Slack, GitHub, and _many_ other
-    online tools, so understanding at least
-    the basics is really valuable.)
+    * Markdown is the markup language used
+      by Slack, GitHub, and _many_ other
+      online tools, so understanding at least
+      the basics is really valuable.)
 * [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
   * The beginner tutorials would be the
     obvious place to start; over time,
