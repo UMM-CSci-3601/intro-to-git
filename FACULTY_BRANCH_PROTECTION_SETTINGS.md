@@ -21,16 +21,25 @@ conflicts. There are also no substantial "checks" that apply to these
 Markdown files.
 
 Because they'll be committing directly to `main`, and there are no
-meaningful checks, it's important that all branch protections are
-_turned off_ (on the copy created by GitHub Classroom in that semester's
-organization) before they start the lab.
+meaningful checks, it's important that we don't require things like
+pull requests and code reviews.
 
 To check this, go to the GitHub web interface for the (copied) repository
 and go to "Settings > Branches". If there's no branch protection rule
-for `main` then everything's fine. If there is, however, then you 
-need to delete; otherwise no one will be able to directly push to
-`main`, which will break lots of things when the students start
-going through the lab.
+for `main` then everything's fine. If there is, however, click "Edit"
+for that rule and then _uncheck everything_. That will leave some
+minimal protection (students won't be able to force push to `main` or 
+delete the `main` branch), but there won't be any requirements for
+pull requests, checks to pass, or code reviews. Requiring things
+like pull requests, for example, would break lots of things when
+the students start going through the lab.
+
+Since we don't really want students to be able to do things like
+delete `main` or
+[force push](https://evilmartians.com/chronicles/git-push---force-and-how-to-deal-with-it),
+you might want to turn on the minimal protection if
+there's nothing there originally. Click "Add rule", enter `main` as
+the branch name, and save without checking any of the boxes.
 
 ## Switching things for the second part
 
