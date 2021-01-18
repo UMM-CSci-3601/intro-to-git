@@ -204,7 +204,7 @@ local changes up to the GitHub repository so that other people can access them.
 ### Configuring your `git` e-mail
 
 :mask::warning::exclamation::warning::mask:
-This whole section may be irrelevant for home set ups. It looks like
+This whole section may be irrelevant for home set-ups. It looks like
 GitKraken may set all this stuff up for you. To check that run these
 two commands and confirm that they return the email you used when
 you created your GitHub account, and your user name as you'd like it
