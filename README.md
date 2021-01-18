@@ -13,7 +13,7 @@
 > * [ ] Make sure we've added every student in the current semester
 > to that semester's organization so they'll have permission to push to
 > this repo.
-> * [ ] Turn off branch protection so that students can `push`.
+> * [ ] [Turn off branch protection](FACULTY_BRANCH_PROTECTION_SETTINGS.md) so that students can `push`.
 > * [ ] Remove this note and the broken badge above in the fork.
 >
 > We should leave these notes in the copy in the "starter"
@@ -260,6 +260,11 @@ credit you for your work.
 In this part of the lab we'll add everyone's names and GitHub usernames to the
 repository so we'll be able to figure out who GitHub user `MightyWombat259`
 is in real life.
+
+> :exclamation: :mage_woman: **Faculty** need to make sure that
+> [branch protection check and review requirements are _off_](FACULTY_BRANCH_PROTECTION_SETTINGS.md)
+> for this first part of the lab or students won't be
+> able to push directly to `main`
 
 ### `clone` a local copy of the repository
 
@@ -615,15 +620,12 @@ the previous part.
 
 > :bangbang: :mage_woman: **Faculty**
 >
-> When the students get this part of the lab, we'll need to turn on branch
-> protections. Go to `Settings > Branches` and either add a rule for `main`
-> or edit the existing rule for `main` if there is one. We want:
->
-> * [ ] Require 2 code reviews before merging
->   * [ ] Dismiss stale reviews
-> * [ ] Require status checks
->   * [ ] Require branches to be up to date
->   * [ ] Enable all the checks
+> When the students get this part of the lab, we'll need to
+> [turn on branch protections](FACULTY_BRANCH_PROTECTION_SETTINGS.md). 
+> This will ensure that the checks will be run against
+> all pull requests and merging will be blocked if,
+> e.g., the tests fail or there aren't enough code
+> reviews.
 
 :zzz: ~~:bangbang: You should definitely change _driver_ and _navigator_ roles now.~~
 
