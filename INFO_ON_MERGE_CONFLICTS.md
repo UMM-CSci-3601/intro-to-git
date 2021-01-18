@@ -1,7 +1,7 @@
 # Info on merge conflicts <!-- omit in toc -->
 
 Working as part of a team on a shared repository can be tricky.
-If no one else was working on the repository life would be easy, and
+If no one else was working on the repository, life would be easy, and
 you'd (probably) never have any merge conflicts. But there are other
 people working on the repository, and you have to make sure you play
 nice with them.

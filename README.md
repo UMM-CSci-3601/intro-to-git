@@ -397,7 +397,7 @@ to do anything you could have done in an "external" terminal window. This
 includes things like:
 
 ```bash
-   ./gradlew test
+./gradlew test
 ```
 
 to run your tests from "inside" VS Code; you should get the same output you
@@ -1100,8 +1100,8 @@ There are numerous ways this conflict could have come about, such as:
 * Chris wants to make _both_ function calls (in some order, which `git` couldn't
   begin to guess).
 
-Here `git can't tell which of these happened, and thus can't "know" how to
-handle the merge. Thus it punts it to us, the human users to sort out. Sometimes
+Here `git` can't tell which of these happened, and thus can't "know" how to
+handle the merge. Thus it punts it to us, the human users, to sort out. Sometimes
 it's obvious to us what to do, but sometimes it's really _not_ clear what the
 right course of action is. :warning: DO NOT JUST THROW AWAY OTHER PEOPLE'S
 WORK TO RESOLVE A MERGE CONFLICT. This is a place where you really want to
@@ -1132,12 +1132,12 @@ up, and attempt to merge again.
 Now you've finally gotten your code up-to-date and all the checks pass. You
 still can't merge because of a big red X and the message "Review required".
 This is because we're following a common "best practice" and requiring at
-least one code review _by another person_ for each pull request.
+least two code review _by other people_ for each pull request.
 
 So you need to get someone to review your code! In the upper right there's
 a "Reviewers" section. Click on the gear there and you should get a drop down
 with the (GitHub) names of the other people in the class. Choose two or three
-and click their names to invite them to review your code. _Don't just choose
+and click their names to invite them to review your code. Don't just choose
 the top three – if everyone does that the same few people will be asked to do
 _all_ the reviews. Instead, try choosing the two or three names right after yours
 on the list – that should spread the load around.
