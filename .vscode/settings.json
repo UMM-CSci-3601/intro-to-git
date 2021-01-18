@@ -3,5 +3,11 @@
     "java.server.launchMode": "Standard",
     "cSpell.words": [
         "wizarding"
-    ]
+    ],
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
