@@ -1,0 +1,10 @@
+component_depth: 1
+default_excludes: true
+languages:
+- name: java
+  production:
+    include:
+      - src/main/.*\.java
+  test:
+    include:
+      - src/test/.*\.java
