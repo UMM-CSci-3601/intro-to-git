@@ -27,10 +27,10 @@ organization) before they start the lab.
 
 To check this, go to the GitHub web interface for the (copied) repository
 and go to "Settings > Branches". If there's no branch protection rule
-for `main` then everything's fine. If there is, however, then you want to
-edit it, uncheck _everything_, and then click the green "Save changes"
-button at the bottom. (You could also just delete the branch protection,
-but then you'd have to recreate it when you're starting the second part.)
+for `main` then everything's fine. If there is, however, then you 
+need to delete; otherwise no one will be able to directly push to
+`main`, which will break lots of things when the students start
+going through the lab.
 
 ## Switching things for the second part
 
@@ -38,12 +38,17 @@ In the second part, we'll be using pull requests and want branch
 protection to be enforcing the checks and code reviews.
 
 So after the first part is all done and before the second part starts,
-you'll want to go to "Settings > Branches" and edit the branch protection
-for `main`. Here you want to check:
+you'll want to go to "Settings > Branches" and enable branch protection:
+
+* [ ] Click the "Add rule" button
+* [ ] Enter `main` in the "Branch name pattern box"
+
+Then go through and check/enable the following options:
 
 * [ ] "Require pull request reviews before merging"
   * [ ] Set the number of required approving reviews to 2
   * [ ] "Dismiss stale pull request approvals when new commits are pushed"
+  * [ ] "Restrict who can dismiss pull request reviews"
 * [ ] "Require status checks to pass before merging"
   * [ ] "Require branches to be up to date before merging"
   * [ ] Check each of "Better Code Hub", "LGTM analysis: Java", and
