@@ -6,11 +6,11 @@
  */
 
 plugins {
-  // Apply the application plugin to add support for building a CLI application
+  // Apply the application plugin to add support for building a CLI application.
   id 'application'
 }
 
-// In this section you declare where to find the dependencies of your project
+// In this section you declare where to find the dependencies of your project.
 repositories {
   // Use jcenter for resolving your dependencies.
   // You can declare any Maven/Ivy/file repository here.
@@ -32,11 +32,16 @@ dependencies {
 }
 
 application {
-  // Define the main class for the application
+  // Define the main class for the application.
   mainClass.set('hellos.Hellos')
 }
 
 test {
-  // Use junit platform for unit tests
+  // Use junit platform for unit tests.
   useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+  // All of our source files are written in UTF-8.
+  options.encoding = 'UTF-8'
 }
