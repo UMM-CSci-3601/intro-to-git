@@ -13,7 +13,7 @@
 > * [ ] Make sure we've added every student in the current semester
 > to that semester's organization so they'll have permission to push to
 > this repo.
-> * [ ] [Turn off branch protection](FACULTY_BRANCH_PROTECTION_SETTINGS.md) so that students can `push`.
+> * [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md) so that students can `push`.
 > * [ ] Remove this note and the broken badge above in the fork.
 >
 > We should leave these notes in the copy in the "starter"
@@ -23,11 +23,11 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=main)](https://bettercodehub.com/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
-* [Background](#background)
-  * [Resources for learning `git` and friends](#resources-for-learning-git-and-friends)
-  * [How we're going to use `git`](#how-were-going-to-use-git)
-  * [Configuring your `git` e-mail](#configuring-your-git-e-mail)
-* [We're ready to start the lab :grin:](#were-ready-to-start-the-lab-grin)
+- [Background](#background)
+  - [Resources for learning `git` and friends](#resources-for-learning-git-and-friends)
+  - [How we're going to use `git`](#how-were-going-to-use-git)
+  - [Configuring your `git` e-mail](#configuring-your-git-e-mail)
+- [We're ready to start the lab :grin:](#were-ready-to-start-the-lab-grin)
 
 ## Background
 
@@ -72,9 +72,9 @@ This lab experience definitely will _not_ provide a comprehensive overview of th
 _many_ features `git` provides, and there are a _lot_ of on-line resources
 that can provide additional information.
 
-Some that you might want to look at right away
+Below are some resources that you might want to look at right away
 to help you get up to speed on `git` and its
-friends include:
+friends:
 
 * A few of the _many_ GitHub tutorials and
   docs. There are a _lot_ more than just these, but these are short and pretty easy to spin through, and cover the key concepts we’ll need at the beginning of the semester.
@@ -92,6 +92,12 @@ friends include:
     obvious place to start; over time,
     though, we’d encourage you to work through
     the more advanced ones.
+
+As well as reading this README document, you should read two other pieces
+of documentation we have in the `docs/` folder:
+
+- [A discussion of how to avoid merge conflicts and deal with them when they (inevitably) happen](docs/MERGE_CONFLICTS.md)
+- [An overview of the Gradle build tool and how we're using it in this lab](docs/Gradle_README.md)
 
 Below are some additional resources that you might
 want to (re)visit over time as you become more
