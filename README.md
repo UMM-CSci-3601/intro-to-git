@@ -19,7 +19,7 @@
 > We should leave these notes in the copy in the "starter"
 > repository so it's there each semester when we fork this.
 
-[![Continuous integration status](../../workflows/Java/badge.svg)](../../actions?query=workflow%3A"Java")
+[![Continuous integration status](../../actions/workflows/gradle.yaml/badge.svg)](../../actions/workflows/gradle.yaml)
 [![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=main)](https://bettercodehub.com/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
@@ -142,7 +142,7 @@ collaboration and change. We're going to use three related tools:
   and display of complex things like `git` histories and branching.
 * _GitHub_ is a web-based software service that allows people
   to host, search, and use repositories created and managed with `git`.
-  
+
 You could use `git` without ever using GitKraken or GitHub. We've found that a
 good GUI like GitKraken can be a big help when things get complicated. GitHub
 is an extremely popular repository hosting service, and it's a good idea for
