@@ -17,7 +17,7 @@ plugins {
 }
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
 dependencies {
@@ -40,9 +40,7 @@ That actually gives us a _bunch_ of Gradle commands we can run that know
 how to build, run, test, and deploy a Java application.
 
 The `repositories` section allows us to provide one or more repositories where
-Gradle can go to download libraries that our project depends on. We're using
-the [JCenter library repository](https://bintray.com/bintray/jcenter);
-another common option is [`mavenCentral()`](https://search.maven.org/).
+Gradle can go to download libraries that our project depends on. We're using [`mavenCentral()`](https://search.maven.org/), which is the Maven Central Repository.
 
 The
 `dependencies` section tells Gradle that in order to compile our
