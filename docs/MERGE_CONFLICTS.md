@@ -64,7 +64,7 @@ Suppose you're working on a new feature, and you have all of your changes in a b
 merged the change into `main`. To make sure the bugfix is on your feature
 branch as well, you'll want to merge `main` into `my-cool-feature`.
 
-![Diagram of a development branch that's out of date with `main`](./docs/images/before-merging.png)
+![Diagram of a development branch that's out of date with `main`](images/before-merging.png)
 
 Since the `my-cool-feature` branch doesn't include all of the latest changes to
 `main`, we say that it's _out of date_. You want your feature branch to be
@@ -168,7 +168,7 @@ The sequence of events in GitKraken is likely to look something like:
   "A file conflict was found when attempting to merge" up at the top of the
   commit history graph.
 
-![Diagram showing conflict after a merge](./docs/images/while-merging.png)
+![Diagram showing conflict after a merge](images/while-merging.png)
 
 * All the files with merge conflicts will be listed in the "Conflicted Files"
   panel on the right hand side.
@@ -177,7 +177,7 @@ The sequence of events in GitKraken is likely to look something like:
   the version we're trying to merge in (e.g., `my-cool-feature`) on
   the top left, and the `Output` (the result of the merge) at the bottom.
 
-![Example of GitKraken's merge conflict tool](./docs/images/conflict-in-gitkraken.png)
+![Example of GitKraken's merge conflict tool](images/conflict-in-gitkraken.png)
 
 * You can then choose sections (using the checkboxes) that you want to include
   in the finished result. You can even choose to include (or not include)
@@ -185,13 +185,13 @@ The sequence of events in GitKraken is likely to look something like:
   will be added to the result below in the order in which you
   select them.
 
-![Illustration of selecting lines to include in resolving a merge conflict in GitKraken](./docs/images/resolved-in-gitkraken.png)
+![Illustration of selecting lines to include in resolving a merge conflict in GitKraken](images/resolved-in-gitkraken.png)
 
 * When you're done click `Save`.
 * That will move that file to "Staged Files", and you can commit the changes
   like normal.
 
-![Result of resolving a merge conflict in GitKraken](docs/images/after-merging.png)
+![Result of resolving a merge conflict in GitKraken](images/after-merging.png)
 
 ### Push your feature branch to GitHub
 
