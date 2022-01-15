@@ -1,10 +1,14 @@
 # Info on merge conflicts <!-- omit in toc -->
 
+- [What is a merge conflict & why do they matter?](#what-is-a-merge-conflict--why-do-they-matter)
+- [Pro-tip: Keep your branch(es) up-to-date](#pro-tip-keep-your-branches-up-to-date)
 - [How to deal with merge conflicts](#how-to-deal-with-merge-conflicts)
   - [Make sure you have the latest version of `main` locally](#make-sure-you-have-the-latest-version-of-main-locally)
   - [Initiate a merge from `main` to your feature branch](#initiate-a-merge-from-main-to-your-feature-branch)
   - [Resolve the merge conflict](#resolve-the-merge-conflict)
   - [Push your feature branch to GitHub](#push-your-feature-branch-to-github)
+
+## What is a merge conflict & why do they matter?
 
 Working as part of a team on a shared repository can be tricky.
 If no one else was working on the repository, life would be easy, and
@@ -29,12 +33,14 @@ merge (from Chris), generate a _merge conflict_, and ask Chris to _resolve_
 the conflict by deciding which change to use.
 
 Dealing with merge conflicts, especially complex ones, can be a real headache,
-but these tips can help reduce the likelihood of pain here:
+but these tips can help reduce the likelihood of pain arising from
+merge conflicts:
 
 * Merge changes into your development branch(es) early and often. The
   more consistent your branch is with `main` (or whatever branch you're going to
-  merge into), the less likely conflicts will be, and they'll tend to be smaller
-  when they do happen. The history/branch visualization in GitKraken can
+  merge into), the less likely there will be conflicts, and
+  they'll tend to be smaller when they do happen. The
+  history/branch visualization in GitKraken can
   give you a sense of how far your branch is from what's on `main`.
 * Break your work into small, manageable stories/tasks/chunks. Small,
   well-defined bits of work tend to touch less code and be completed more
@@ -46,19 +52,19 @@ but these tips can help reduce the likelihood of pain here:
   time and energy to deal with it properly and your chances are much higher that
   you'll do something you'll regret.
 * Don't do (big) merges alone (or at least make sure other folks are around).
-  This relates to the previous one. If you're caught off guard by a conflict,
+  This relates to the previous tip. If you're caught off guard by a conflict,
   and you're in a hurry, and there's no one around to help you understand how
   your changes relate to and will affect changes other people have made,
   Badness is very likely to ensue.
 
-## How to deal with merge conflicts
+## Pro-tip: Keep your branch(es) up-to-date
 
-Suppose you're working on a new feature, and you have all of your changes in a
-`my-cool-feature` branch. In the meantime, one of your classmates fixed a bug and
+Suppose you're working on a new feature, and you have all of your changes in a branch called
+`my-cool-feature`. In the meantime, one of your classmates fixed a bug and
 merged the change into `main`. To make sure the bugfix is on your feature
 branch as well, you'll want to merge `main` into `my-cool-feature`.
 
-![](./docs/images/before-merging.png)
+![Diagram of a development branch that's being `main`](./docs/images/before-merging.png)
 
 Since the `my-cool-feature` branch doesn't include all of the latest changes to
 `main`, we say that it's _out of date_. You want your feature branch to be
@@ -68,6 +74,22 @@ to `main` might not be clean.
 Many projects, including ours, block pull requests from out-of-date branches as
 a safety measure. So, you'll need to bring your branches up to date before
 merging your pull requests.
+
+In general you want to keep your branch up-to-date with any
+changes that have been merged into `main` as much as you can.
+The longer you wait to merge changes in from `main`, the harder
+it will be and the more likely it is that you'll have merge
+conflicts when you do.
+
+Branches that get really disconnected from `main` often get
+abandoned because merging that work in just becomes too much
+hassle, and lots of potentially good work has been "lost"
+that way.
+
+In the next section we'll go over the mechanics of getting
+your branch up to do with `main`.
+
+## How to deal with merge conflicts
 
 When bringing your branches up to date, you might encounter merge
 conflicts. Here's how to deal with them!
@@ -146,28 +168,30 @@ The sequence of events in GitKraken is likely to look something like:
   "A file conflict was found when attempting to merge" up at the top of the
   commit history graph.
 
-![](./docs/images/while-merging.png)
+![Diagram showing conflict after a merge](./docs/images/while-merging.png)
 
 * All the files with merge conflicts will be listed in the "Conflicted Files"
   panel on the right hand side.
 * Select a file with a conflict. That should bring up a GUI for resolving
-  merge conflicts with one version (`main` in this case) on the top left,
+  merge conflicts with one version (`main` in this case) on the top right,
   the version were trying to merge in (e.g., `pat-and-chris-greetings`) on
-  the top right, and the `Output` (the result of the merge) at the bottom.
+  the top left, and the `Output` (the result of the merge) at the bottom.
 
-![](./docs/images/conflict-in-gitkraken.png)
+![Example of GitKraken's merge conflict tool](./docs/images/conflict-in-gitkraken.png)
 
 * You can then choose sections (using the checkboxes) that you want to include
   in the finished result. You can even choose to include (or not include)
-  individual lines if you wish.
+  individual lines if you wish. The sections or lines you select
+  will be added to the result below in the order in which you
+  select them.
 
-![](./docs/images/resolved-in-gitkraken.png)
+![Illustration of selecting lines to include in resolving a merge conflict in GitKraken](./docs/images/resolved-in-gitkraken.png)
 
 * When you're done click `Save`.
 * That will move that file to "Staged Files", and you can commit the changes
   like normal.
 
-![](docs/images/after-merging.png)
+![Result of resolving a merge conflict in GitKraken](docs/images/after-merging.png)
 
 ### Push your feature branch to GitHub
 
