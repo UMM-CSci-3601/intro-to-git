@@ -64,7 +64,7 @@ Suppose you're working on a new feature, and you have all of your changes in a b
 merged the change into `main`. To make sure the bugfix is on your feature
 branch as well, you'll want to merge `main` into `my-cool-feature`.
 
-![Diagram of a development branch that's being `main`](./docs/images/before-merging.png)
+![Diagram of a development branch that's out of date with `main`](./docs/images/before-merging.png)
 
 Since the `my-cool-feature` branch doesn't include all of the latest changes to
 `main`, we say that it's _out of date_. You want your feature branch to be
@@ -174,7 +174,7 @@ The sequence of events in GitKraken is likely to look something like:
   panel on the right hand side.
 * Select a file with a conflict. That should bring up a GUI for resolving
   merge conflicts with one version (`main` in this case) on the top right,
-  the version were trying to merge in (e.g., `pat-and-chris-greetings`) on
+  the version we're trying to merge in (e.g., `my-cool-feature`) on
   the top left, and the `Output` (the result of the merge) at the bottom.
 
 ![Example of GitKraken's merge conflict tool](./docs/images/conflict-in-gitkraken.png)
