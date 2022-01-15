@@ -1,7 +1,12 @@
-# How we're using Gradle
+# How we're using Gradle <!-- omit in toc -->
 
 We're using [the Gradle build tool](https://gradle.org/) to help automate
 building, testing, and deploying our projects throughout this class.
+
+- [Setting up Gradle](#setting-up-gradle)
+- [Running Gradle](#running-gradle)
+  - [Gradle on the command line](#gradle-on-the-command-line)
+  - [Gradle in VS Code](#gradle-in-vs-code)
 
 ## Setting up Gradle
 
@@ -86,16 +91,16 @@ To run tasks with Gradle Wrapper, use `./gradlew <task>` in the top-level
 directory of the project. There are a _lot_ of tasks; some of particular
 interest include:
 
-* `./gradlew run` will run your application.
-* `./gradlew build` will compile all your files.
-* `./gradlew clean` will delete all the generated files (e.g., `.class`
+- `./gradlew run` will run your application.
+- `./gradlew build` will compile all your files.
+- `./gradlew clean` will delete all the generated files (e.g., `.class`
   files), which can be helpful when it looks like you need to force a
   rebuild. It's also a nice thing to do when you're done working on a
   project for a while and want to clean up some disk space.
-* `./gradlew jar` will generate a standalone JAR file for your application.
-* `./gradlew check` will make sure everything builds and the tests
+- `./gradlew jar` will generate a standalone JAR file for your application.
+- `./gradlew check` will make sure everything builds and the tests
   all pass.
-* etc., etc.
+- etc., etc.
 
 ### Gradle in VS Code
 
@@ -108,12 +113,12 @@ That will have a "folder" with the name of the repo (`intro-to-git` or
 similar in this case). That which will contain many other folders
 containing specific tasks. Some of particular interest:
 
-* _application -> run_ will run your application
-* _build -> build_ will compile all your files
-* _build -> clean_ will delete all the generated files (e.g., `.class`
+- _application -> run_ will run your application
+- _build -> build_ will compile all your files
+- _build -> clean_ will delete all the generated files (e.g., `.class`
   files), which can be helpful when it looks like you need to force a
   rebuild. It's also a nice thing to do when you're done working on a
   project for a while and want to clean up some disk space.
-* _build -> jar_ will generate a standalone JAR file for your application
-* _verification -> check_ will make sure everything builds and the tests
+- _build -> jar_ will generate a standalone JAR file for your application
+- _verification -> check_ will make sure everything builds and the tests
   all pass

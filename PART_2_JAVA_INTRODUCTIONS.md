@@ -14,7 +14,7 @@
     - [You need a review](#you-need-a-review)
     - [Review some other pull requests](#review-some-other-pull-requests)
     - [Process the code reviews you receive](#process-the-code-reviews-you-receive)
-  - [Finally merge your pull request!](#finally-merge-your-pull-request)
+  - [Finally merge your pull request](#finally-merge-your-pull-request)
 - [Huzzah! We're done! :-)](#huzzah-were-done--)
 
 :bangbang: Don't move on to this next part until _everyone_ is done with
@@ -57,8 +57,8 @@ Open up GitKraken. If this is your first time starting GitKraken it will ask you
 to sign in, providing several options. You want to sign in with your GitHub account
 as this will do two important things:
 
-* It will allow GitKraken to push/pull/etc. with GitHub on your behalf.
-* [**Assuming you've set up your GitHub Student Pack**](https://education.github.com/pack),
+- It will allow GitKraken to push/pull/etc. with GitHub on your behalf.
+- [**Assuming you've set up your GitHub Student Pack**](https://education.github.com/pack),
   this will automagically give you a Pro account on GitKraken, which includes
   some nice features that you'll want to have, like an interactive tool
   for resolving merge conflicts. :bangbang: _If you haven't set up your
@@ -331,12 +331,12 @@ Every time you (or anyone else) pushes to GitHub, we have GitHub Actions
 set up so they run the JUnit tests against that version of the code.
 The meaning of these symbols is:
 
-* ![GitHub's orange in-progress circle][orange-circle]:
+- ![GitHub's orange in-progress circle][orange-circle]:
   The yellow dot means that it's still building and running the tests and checks.
-* ![GitHub's green success check mark][green-check]: A green
+- ![GitHub's green success check mark][green-check]: A green
   check mark means it's done and everything was great (the code compiled,
   the tests passed, and any other checks passed as well).
-* ![GitHub's red failure x][red-x]: A red x means that
+- ![GitHub's red failure x][red-x]: A red x means that
   something bad happened like a test failed.
   
 If you click on any of these symbols on the GitHub page, you can get
@@ -379,11 +379,11 @@ more messages in a light yellow box near the top that say something like:
 If you pushed recently, then one of these messages may will be about your
 branch.
 
-* If there is such a message for your branch, click "Compare & pull request".
-* If there isn't a message for your branch:
-  * Select your branch from the branch dropdown. Then there should be a message
+- If there is such a message for your branch, click "Compare & pull request".
+- If there isn't a message for your branch:
+  - Select your branch from the branch dropdown. Then there should be a message
     for your branch.
-  * Click "Compare & pull request".
+  - Click "Compare & pull request".
 
 That will bring up the page for creating pull requests, filling in some of the
 information based on your commits on that branch. You want to fill in the title
@@ -406,9 +406,9 @@ an official part of the project. You can't do it yet, though – the "Merge pull
 request" button down at the bottom is grayed out. Before you can merge, at least
 two things must be true:
 
-* A set of automated checks have to pass
-* Your pull request/branch has to be up-to-date with `main`
-* At least one person has to review _and accept_ your pull request
+- A set of automated checks have to pass
+- Your pull request/branch has to be up-to-date with `main`
+- At least one person has to review _and accept_ your pull request
 
 #### Automated checks
 
@@ -416,12 +416,12 @@ We use a feature called GitHub Actions to automate a set of checks on the lab
 and project repositories in this course. All those checks have to pass before
 you can merge in your pull request. For this lab we have three checks:
 
-* "Java_CI/build": This automatically runs the tests (essentially doing
+- "Java_CI/build": This automatically runs the tests (essentially doing
   `./gradlew test`) and passes (gives you a green check mark) if the tests
   pass, and fails (gives you a red x) if the tests fail.
-* "LGTM analysis: Java": This performs an automated "statement-level" analysis
+- "LGTM analysis: Java": This performs an automated "statement-level" analysis
   of the Java code.
-* "Better Code Hub": This performs a more "big picture" analysis of the
+- "Better Code Hub": This performs a more "big picture" analysis of the
   project's code.
 
 So have a look at the bottom of your pull request and you should see info on
@@ -435,12 +435,12 @@ you push.
 If any of the checks fail (give you a red x), then you probably want to click on
 "Details" by that check to learn more about what might have failed.
 
-* If the tests failed, it's likely that you either didn't structure your
+- If the tests failed, it's likely that you either didn't structure your
   greeting correctly, or you didn't put it in the correct place so that all
   greetings are in alphabetical order. You should probably run the tests again
   on your computer, where you'll get more information on which test failed and
   why. If you're unsure how to proceed _definitely ask for some help!_
-* If either LGTM or Better Code Hub is grumpy, definitely click the "Details"
+- If either LGTM or Better Code Hub is grumpy, definitely click the "Details"
   link, and you'll see more information about what they're not happy about.
   If you understand the problem and how to possibly fix it, that's great.
   If you don't, however, that's totally fine and you should definitely ask
@@ -497,11 +497,11 @@ look like in the `main` branch.
 
 There are numerous ways this conflict could have come about, such as:
 
-* Chris wants to change the line from calling `patSaysHello()` to
+- Chris wants to change the line from calling `patSaysHello()` to
   instead called the (supposedly different) method `chrisSaysHello()`.
-* Chris has renamed `patSaysHello()` to `chrisSaysHello()`, and wants to change
+- Chris has renamed `patSaysHello()` to `chrisSaysHello()`, and wants to change
   the call to match this renaming.
-* Chris wants to make _both_ function calls (in some order, which `git` couldn't
+- Chris wants to make _both_ function calls (in some order, which `git` couldn't
   begin to guess).
 
 Here `git` can't tell which of these happened, and thus can't "know" how to
@@ -569,15 +569,15 @@ There's a _lot_ you can do here (read up on this), but for the moment we'll just
 look over the code and make sure the changes look reasonable. Some things to
 check for:
 
-* [ ] Does it look (by eye) that this will print all the greetings in alphabetical
+- [ ] Does it look (by eye) that this will print all the greetings in alphabetical
   order? (The tests check that for sure, but you should always be thinking about
   correctness as well.)
-* [ ] Do any new methods they're adding have reasonable names that convey useful
+- [ ] Do any new methods they're adding have reasonable names that convey useful
   info to the reader?
-* [ ] Are new method names in camel cases, starting in lowercase (the Java standard
+- [ ] Are new method names in camel cases, starting in lowercase (the Java standard
   for method names)?.
-* [ ] Is the implementation of the any new methods reasonable?
-* [ ] Is the spacing and indentation uniform and consistent with the rest of the file?
+- [ ] Is the implementation of the any new methods reasonable?
+- [ ] Is the spacing and indentation uniform and consistent with the rest of the file?
 
 Etc., etc.
 
@@ -602,7 +602,7 @@ While you're waiting for them to re-review your pull request, check and make sur
 no one else is waiting for you to re-review code reviews you left on their pull
 requests!
 
-### Finally merge your pull request!
+### Finally merge your pull request
 
 Let's assume you've _finally_ gotten all the checks to pass, you're up to date
 with `main`, and you've gotten a positive pull request. Now the green

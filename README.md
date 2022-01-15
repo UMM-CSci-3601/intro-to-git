@@ -7,14 +7,14 @@
 > Each semester _after creating the instance in GitHub Classroom_,
 > we need to (in the GitHub Classroom "fork"):
 >
-> * [ ] Fix the URLs in the badges
+> - [ ] Fix the URLs in the badges
 > below so they point to that semester's repository instead of the
 > "starter" repo.
-> * [ ] Make sure we've added every student in the current semester
+> - [ ] Make sure we've added every student in the current semester
 > to that semester's organization so they'll have permission to push to
 > this repo.
-> * [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md) so that students can `push`.
-> * [ ] Remove this note and the broken badge above in the fork.
+> - [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md) so that students can `push`.
+> - [ ] Remove this note and the broken badge above in the fork.
 >
 > We should leave these notes in the copy in the "starter"
 > repository so it's there each semester when we fork this.
@@ -27,7 +27,7 @@
   - [Resources for learning `git` and friends](#resources-for-learning-git-and-friends)
   - [How we're going to use `git`](#how-were-going-to-use-git)
   - [Configuring your `git` e-mail](#configuring-your-git-e-mail)
-- [We're ready to start the lab :grin:](#were-ready-to-start-the-lab-grin)
+- [We're ready to start the lab](#were-ready-to-start-the-lab)
 
 ## Background
 
@@ -76,19 +76,19 @@ Below are some resources that you might want to look at right away
 to help you get up to speed on `git` and its
 friends:
 
-* A few of the _many_ GitHub tutorials and
+- A few of the _many_ GitHub tutorials and
   docs. There are a _lot_ more than just these, but these are short and pretty easy to spin through, and cover the key concepts we’ll need at the beginning of the semester.
-  * [GitHub Hello World](https://guides.github.com/activities/hello-world/) (a really nice,
+  - [GitHub Hello World](https://guides.github.com/activities/hello-world/) (a really nice,
     short introduction to the key ideas)
-  * [Getting started with GitHub](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github)
-  * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-  * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-    * Markdown is the markup language used
+  - [Getting started with GitHub](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github)
+  - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
+  - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+    - Markdown is the markup language used
       by Slack, GitHub, and _many_ other
       online tools, so understanding at least
       the basics is really valuable.)
-* [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
-  * The beginner tutorials would be the
+- [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
+  - The beginner tutorials would be the
     obvious place to start; over time,
     though, we’d encourage you to work through
     the more advanced ones.
@@ -104,12 +104,12 @@ want to (re)visit over time as you become more
 experienced with `git` and want to use some of
 its more advanced features.
 
-* The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
-* [The "standard" `git` documentation site](https://git-scm.com/documentation),
+- The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
+- [The "standard" `git` documentation site](https://git-scm.com/documentation),
 which also includes links to videos, cheat sheets, and such
-* [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
+- [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
 a single-page app that goes through the major features of `git`
-* [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
+- [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
 
 As circumstances allow, you might also want to at least skim one or two of the
 tutorials listed above.
@@ -139,14 +139,14 @@ everyone has a chance to go through all the activities.~~
 a team of developers to work together on a project, helping manage
 collaboration and change. We're going to use three related tools:
 
-* `git` is the fundamental program (originally developed to help manage the Linux
+- `git` is the fundamental program (originally developed to help manage the Linux
   operating system codebase) that underlies the next two tools. It
   organizes projects into _repositories_, which are collections of files and
   histories of all the changes ever made to that project. It is a command
   line tool.
-* GitKraken is a GUI for `git` that provides a nice visual interface to `git`
+- GitKraken is a GUI for `git` that provides a nice visual interface to `git`
   and display of complex things like `git` histories and branching.
-* _GitHub_ is a web-based software service that allows people
+- _GitHub_ is a web-based software service that allows people
   to host, search, and use repositories created and managed with `git`.
 
 You could use `git` without ever using GitKraken or GitHub. We've found that a
@@ -158,8 +158,8 @@ use GitHub to manage all your labs and project iterations in this course.
 
 This lab essentially has two halves:
 
-* Adding your names in separate Markdown files
-* Adding your greetings in the Java code
+- Adding your names in separate Markdown files
+- Adding your greetings in the Java code
 
 We'll use command line `git` for the first half so you have some exposure to
 using `git` on the command line. This is important because you don't always
@@ -188,8 +188,8 @@ two commands and confirm that they return the email you used when
 you created your GitHub account, and your user name as you'd like it
 to be displayed in things like commit messages and on GitHub:
 
-* `git config --global user.email`
-* `git config --global user.name`
+- `git config --global user.email`
+- `git config --global user.name`
 
 If both of those look right, ignore the rest of this. You're done
 with the setup and ready to start the first half of the lab exercise!
@@ -213,12 +213,12 @@ account](https://help.github.com/articles/setting-your-commit-email-address-in-g
 You only need to do this once and it will "stick" throughout the course
 (and beyond) in all systems that use `git`.
 
-* Open a terminal window
-  * :mask: On Macs and Linux boxes use the Terminal app. On Windows use PowerShell.
-* Type `git config --global user.email "email@example.com"` where
+- Open a terminal window
+  - :mask: On Macs and Linux boxes use the Terminal app. On Windows use PowerShell.
+- Type `git config --global user.email "email@example.com"` where
   you replace `email@example.com` with the email you used to set up
   your GitHub account.
-* Verify that it worked by typing `git config --global user.email`;
+- Verify that it worked by typing `git config --global user.email`;
   you should get the address you just configured as the response.
 
 If you want to use a different e-mail address than the one you
@@ -233,12 +233,12 @@ on those machines as well. This will ensure that no matter where
 you commit from, `git` and GitHub will "know" it's you and properly
 credit you for your work.
 
-## We're ready to start the lab :grin:
+## We're ready to start the lab
 
 There are two parts to the lab:
 
-* In [the first part](PART_1_SHARE_INFO.md) we'll all share some info through `git`
-* In [the second part](PART_2_JAVA_INTRODUCTIONS.md) we'll take it up a notch and
+- In [the first part](PART_1_SHARE_INFO.md) we'll all share some info through `git`
+- In [the second part](PART_2_JAVA_INTRODUCTIONS.md) we'll take it up a notch and
   collectively edit a single Java program, using `git` to manage all the possible
   conflicts that might arise.
 

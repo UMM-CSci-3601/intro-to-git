@@ -178,11 +178,11 @@ class that is, especially if you don't always wear your wizarding regalia to lab
 There will be several steps to this process, each of which is described in
 more detail below:
 
-* Create your contact info file/page.
-* `commit` that to your local copy of the repository.
-* `pull` down the changes other people may have made to the central repository on
+- Create your contact info file/page.
+- `commit` that to your local copy of the repository.
+- `pull` down the changes other people may have made to the central repository on
   GitHub while you were working, `merging` them with your changes.
-* `push` your (merged) changes back up to GitHub so they're available to everyone.
+- `push` your (merged) changes back up to GitHub so they're available to everyone.
 
 ### Creating a page
 
@@ -192,25 +192,25 @@ new file with the appropriate contact info).
 There are a number of different ways to create a new file in VS Code. A nice
 approach is:
 
-* Go to the Explorer (top icon in the left tool bar).
-* Open up directories (i.e., folders) until you can see the directory
+- Go to the Explorer (top icon in the left tool bar).
+- Open up directories (i.e., folders) until you can see the directory
   you want the new file to go in.
-* Right click on that directory and choose "New File".
-* Enter its name (see below for naming rules for this step). Make sure
+- Right click on that directory and choose "New File".
+- Enter its name (see below for naming rules for this step). Make sure
   to include the appropriate extension (e.g., `.md` or `java`) so
   VS Code will know how to color code and check the file's contents.
-* Press Enter/Return and VS Code will create your new (empty) file
+- Press Enter/Return and VS Code will create your new (empty) file
   and open an editing pane for you to start working in it.
 
 Each contact info page should:
 
-* Be created in the `user_info` directory.
-* :zzz: ~~Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`~~
-* :mask: Be named `<your_name>.md`, e.g., `Pat.md`
-* Contain at least:
-  * Your preferred name~~s~~ (e.g., "Nic" or "KK")
-  * [Your preferred pronouns](https://www.mypronouns.org/)
-  * Your GitHub username~~s~~ (so we can figure out who `UnicornWizard375`
+- Be created in the `user_info` directory.
+- :zzz: ~~Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`~~
+- :mask: Be named `<your_name>.md`, e.g., `Pat.md`
+- Contain at least:
+  - Your preferred name~~s~~ (e.g., "Nic" or "KK")
+  - [Your preferred pronouns](https://www.mypronouns.org/)
+  - Your GitHub username~~s~~ (so we can figure out who `UnicornWizard375`
     is in real life)
 
 Feel free to use the file `KK_and_Nic.md` as a model, :mask: although
@@ -276,17 +276,17 @@ accident.
 git commit
 ```
 
-* This will bring up an editor for you to enter
+- This will bring up an editor for you to enter
   your commit message.
-  * What editor you get will depend on the configuration of your system, and you
+  - What editor you get will depend on the configuration of your system, and you
     can configure `git` to use the editor of your choice (see below).
-  * This may be the command line `vi/vim` editor for many people;
+  - This may be the command line `vi/vim` editor for many people;
     ask for help if you find yourself [trapped in `vim`](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/) and [can't seem
     to escape](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
-* You can also use `git commit -m "Your cool commit message"` to
+- You can also use `git commit -m "Your cool commit message"` to
   avoid being sent to an editor. We _strongly_ discourage this,
   however, as people rarely enter useful one-line commit messages.
-* If `vi/vim` bugs you, you should probably set your default
+- If `vi/vim` bugs you, you should probably set your default
   `git` editor to something you like. [This GitHub help page](https://help.github.com/articles/associating-text-editors-with-git/)
   shows you how to set various GUI editors like `atom`, but you
   could also use something like `git config --global core.editor nano`
