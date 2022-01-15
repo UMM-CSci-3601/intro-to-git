@@ -1,21 +1,21 @@
 # The second half: Collectively editing a program <!-- omit in toc -->
 
-* [Open GitKraken](#open-gitkraken)
-* [Creating a branch](#creating-a-branch)
-* [Edit the program](#edit-the-program)
-* [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
-  * [Commit with GitKraken](#commit-with-gitkraken)
-  * [Push with GitKraken](#push-with-gitkraken)
-* [Create a pull request to merge your changes into `main`](#create-a-pull-request-to-merge-your-changes-into-main)
-  * [Create a pull request](#create-a-pull-request)
-  * [You can't merge yet](#you-cant-merge-yet)
-    * [Automated checks](#automated-checks)
-    * [You might need to merge in changes from `main`](#you-might-need-to-merge-in-changes-from-main)
-    * [You need a review](#you-need-a-review)
-    * [Review some other pull requests](#review-some-other-pull-requests)
-    * [Process the code reviews you receive](#process-the-code-reviews-you-receive)
-  * [Finally merge your pull request!](#finally-merge-your-pull-request)
-* [Huzzah! We're done! :-)](#huzzah-were-done--)
+- [Open GitKraken](#open-gitkraken)
+- [Creating a branch](#creating-a-branch)
+- [Edit the program](#edit-the-program)
+- [Commit and Push your branch to GitHub](#commit-and-push-your-branch-to-github)
+  - [Commit with GitKraken](#commit-with-gitkraken)
+  - [Push with GitKraken](#push-with-gitkraken)
+- [Create a pull request to merge your changes into `main`](#create-a-pull-request-to-merge-your-changes-into-main)
+  - [Create a pull request](#create-a-pull-request)
+  - [You can't merge yet](#you-cant-merge-yet)
+    - [Automated checks](#automated-checks)
+    - [You might need to merge in changes from `main`](#you-might-need-to-merge-in-changes-from-main)
+    - [You need a review](#you-need-a-review)
+    - [Review some other pull requests](#review-some-other-pull-requests)
+    - [Process the code reviews you receive](#process-the-code-reviews-you-receive)
+  - [Finally merge your pull request!](#finally-merge-your-pull-request)
+- [Huzzah! We're done! :-)](#huzzah-were-done--)
 
 :bangbang: Don't move on to this next part until _everyone_ is done with
 the previous part.
@@ -23,7 +23,7 @@ the previous part.
 > :bangbang: :mage_woman: **Faculty**
 >
 > When the students get this part of the lab, we'll need to
-> [turn on branch protections](FACULTY_BRANCH_PROTECTION_SETTINGS.md).
+> [turn on branch protections](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md).
 > This will ensure that the checks will be run against
 > all pull requests and merging will be blocked if,
 > e.g., the tests fail or there aren't enough code
@@ -523,6 +523,8 @@ Chris clicks "Mark as resolved", and then the button to commit the merged change
 complex than this, and trickier to resolve. The Pro version of GitKraken (which you
 got through the GitHub Student Pack) actually has a very nice GUI for resolving merge
 conflicts, and you'd probably rather use that for more complex conflicts.
+See [our write-up on using GitKraken to deal with merge conflicts](docs/MERGE_CONFLICTS.md)
+for more examples and details.
 
 :warning: :bangbang: At this point Chris (or you if you've been doing something
 similar) will need to pull these changes back down to your copy if you want

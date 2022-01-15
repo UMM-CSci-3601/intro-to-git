@@ -1,23 +1,23 @@
 # The first half: Adding our names <!-- omit in toc -->
 
-* [`clone` a local copy of the repository](#clone-a-local-copy-of-the-repository)
-  * [Join our GitHub Classroom team; get your clone URL](#join-our-github-classroom-team-get-your-clone-url)
-  * [Command line `clone`](#command-line-clone)
-* [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
-* [Opening our project in VS Code](#opening-our-project-in-vs-code)
-  * [Install recommended extensions](#install-recommended-extensions)
-  * [Have a look at the project](#have-a-look-at-the-project)
-* [Create an info page :zzz: ~~for each pair~~](#create-an-info-page-zzz-for-each-pair)
-  * [Creating a page](#creating-a-page)
-  * [`commit` your changes (locally)](#commit-your-changes-locally)
-  * [`push`ing your work to GitHub](#pushing-your-work-to-github)
+- [`clone` a local copy of the repository](#clone-a-local-copy-of-the-repository)
+  - [Join our GitHub Classroom team; get your clone URL](#join-our-github-classroom-team-get-your-clone-url)
+  - [Command line `clone`](#command-line-clone)
+- [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
+- [Opening our project in VS Code](#opening-our-project-in-vs-code)
+  - [Install recommended extensions](#install-recommended-extensions)
+  - [Have a look at the project](#have-a-look-at-the-project)
+- [Create an info page :zzz: ~~for each pair~~](#create-an-info-page-zzz-for-each-pair)
+  - [Creating a page](#creating-a-page)
+  - [`commit` your changes (locally)](#commit-your-changes-locally)
+  - [`push`ing your work to GitHub](#pushing-your-work-to-github)
 
 In this part of the lab we'll add everyone's names and GitHub usernames to the
 repository so we'll be able to figure out who GitHub user `MightyWombat259`
 is in real life.
 
 > :exclamation: :mage_woman: **Faculty** need to make sure that
-> [branch protection check and review requirements are _off_](FACULTY_BRANCH_PROTECTION_SETTINGS.md)
+> [branch protection check and review requirements are _off_](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md)
 > for this first part of the lab or students won't be
 > able to push directly to `main`
 
