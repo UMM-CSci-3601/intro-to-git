@@ -2,7 +2,7 @@
  * This file contains the Gradle setup for a simple Java application project.
  *
  * For more details take a look at the 'Building Java & JVM projects' chapter in the Gradle
- * User Manual available at https://docs.gradle.org/6.8/userguide/building_java_projects.html
+ * User Manual available at https://docs.gradle.org/7.3/userguide/building_java_projects.html
  */
 
 plugins {

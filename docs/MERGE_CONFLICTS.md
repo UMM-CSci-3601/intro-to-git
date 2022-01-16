@@ -36,22 +36,22 @@ Dealing with merge conflicts, especially complex ones, can be a real headache,
 but these tips can help reduce the likelihood of pain arising from
 merge conflicts:
 
-* Merge changes into your development branch(es) early and often. The
+- Merge changes into your development branch(es) early and often. The
   more consistent your branch is with `main` (or whatever branch you're going to
   merge into), the less likely there will be conflicts, and
   they'll tend to be smaller when they do happen. The
   history/branch visualization in GitKraken can
   give you a sense of how far your branch is from what's on `main`.
-* Break your work into small, manageable stories/tasks/chunks. Small,
+- Break your work into small, manageable stories/tasks/chunks. Small,
   well-defined bits of work tend to touch less code and be completed more
   quickly, both of which reduce the likelihood of a nasty conflict surprise
   when you come to merge.
-* Give yourself plenty of time to merge into `main`. You don't want to decide
+- Give yourself plenty of time to merge into `main`. You don't want to decide
   you're going to merge into `main` at 2am or 15 minutes before Food Service
   closes for dinner; if there's an unexpected conflict you don't have the
   time and energy to deal with it properly and your chances are much higher that
   you'll do something you'll regret.
-* Don't do (big) merges alone (or at least make sure other folks are around).
+- Don't do (big) merges alone (or at least make sure other folks are around).
   This relates to the previous tip. If you're caught off guard by a conflict,
   and you're in a hurry, and there's no one around to help you understand how
   your changes relate to and will affect changes other people have made,
@@ -103,19 +103,19 @@ your copy.
 
 The basic process you'll typically want to follow is:
 
-* Make sure all your changes on your feature branch are committed locally.
-  * In GitKraken if there's no `WIP` entry at the top then you know all your changes are
+- Make sure all your changes on your feature branch are committed locally.
+  - In GitKraken if there's no `WIP` entry at the top then you know all your changes are
     committed. If there is an `WIP` entry, you can click on it to see what's
     not yet committed. (There can be times where you have changes you don't
     yet want to commit, but these can interfere with the process. Feel free
     to create a _stash_ as a way to temporarily store those changes so you
     can get them back later.)
-  * Or use `git status` on the command line to confirm that everything you
+  - Or use `git status` on the command line to confirm that everything you
     mean to have committed is in fact committed.
-* Check out the `main` branch
-  * Double click on `main` in the branch listing on the left-hand side
+- Check out the `main` branch
+  - Double click on `main` in the branch listing on the left-hand side
     of GitKraken.
-  * Or `git checkout main` on the command line
+  - Or `git checkout main` on the command line
 
 At this point you should be on the `main` branch, and all your work
 on your new feature should "disappear" in VS Code. Don't worry, it's still
@@ -124,8 +124,8 @@ visible when we have `main` checked out.
 
 Next, you'll want to get the new changes from GitHub.
 
-* Click the `Pull` button in GitKraken,
-* Or run `git pull` on the command line.
+- Click the `Pull` button in GitKraken,
+- Or run `git pull` on the command line.
 
 Assuming you've _only_ made changes to your group's special development
 branch, this `pull` should succeed with no difficulties, and `git` will
@@ -138,15 +138,16 @@ VS Code, though, just to make sure someone hasn't broken things.
 Now we have the moment of truth, where you merge the changes on `main` into
 your feature branch.
 
-* In GitKraken, drag the label with the branch name that you want to merge
+- In GitKraken, drag the label with the branch name that you want to merge
   (e.g., `main`) onto the branch you want to merge into (in this case
   `my-cool-feature`). That will bring up a dialog with several options.
   Go with the first one (probably "Merge", but possibly "Fast-forward").
-* On the command line, run<br>`git checkout my-cool-feature`<br>to check out the
-  feature branch, and then run<br>`git merge main`<br>to merge in the new changes
-  from main.
-  * On the command line, `git merge <branch-name>` will merge the specified
-    branch into whichever branch is currently checked out.
+- On the command line
+  - Run `git checkout my-cool-feature` to check out the
+  feature branch
+  - Then run `git merge main` to merge in the new changes from `main`.
+    - On the command line, `git merge <branch-name>` will merge the specified
+      branch into whichever branch is currently checked out.
 
 If you're lucky, any changes you've made won't conflict
 with changes other people have made and the merge will succeed immediately.
@@ -164,22 +165,22 @@ GitKraken here, but you should feel free to use whichever you find most useful.
 
 The sequence of events in GitKraken is likely to look something like:
 
-* The attempt to `merge` will lead to a conflict; you'll have a message like
+- The attempt to `merge` will lead to a conflict; you'll have a message like
   "A file conflict was found when attempting to merge" up at the top of the
   commit history graph.
 
 ![Diagram showing conflict after a merge](images/while-merging.png)
 
-* All the files with merge conflicts will be listed in the "Conflicted Files"
+- All the files with merge conflicts will be listed in the "Conflicted Files"
   panel on the right hand side.
-* Select a file with a conflict. That should bring up a GUI for resolving
+- Select a file with a conflict. That should bring up a GUI for resolving
   merge conflicts with one version (`main` in this case) on the top right,
   the version we're trying to merge in (e.g., `my-cool-feature`) on
   the top left, and the `Output` (the result of the merge) at the bottom.
 
 ![Example of GitKraken's merge conflict tool](images/conflict-in-gitkraken.png)
 
-* You can then choose sections (using the checkboxes) that you want to include
+- You can then choose sections (using the checkboxes) that you want to include
   in the finished result. You can even choose to include (or not include)
   individual lines if you wish. The sections or lines you select
   will be added to the result below in the order in which you
@@ -187,8 +188,8 @@ The sequence of events in GitKraken is likely to look something like:
 
 ![Illustration of selecting lines to include in resolving a merge conflict in GitKraken](images/resolved-in-gitkraken.png)
 
-* When you're done click `Save`.
-* That will move that file to "Staged Files", and you can commit the changes
+- When you're done click `Save`.
+- That will move that file to "Staged Files", and you can commit the changes
   like normal.
 
 ![Result of resolving a merge conflict in GitKraken](images/after-merging.png)

@@ -1,7 +1,7 @@
 # Branch protection settings for this lab <!-- omit in toc -->
 
-* [Preparing for the first part (before the lab starts)](#preparing-for-the-first-part-before-the-lab-starts)
-* [Switching things for the second part](#switching-things-for-the-second-part)
+- [Preparing for the first part (before the lab starts)](#preparing-for-the-first-part-before-the-lab-starts)
+- [Switching things for the second part](#switching-things-for-the-second-part)
 
 > :mage_woman: This documentation is primarily for the faculty (and
 > possibly TAs) running this lab. If it's useful for students, though,
@@ -9,9 +9,9 @@
 
 There are two main parts to this lab:
 
-* The first part, where students just commit new, separate Markdown
+- The first part, where students just commit new, separate Markdown
   files.
-* The second part, where students commit changes to a shared Java file.
+- The second part, where students commit changes to a shared Java file.
 
 ## Preparing for the first part (before the lab starts)
 
@@ -28,7 +28,7 @@ To check this, go to the GitHub web interface for the (copied) repository
 and go to "Settings > Branches". If there's no branch protection rule
 for `main` then everything's fine. If there is, however, click "Edit"
 for that rule and then _uncheck everything_. That will leave some
-minimal protection (students won't be able to force push to `main` or 
+minimal protection (students won't be able to force push to `main` or
 delete the `main` branch), but there won't be any requirements for
 pull requests, checks to pass, or code reviews. Requiring things
 like pull requests, for example, would break lots of things when
@@ -49,18 +49,18 @@ protection to be enforcing the checks and code reviews.
 So after the first part is all done and before the second part starts,
 you'll want to go to "Settings > Branches" and enable branch protection:
 
-* [ ] Click the "Add rule" button
-* [ ] Enter `main` in the "Branch name pattern box"
+- [ ] Click the "Add rule" button
+- [ ] Enter `main` in the "Branch name pattern box"
 
 Then go through and check/enable the following options:
 
-* [ ] "Require pull request reviews before merging"
-  * [ ] Set the number of required approving reviews to 2
-  * [ ] "Dismiss stale pull request approvals when new commits are pushed"
-  * [ ] "Restrict who can dismiss pull request reviews"
-* [ ] "Require status checks to pass before merging"
-  * [ ] "Require branches to be up to date before merging"
-  * [ ] Check each of "Better Code Hub", "LGTM analysis: Java", and
+- [ ] "Require pull request reviews before merging"
+  - [ ] Set the number of required approving reviews to 2
+  - [ ] "Dismiss stale pull request approvals when new commits are pushed"
+  - [ ] "Restrict who can dismiss pull request reviews"
+- [ ] "Require status checks to pass before merging"
+  - [ ] "Require branches to be up to date before merging"
+  - [ ] Check each of "Better Code Hub", "LGTM analysis: Java", and
         "build" to turn those checks on.
 
 This should prevent anyone from directly committing to `main`, forcing

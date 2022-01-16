@@ -7,7 +7,7 @@
 - [Opening our project in VS Code](#opening-our-project-in-vs-code)
   - [Install recommended extensions](#install-recommended-extensions)
   - [Have a look at the project](#have-a-look-at-the-project)
-- [Create an info page :zzz: ~~for each pair~~](#create-an-info-page-zzz-for-each-pair)
+- [Create an info page for each group](#create-an-info-page-for-each-group)
   - [Creating a page](#creating-a-page)
   - [`commit` your changes (locally)](#commit-your-changes-locally)
   - [`push`ing your work to GitHub](#pushing-your-work-to-github)
@@ -23,9 +23,9 @@ is in real life.
 
 ## `clone` a local copy of the repository
 
-Before we can start working on the lab proper, each ~~group~~ :mask: person will need to
+Before we can start working on the lab proper, each group will need to
 `clone` the GitHub repository so they have a local copy to work with. There
-will only be one copy of the repository on GitHub, but each ~~group~~ :mask: person should obtain
+will only be one copy of the repository on GitHub, but each group should obtain
 a clone on whatever machine they're working on, so there will be lots of
 local copies. Each of those local copies will be completely independent, and
 will only share changes through explicit interactions with the GitHub
@@ -38,7 +38,7 @@ to manage team repositories.
 For each project we'll post a GitHub Classroom URL on the assignment on Canvas;
 you'll use that to create/join your team for that lab. GitHub Classroom
 will create a copy on GitHub for your team of our starter
-repository; your team will use as the starting point for your work.
+repository; your team will use that as the starting point for your work.
 
 This lab is unusual in that we will all be on a single large team called
 __Everyone__, all making changes to a single shared repository. This will
@@ -87,7 +87,7 @@ _in_ the directory containing your clone of the repo (i.e., you're in the
 ./gradlew run
 ```
 
-:mask: This may spend a little time downloading dependencies; how long this takes
+This may spend a little time downloading dependencies; how long this takes
 will depend on the configuration of your computer, your networking speed, etc.
 It will eventually run our program, which should generate output that
 looks something like
@@ -106,7 +106,7 @@ BUILD SUCCESSFUL in 3s
 To run the tests try
 
 ```bash
-./gradlew test
+./gradlew check
 ```
 
 which should generate output something like
@@ -117,8 +117,6 @@ BUILD SUCCESSFUL in 827ms
 ```
 
 If a test had failed, you would have gotten longer, more detailed information.
-(Although you get better info from running the tests in VS Code – we'll see that
-in a bit.)
 
 ## Opening our project in VS Code
 
@@ -139,7 +137,8 @@ install them one at a time if you want to know more about what we're doing here.
 
 ### Have a look at the project
 
-Open up `src -> main/java/hellos -> Hellos.java` and you should see a small
+In the file explorer on the left of the VS Code window,
+open up `src -> main/java/hellos -> Hellos.java` and you should see a small
 Java program. Now open up `src -> test/java/hellos -> HellosTest.java` and you
 should see our JUnit tests.
 
@@ -157,20 +156,20 @@ to do anything you could have done in an "external" terminal window. This
 includes things like:
 
 ```bash
-./gradlew test
+./gradlew check
 ```
 
 to run your tests from "inside" VS Code; you should get the same output you
 got earlier when you ran Gradle commands in an external terminal.
 
-## Create an info page :zzz: ~~for each pair~~
+## Create an info page for each group
 
 We'll come back to this Java code again in the second half of the lab, but
 for now we're going to return to how we'll use `git` to make and share changes.
 
 This repository has a `user_info` directory, and in this part of the
-lab we'll create a new file in that directory for each :mask: ~~pair~~ person in the
-class containing your real names and your GitHub user names. Sometimes
+lab we'll create a new file in that directory for each group, each of which
+will contain your real names and your GitHub user names. Sometimes
 it's easy for us to figure out how those names relate, but if your
 GitHub user name is `UnicornWizard375` it's not always obvious who in the
 class that is, especially if you don't always wear your wizarding regalia to lab.
@@ -178,51 +177,49 @@ class that is, especially if you don't always wear your wizarding regalia to lab
 There will be several steps to this process, each of which is described in
 more detail below:
 
-* Create your contact info file/page.
-* `commit` that to your local copy of the repository.
-* `pull` down the changes other people may have made to the central repository on
+- Create your contact info file/page.
+- `commit` that to your local copy of the repository.
+- `pull` down the changes other people may have made to the central repository on
   GitHub while you were working, `merging` them with your changes.
-* `push` your (merged) changes back up to GitHub so they're available to everyone.
+- `push` your (merged) changes back up to GitHub so they're available to everyone.
 
 ### Creating a page
 
-You'll start by creating your :zzz: ~~group's~~ contact info page (i.e., a
+You'll start by creating your group's contact info page (i.e., a
 new file with the appropriate contact info).
 
 There are a number of different ways to create a new file in VS Code. A nice
 approach is:
 
-* Go to the Explorer (top icon in the left tool bar).
-* Open up directories (i.e., folders) until you can see the directory
+- Go to the Explorer (top icon in the left tool bar).
+- Open up directories (i.e., folders) until you can see the directory
   you want the new file to go in.
-* Right click on that directory and choose "New File".
-* Enter its name (see below for naming rules for this step). Make sure
+- Right click on that directory and choose "New File".
+- Enter its name (see below for naming rules for this step). Make sure
   to include the appropriate extension (e.g., `.md` or `java`) so
-  VS Code will know how to color code and check the file's contents.
-* Press Enter/Return and VS Code will create your new (empty) file
+  VS Code will know how to handle the file and its contents.
+- Press Enter/Return and VS Code will create your new (empty) file
   and open an editing pane for you to start working in it.
 
 Each contact info page should:
 
-* Be created in the `user_info` directory.
-* :zzz: ~~Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`~~
-* :mask: Be named `<your_name>.md`, e.g., `Pat.md`
-* Contain at least:
-  * Your preferred name~~s~~ (e.g., "Nic" or "KK")
-  * [Your preferred pronouns](https://www.mypronouns.org/)
-  * Your GitHub username~~s~~ (so we can figure out who `UnicornWizard375`
+- Be created in the `user_info` directory.
+- Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
+- Contain at least:
+  - Your preferred names (e.g., "Nic" or "KK")
+  - [Your preferred pronouns](https://www.mypronouns.org/)
+  - Your GitHub usernames (so we can figure out who `UnicornWizard375`
     is in real life)
 
-Feel free to use the file `KK_and_Nic.md` as a model, :mask: although
-that is structured for teams and you'll be doing this as individuals this
-semester.
+Feel free to use the file [`KK_and_Nic.md`](user_info/KK_and_Nic.md)
+as a model.
 
 ### `commit` your changes (locally)
 
 Before you can share your changes with the class via the GitHub repository,
 you need to `add` and `commit` these changes to your local `git` repository.
 
-On the command line type `git status`. That should tell you that something
+On the command line type `git status`. That should tell you something
 like:
 
 ```text
@@ -247,7 +244,7 @@ you often get when there have been a lot of changes). This, and other nifty
 things beyond the scope of this lab, is why `git` allows you to specify through
 staging exactly what you wish to include in a commit.
 
-**Stage the new file** so `git` knows you want to commit it:
+**Stage the new file** so `git` knows you want to commit it, by running
 
 ```bash
 git add <file>
@@ -270,27 +267,28 @@ This tells you that you've successfully staged `user_info/Pat_and_Chris.md`.
 It also tells you how you can _unstage_ a file that you might have staged by
 accident.
 
-**Commit the change** _to your local copy of the repository_ with
+**Commit the change** _to your local copy of the repository_ by running
 
 ```bash
 git commit
 ```
 
-* This will bring up an editor for you to enter
+- This will bring up an editor for you to enter
   your commit message.
-  * What editor you get will depend on the configuration of your system, and you
+  - What editor you get will depend on the configuration of your system, and you
     can configure `git` to use the editor of your choice (see below).
-  * This may be the command line `vi/vim` editor for many people;
+  - This may be the command line `vi/vim` editor for many people;
     ask for help if you find yourself [trapped in `vim`](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/) and [can't seem
     to escape](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).
-* You can also use `git commit -m "Your cool commit message"` to
+- You can also use `git commit -m "Your cool commit message"` to
   avoid being sent to an editor. We _strongly_ discourage this,
   however, as people rarely enter useful one-line commit messages.
-* If `vi/vim` bugs you, you should probably set your default
+- If `vi/vim` bugs you, you should probably set your default
   `git` editor to something you like. [This GitHub help page](https://help.github.com/articles/associating-text-editors-with-git/)
-  shows you how to set various GUI editors like `atom`, but you
+  shows you how to set various GUI editors like VS Code, but you
   could also use something like `git config --global core.editor nano`
-  to set it to a command line editor like `nano`.
+  to set it to a command line editor like `nano`, which people who are new to
+  the Linux command line often find easier to work with than `vim`.
 
 After entering a commit message that is [properly formatted](https://chris.beams.io/posts/git-commit/), [organized](https://dev.to/jacobherrington/how-to-write-useful-commit-messages-my-commit-message-template-20n9), [meaningful](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/) and [helpful](https://github.com/erlang/otp/wiki/writing-good-commit-messages)
 you can save and exit the editor.
@@ -312,6 +310,13 @@ output that looks something like:
 If you then run `git status` you should see that your file is no longer staged,
 because it's been successfully committed!
 
+```text
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+```
+
 ### `push`ing your work to GitHub
 
 At this point you have your changes committed to your local copy of the
@@ -328,13 +333,16 @@ git pull
 ```
 
 Pay attention to whatever message you get; it's possible that there could
-be problems (the word "conflict" would be a Bad Sign) so don't just ignore what
-`git` tells you. Definitely ask questions if you get some verbiage from `git`
+be problems so don't just ignore what
+`git` tells you. In particular, the word "conflict" would be a Bad Sign
+and you'd want to ask for a hand there.
+Definitely ask questions if you get some verbiage from `git`
 that you don't understand.
 
 If no one else is working on these files in this repository (which is
 likely in this case since you created a group-specific file for your
-information) then this should go smoothly. As we'll see below, though,
+information) then this should go smoothly. As we'll see in the second
+part of the lab, though,
 if there have been changes in the same parts of the same files, a `pull`
 can lead to conflicts and confusion.
 
