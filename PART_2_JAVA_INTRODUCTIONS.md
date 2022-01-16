@@ -112,7 +112,7 @@ development branches that are merged into `main` when that work is deemed
 > the painful connotations that term has for many people, and there have
 > been [calls to change from `master` to the more neutral `main`](https://dev.to/afrodevgirl/replacing-master-with-main-in-github-2fjf).
 > GitHub in fact did a lot of work to support changing the default naming for new projects,
-> and provide tools to help automate changing the name of the default branch.
+> and provides tools to help automate changing the name of the default branch.
 > See [their renaming repo](https://github.com/github/renaming) for the
 > details. New, blank repositories will, for example, now
 > have `main` as their default branch name, and they've provided tools for
@@ -133,9 +133,9 @@ up at the top. It
 won't immediately look like anything actually happened, but there will be a
 text box to the left of the history diagram where the _HEAD_ (top) of `main` is.
 Enter your branch name (e.g., `pat-and-chris-greetings`) there and hit return. It
-should now show (part of) :mask: `pat-and-chris-greetings` and a `+1` which indicates
+should now show (part of) `pat-and-chris-greetings` and a `+1` which indicates
 that there's another branch (`main`) whose HEAD is at the same place. You should
-also have :mask: `pat-and-chris-greetings` listed as a new branch under `LOCAL` in the
+also have `pat-and-chris-greetings` listed as a new branch under `LOCAL` in the
 explorer on the left, and it should be highlighted to indicate that it is the
 currently _checked out_ branch. That means that any new commits you make will
 be _in that branch_ instead of in `main` as they were in the first half
@@ -227,7 +227,7 @@ You can put your methods wherever you want in the `Hellos` class, but probably
 makes sense to have them in the same order as the calls. Our tests don't check
 that, though. (They probably can't actually, at least not in any easy way.)
 
-Once everything looks good, compile and run your program to make sure that everything is good; `./gradlew run` should do the trick.
+Once everything looks good, compile and run your program to make sure that it works correctly; `./gradlew run` should do the trick.
 
 You should also re-run the tests/checks (`./gradlew check`)
 to confirm that all the lines
@@ -310,7 +310,7 @@ but there will be a question where the toolbar used to be:
 The issue here is we created a new _local_ branch, and GitKraken wants to know
 what _remote_ repository to connect that to, and with what name. It will default
 to `origin` (which in this case is another name for the GitHub repository we
-cloned from) and our branch name (e.g., :mask: `pat-and-chris-greetings`). Those are
+cloned from) and our branch name (e.g., `pat-and-chris-greetings`). Those are
 what we want, so hit `Submit`. After a second you should get a bubble in the
 bottom left corner says that the `push` was successful.
 
