@@ -5,6 +5,7 @@
   - [Command line `clone`](#command-line-clone)
 - [Using `gradle` to run tasks](#using-gradle-to-run-tasks)
 - [Opening our project in VS Code](#opening-our-project-in-vs-code)
+  - [Trust us, really](#trust-us-really)
   - [Install recommended extensions](#install-recommended-extensions)
   - [Have a look at the project](#have-a-look-at-the-project)
 - [Create an info page for each group](#create-an-info-page-for-each-group)
@@ -123,6 +124,25 @@ If a test had failed, you would have gotten longer, more detailed information.
 Now we'll want to open VS Code and see how we can use it to edit and run our code.
 Launch VS Code, and then choose `File -> Open Folder…`. Navigate to your clone
 of the repo (the directory `intro-to-git`) and choose `Open`.
+
+### Trust us, really
+
+When you first open a project in VS Code, it will ask you
+if you trust the authors of the project:
+
+![](docs/images/VSCode-trust-dialog.png)
+
+This is important because VS Code and its extensions are
+quite powerful, and a malicious agent could hijack these
+features and run damaging code on your computer.
+
+You'll need to trust us, though, and we promise to not
+knowingly introduce any Bad Code into your world. So go
+ahead and click the "Yes, I trust the authors" button.
+
+This trust dialog will probably come up for each of the
+labs and most of the project iterations, so be prepared
+to see it again.
 
 ### Install recommended extensions
 
