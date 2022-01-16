@@ -2,11 +2,11 @@
  * This file contains the Gradle setup for a simple Java application project.
  *
  * For more details take a look at the 'Building Java & JVM projects' chapter in the Gradle
- * User Manual available at https://docs.gradle.org/6.8/userguide/building_java_projects.html
+ * User Manual available at https://docs.gradle.org/7.3/userguide/building_java_projects.html
  */
 
 plugins {
-  // Apply the application plugin to add support for building a CLI application
+  // Apply the application plugin to add support for building a CLI application.
   id 'application'
 
   // The checkstyle plugin provides basic Java style checks to ensure we're
@@ -14,11 +14,11 @@ plugins {
   id 'checkstyle'
 }
 
-// In this section you declare where to find the dependencies of your project
+// In this section you declare where to find the dependencies of your project.
 repositories {
-  // Use jcenter for resolving your dependencies.
+  // Use Maven Central for resolving your dependencies.
   // You can declare any Maven/Ivy/file repository here.
-  jcenter()
+  mavenCentral()
 }
 
 java {
@@ -29,18 +29,23 @@ java {
 
 dependencies {
   // JUnit Jupiter API for testing.
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
 
   // JUnit Jupiter Engine for testing.
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
 application {
-  // Define the main class for the application
+  // Define the main class for the application.
   mainClass.set('hellos.Hellos')
 }
 
 test {
-  // Use junit platform for unit tests
+  // Use junit platform for unit tests.
   useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+  // All of our source files are written in UTF-8.
+  options.encoding = 'UTF-8'
 }

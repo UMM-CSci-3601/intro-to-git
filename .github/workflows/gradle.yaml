@@ -1,4 +1,4 @@
-name: Java_CI
+name: Java
 
 on: [push]
 

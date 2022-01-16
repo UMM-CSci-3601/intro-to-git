@@ -1,7 +1,12 @@
-# How we're using Gradle
+# How we're using Gradle <!-- omit in toc -->
 
 We're using [the Gradle build tool](https://gradle.org/) to help automate
 building, testing, and deploying our projects throughout this class.
+
+- [Setting up Gradle](#setting-up-gradle)
+- [Running Gradle](#running-gradle)
+  - [Gradle on the command line](#gradle-on-the-command-line)
+  - [Gradle in VS Code](#gradle-in-vs-code)
 
 ## Setting up Gradle
 
@@ -17,7 +22,7 @@ plugins {
 }
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 
 dependencies {
@@ -40,9 +45,7 @@ That actually gives us a _bunch_ of Gradle commands we can run that know
 how to build, run, test, and deploy a Java application.
 
 The `repositories` section allows us to provide one or more repositories where
-Gradle can go to download libraries that our project depends on. We're using
-the [JCenter library repository](https://bintray.com/bintray/jcenter);
-another common option is [`mavenCentral()`](https://search.maven.org/).
+Gradle can go to download libraries that our project depends on. We're using [`mavenCentral()`](https://search.maven.org/), which is the Maven Central Repository.
 
 The
 `dependencies` section tells Gradle that in order to compile our
@@ -88,34 +91,40 @@ To run tasks with Gradle Wrapper, use `./gradlew <task>` in the top-level
 directory of the project. There are a _lot_ of tasks; some of particular
 interest include:
 
-* `./gradlew run` will run your application.
-* `./gradlew build` will compile all your files.
-* `./gradlew clean` will delete all the generated files (e.g., `.class`
+- `./gradlew check` will run all yours tests and check your code style.
+- `./gradlew run` will run your application.
+- `./gradlew build` will compile all your files and run tests and checks.
+- `./gradlew clean` will delete all the generated files (e.g., `.class`
   files), which can be helpful when it looks like you need to force a
   rebuild. It's also a nice thing to do when you're done working on a
   project for a while and want to clean up some disk space.
-* `./gradlew jar` will generate a standalone JAR file for your application.
-* `./gradlew check` will make sure everything builds and the tests
-  all pass.
-* etc., etc.
+- `./gradlew jar` will generate a standalone JAR file for your application.
+- etc., etc.
 
 ### Gradle in VS Code
 
 "Out of the box", VS Code doesn't give you any way to run Gradle Tasks.
-If you install the [Gradle Tasks](https://marketplace.visualstudio.com/items?itemName=richardwillis.vscode-gradle)
-extensions then you get a "Gradle Tasks"
-view (bottom left in the Explorer, below your file tree).
+If you install the [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle)
+extensions then you get a "Gradle" view, which is an elephant
+icon along the left side of the VS Code window.
+
+![](images/Gradle_extension_in_VSCode.png)
 
 That will have a "folder" with the name of the repo (`intro-to-git` or
 similar in this case). That which will contain many other folders
 containing specific tasks. Some of particular interest:
 
-* _application -> run_ will run your application
-* _build -> build_ will compile all your files
-* _build -> clean_ will delete all the generated files (e.g., `.class`
+- _application -> run_ will run your application
+- _build -> build_ will compile all your files
+- _build -> clean_ will delete all the generated files (e.g., `.class`
   files), which can be helpful when it looks like you need to force a
   rebuild. It's also a nice thing to do when you're done working on a
   project for a while and want to clean up some disk space.
-* _build -> jar_ will generate a standalone JAR file for your application
-* _verification -> check_ will make sure everything builds and the tests
-  all pass
+- _build -> jar_ will generate a standalone JAR file for your application
+- _verification -> check_ will make sure everything builds, Checkstyle
+  is happy, and the tests all pass
+
+Running these from VS Code is equivalent to running the same tasks from the
+command like, e.g., `./gradlew run` or `./gradlew check`. Note that on the
+command line, however, there's no "folder" name like "application" or
+"verification".
