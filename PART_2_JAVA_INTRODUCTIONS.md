@@ -29,10 +29,10 @@ the previous part.
 > e.g., the tests fail or there aren't enough code
 > reviews.
 
-:zzz: ~~:bangbang: You should definitely change _driver_ and _navigator_ roles now.~~
+:bangbang: You should definitely change _driver_ and _navigator_ roles now.
 
 In this second part each group will make a small change to a simple Java
-program, `Hellos.java` in the `src/main/java/hellos` directory. Each :mask: ~~group~~ person will make a
+program, `Hellos.java` in the `src/main/java/hellos` directory. Each group will make a
 small extension to that program in a way that virtually guarantees some sort
 of merge conflict, so everyone will have the experience of dealing with
 conflicts.
@@ -54,10 +54,10 @@ half, in this half we'll use `GitKraken`, which provides a nice GUI and
 visualization of things like our commit history and branching.
 
 Open up GitKraken. If this is your first time starting GitKraken it will ask you
-to sign in, providing several options. You want to sign in with your GitHub account
-as this will do two important things:
+to sign in, providing several options. **You want to sign in with your
+GitHub account** as this will do two important things:
 
-- It will allow GitKraken to push/pull/etc. with GitHub on your behalf.
+- It will allow GitKraken to push/pull/etc. to/from GitHub on your behalf.
 - [**Assuming you've set up your GitHub Student Pack**](https://education.github.com/pack),
   this will automagically give you a Pro account on GitKraken, which includes
   some nice features that you'll want to have, like an interactive tool
@@ -72,34 +72,34 @@ Once all the setup is finished, select `File -> Open` and navigate to the direct
 containing your local clone (`intro-to-git`), and open that up. There's a lot of information
 here, but you can ignore most of it for now. One thing that should stand out
 is the commit history graph, where you should see all the commits you and all the
-other :mask: ~~groups~~ people made today.
+other groups made today.
 
-Before we move on, it would be a good idea to do a pull just to make sure
+Before we move on, it would be a good idea to do a `git` pull just to make sure
 we have the latest version of the code. In GitKraken you can just click the
 `Pull` button in the toolbar at the top of the window. If there were recent
-changes that you didn't have (which is unlikely), the history would update
+changes that you didn't have, the history would update
 to show the new commits you just pulled down to your local repository.
 
 ## Creating a branch
 
 Before we get started on actually editing the program, we want to introduce
 the concept of _branches_ in `git`, as they are a powerful tool for
-isolating work (in progress)
+isolating in-progress work
 on a particular feature from other on-going work on the project.
 Creating and working in your own feature branch allows you to commit,
-save, and share incomplete work without breaking the project for other people.
+save, share, and discuss incomplete work without breaking the project for other people.
 This is incredibly valuable; without it you'd be constantly worried about
 making commits of incomplete work that might mess things up for other people,
 or worrying that commits from other people in your group might mess up your
-work. If we're serious about _test driven development_, for example, we would
+work. If we're serious about [_test driven development_](https://www.agilealliance.org/glossary/tdd/), for example, we would
 frequently find ourselves writing and committing tests before we've written
 the code that will make those tests pass. If we committed those tests to the
 code that everyone was using, then all of a sudden they'd have breaking tests,
 the builds would fail, and the _continuous integration_ system would be all
 shout-y and mad at the whole team. If, on the other hand, you commit those
 tests to your feature branch, then it will have no impact on people
-working in other branches or on the build system, so everything will be
-nice.
+working in other branches, or on the continuous integration system,
+so everything will be nice.
 
 Every new `git` repository has one default branch called `main`; this is
 usually where the current "deployed" or "released" version of the project
@@ -111,33 +111,35 @@ development branches that are merged into `main` when that work is deemed
 > of the Black Lives Matter movement has been an increasing recognition of
 > the painful connotations that term has for many people, and there have
 > been [calls to change from `master` to the more neutral `main`](https://dev.to/afrodevgirl/replacing-master-with-main-in-github-2fjf).
-> GitHub is in fact working to change the default naming for new projects,
+> GitHub in fact did a lot of work to support changing the default naming for new projects,
 > and provide tools to help automate changing the name of the default branch.
-> (See [their renaming repo](https://github.com/github/renaming) for the
-> current state of this work. New, blank repositories will, for example, now
-> have `main` as their default branch name.)
+> See [their renaming repo](https://github.com/github/renaming) for the
+> details. New, blank repositories will, for example, now
+> have `main` as their default branch name, and they've provided tools for
+> renaming your primary branch.
 >
-> I'm working to make this change on all my course repositories, but may not
-> have them all converted by the time we need them for a lab or other exercise;
-> I apologize in advance if any slip through.
->
-> Sadly, there are likely to be references to `master` as the default branch in older
+> There were a _lot_ of instances of `master` created when that was the
+> default, so there are likely to be references to `master` as the default
+> branch in older
 > `git` examples and documentation for quite a while.
 
-To illustrate the use of branches, we'll have each :mask: ~~group~~ person create a new branch
+To illustrate the use of branches, we'll have each group create a new branch
 for their modification of the shared program. Assuming, for example, that
-we still have Pat :mask: ~~and Chris~~, they would create a new branch called something like :mask: ~~`pat-and-chris-greetings`~~ `pat-greetings`.
+we still have Pat and Chris, they would create a new branch called something
+like `pat-and-chris-greetings`.
 
-In GitKraken we can do this by clicking the `Branch` button in the toolbar. It
+In GitKraken we can do this by clicking the `Branch` button in the toolbar
+up at the top. It
 won't immediately look like anything actually happened, but there will be a
 text box to the left of the history diagram where the _HEAD_ (top) of `main` is.
-Enter your branch name (e.g., :mask: `pat-greetings`) there and hit return. It
-should now show (part of) :mask: `pat-greetings` and a `+1` which indicates
+Enter your branch name (e.g., `pat-and-chris-greetings`) there and hit return. It
+should now show (part of) :mask: `pat-and-chris-greetings` and a `+1` which indicates
 that there's another branch (`main`) whose HEAD is at the same place. You should
-also have :mask: `pat-greetings` listed as a new branch under `LOCAL` in the
+also have :mask: `pat-and-chris-greetings` listed as a new branch under `LOCAL` in the
 explorer on the left, and it should be highlighted to indicate that it is the
 currently _checked out_ branch. That means that any new commits you make will
-be _in that branch_ instead of in `main` as they were in the first half.
+be _in that branch_ instead of in `main` as they were in the first half
+of this lab.
 
 Here we're creating our branch in GitKraken, but you can do this in the
 command line as well. To create and move to a new branch in the command line
@@ -166,7 +168,7 @@ Open up `Hellos.java` and add some more code to the `generateOutput()`
 method:
 
 ```java
-builder.append(patSaysHello());
+        builder.append(patSaysHello());
 ```
 
 Here you'll replace `pat_says_hello` with method names that
@@ -176,8 +178,8 @@ _every_ person in your group. If your group is Pat and Chris, then you
 want
 
 ```java
-builder.append(chrisSaysHello());
-builder.append(patSaysHello());
+        builder.append(chrisSaysHello());
+        builder.append(patSaysHello());
 ```
 
 However, instead of just adding them wherever you want, you need to add them so that
@@ -211,8 +213,8 @@ the example methods; they should look something like:
 ```
 
 Make sure you include the `\n` (newline) in the string so we don't end up
-with one really super long line. In fact our tests require that every greeting
-have the form
+with one really super long line of output. In fact our tests require that
+every greeting have the form
 
 ```text
    <name> says <greeting>!
@@ -225,12 +227,10 @@ You can put your methods wherever you want in the `Hellos` class, but probably
 makes sense to have them in the same order as the calls. Our tests don't check
 that, though. (They probably can't actually, at least not in any easy way.)
 
-Once everything looks good, compile and run your program (by clicking `Run`
-in `Hellos.java`) to make sure that everything is good. If you want to run
-the program from the command line `./gradlew run` should do the trick.
+Once everything looks good, compile and run your program to make sure that everything is good; `./gradlew run` should do the trick.
 
-You should also re-run the JUnit tests (either from VS Code or via `./gradlew test`)
-that will confirm that all the lines
+You should also re-run the tests/checks (`./gradlew check`)
+to confirm that all the lines
 in the output have the right form and are in alphabetical order.
 In general you should always run the tests before you
 commit as another way of making sure that your work is "done done".
@@ -249,9 +249,17 @@ commit and push your work.
 ### Commit with GitKraken
 
 To commit in GitKraken click the top line in the history graph; its circle
-should be an empty with a dotted line, and it should have `// WIP` where the
-commit summary is. On the right you should then have panels labelled
-"Unstaged Files", "Staged Files", and "Commit Message". On the command line you use
+should be empty with a dotted line, and it should have `// WIP` where the
+commit summary is.
+
+![GitKraken history graph showing that there's work to commit](docs/images/GitKraken-wip.png)
+
+On the right you should then have panels labelled
+"Unstaged Files", "Staged Files", and "Commit Message".
+
+![GitKraken commit interface](docs/images/GitKraken-commit-panels.png)
+
+On the command line you use
 `git add` to stage files; in GitKraken you can select a file
 in the "Unstaged Files" area and click the "Stage" button that appears next to
 the file name. You can also see the changes you've made in that file, which can
@@ -295,17 +303,14 @@ for un-pulled changes and forces you to deal with those if they exist (so it's
 safe to just `push` and see what happens).
 
 So hit `Push` in the GitKraken toolbar. It won't look like anything happened,
-but there will be a question where the toolbar used to be. That should be something
-like:
+but there will be a question where the toolbar used to be:
 
-```text
-What remote/branch should "pat-and-chris-greetings" push to and pull from?
-```
+![GitKraken asking what remote branch to use](docs/images/GitKraken-what-remote-branch.png)
 
 The issue here is we created a new _local_ branch, and GitKraken wants to know
 what _remote_ repository to connect that to, and with what name. It will default
 to `origin` (which in this case is another name for the GitHub repository we
-cloned from) and our branch name (e.g., :mask: `pat-greetings`). Those are
+cloned from) and our branch name (e.g., :mask: `pat-and-chris-greetings`). Those are
 what we want, so hit `Submit`. After a second you should get a bubble in the
 bottom left corner says that the `push` was successful.
 
@@ -318,7 +323,11 @@ of new branches; these will start to clutter things up, but we can delete
 unused branches later.
 
 If you go to the GitHub repo in the web, you should see your branch in the
-branch dropdown. If you select it you should see your last commit just below
+branch dropdown.
+
+![GitHub branch dropdown menu](docs/images/GitHub-branch-dropdown.png)
+
+If you select it you should see your last commit just below
 that. Next to the "Latest commit" label should either be an
 orange/yellow dot
 ![GitHub's orange in-progress circle][orange-circle],
@@ -332,12 +341,13 @@ set up so they run the JUnit tests against that version of the code.
 The meaning of these symbols is:
 
 - ![GitHub's orange in-progress circle][orange-circle]:
-  The yellow dot means that it's still building and running the tests and checks.
+  The yellow dot means that it's still building and running the tests and checks,
+  so we need to be patient.
 - ![GitHub's green success check mark][green-check]: A green
   check mark means it's done and everything was great (the code compiled,
   the tests passed, and any other checks passed as well).
 - ![GitHub's red failure x][red-x]: A red x means that
-  something bad happened like a test failed.
+  something bad happened, like a test failed.
   
 If you click on any of these symbols on the GitHub page, you can get
 more information, including links to pages with details on, e.g., failed tests.
@@ -366,7 +376,7 @@ take advantage of our very clever colleagues and have at least one other
 person perform a code review on our proposed changes. A code review is
 essentially an online conversation where members of the team build a
 shared understanding of these changes, proposing fixes and improvements,
-and generally working together to make the code base as good as you
+and generally working together to make the code base as amazing as you
 collectively can.
 
 ### Create a pull request
@@ -414,11 +424,18 @@ two things must be true:
 
 We use a feature called GitHub Actions to automate a set of checks on the lab
 and project repositories in this course. All those checks have to pass before
-you can merge in your pull request. For this lab we have three checks:
+you can merge in your pull request. For this lab we have five checks:
 
-- "Java_CI/build": This automatically runs the tests (essentially doing
-  `./gradlew test`) and passes (gives you a green check mark) if the tests
-  pass, and fails (gives you a red x) if the tests fail.
+- "build": This runs `./gradlew check`, which compiles the code
+  and runs two checks. If both of these succeed you get a green check mark, and you get a red x if anything fails.
+  - It uses a tool called [Checkstyle](https://checkstyle.org/) that
+    checks that your code follows a set of basic style guides.
+  - It runs the JUnit tests
+- "markdown-link-check": This checks that all the links in the
+  project's Markdown files "work" (i.e., there's something at
+  the other end of that URI). You won't be adding or changing any
+  links in this lab, so that should continue to pass without any
+  concerns.
 - "LGTM analysis: Java": This performs an automated "statement-level" analysis
   of the Java code.
 - "Better Code Hub": This performs a more "big picture" analysis of the
@@ -435,11 +452,16 @@ you push.
 If any of the checks fail (give you a red x), then you probably want to click on
 "Details" by that check to learn more about what might have failed.
 
-- If the tests failed, it's likely that you either didn't structure your
+- If the Java `build` fails, it's likely because a test has
+  failed, either because you didn't structure your
   greeting correctly, or you didn't put it in the correct place so that all
   greetings are in alphabetical order. You should probably run the tests again
   on your computer, where you'll get more information on which test failed and
   why. If you're unsure how to proceed _definitely ask for some help!_
+- The other way the Java `build` could fail is if your formatting
+  doesn't meet the Checkstyle criteria. Run `./gradlew check`
+  locally and see if the output there helps you understand
+  why things are failing.
 - If either LGTM or Better Code Hub is grumpy, definitely click the "Details"
   link, and you'll see more information about what they're not happy about.
   If you understand the problem and how to possibly fix it, that's great.
@@ -459,7 +481,7 @@ merging into `main`.
 
 What does that look like on GitHub?
 
-One option is that When Chris looks at their pull request on GitHub they'll
+One option is that when Chris looks at their pull request on GitHub they'll
 see a message that's something like:
 
 > This branch is out-of-date with the base branch
@@ -498,7 +520,7 @@ look like in the `main` branch.
 There are numerous ways this conflict could have come about, such as:
 
 - Chris wants to change the line from calling `patSaysHello()` to
-  instead called the (supposedly different) method `chrisSaysHello()`.
+  instead call the (supposedly different) method `chrisSaysHello()`.
 - Chris has renamed `patSaysHello()` to `chrisSaysHello()`, and wants to change
   the call to match this renaming.
 - Chris wants to make _both_ function calls (in some order, which `git` couldn't
@@ -512,7 +534,7 @@ WORK TO RESOLVE A MERGE CONFLICT. This is a place where you really want to
 take a moment and contact other people on your team to decide what is the best course
 of action.
 
-In this case the last option is the case, and we better call `chrisSaysHello()`
+In this lab, the last option is the most likely situation, and we better call `chrisSaysHello()`
 first so that at least those two calls are in alphabetical order.
 
 Chris would use the web editor to make those changes, deleting the `<<<<`, `====`,
@@ -557,26 +579,33 @@ While you're waiting for feedback from other people, let's do some code reviews
 on other people's work. You might have been invited to provide some code reviews;
 check your notifications (the bell in the far top right) to see if there are any
 code review invitations there. Otherwise you can click on the project's "Pull
-requests" tab at the top, and pick any option pull request.
+requests" tab at the top, and pick any open pull request.
 
 If you had been invited to review this pull request, then there should be a note
 to that effect near the top, and a green "Add your review" button which you can
-click to start your review. If you haven't been invited, you can just click on the
+click to start your review.
+
+![GitHub add review button](docs/images/GitHub-add-review.png)
+
+If you haven't been invited, you can just click on the
 "Files changed" tab of the pull request, and that will take you to the same place.
 
+![GitHub "Files changed" tab](docs/images/GitHub-files-changed.png)
+
 You'll now be looking at all the changes (old on the left, new on the right).
-There's a _lot_ you can do here (read up on this), but for the moment we'll just
+[There's a _lot_ you can do here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request),
+but for the moment we'll just
 look over the code and make sure the changes look reasonable. Some things to
 check for:
 
 - [ ] Does it look (by eye) that this will print all the greetings in alphabetical
   order? (The tests check that for sure, but you should always be thinking about
   correctness as well.)
-- [ ] Do any new methods they're adding have reasonable names that convey useful
+- [ ] Do the new methods they're adding have reasonable names that convey useful
   info to the reader?
 - [ ] Are new method names in camel cases, starting in lowercase (the Java standard
   for method names)?.
-- [ ] Is the implementation of the any new methods reasonable?
+- [ ] Is the implementation of the new methods reasonable?
 - [ ] Is the spacing and indentation uniform and consistent with the rest of the file?
 
 Etc., etc.
@@ -593,7 +622,7 @@ of the overall work, which benefits everyone in the long run.
 Once you receive a positive review you can proceed to merge. If, however, you
 received a request to make some changes, look those over. Does the request make
 sense? Do you understand what (and why) it's being made? If not, _definitely_
-ask them for further information or explanation. You can post your own comment
+ask the requestor for further information or explanation. You can post your own comment
 on the pull request and/or contact them by other means (e.g., Slack, email). You
 probably want any important info to be captured in the pull request, but sometimes
 it's useful to poke someone on another channel to get their attention.

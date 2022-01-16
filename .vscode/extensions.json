@@ -12,10 +12,6 @@
     // https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
     "EditorConfig.EditorConfig",
 
-    // Bracket Pair Colorizer 2
-    // https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
-    "CoenraadS.bracket-pair-colorizer-2",
-
     // Gradle language support
     // https://marketplace.visualstudio.com/items?itemName=naco-siren.gradle-language
     "naco-siren.gradle-language",

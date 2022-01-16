@@ -7,13 +7,14 @@
 > Each semester _after creating the instance in GitHub Classroom_,
 > we need to (in the GitHub Classroom "fork"):
 >
-> - [ ] Fix the URLs in the badges
-> below so they point to that semester's repository instead of the
-> "starter" repo.
+> - [ ] Create a team called "Everyone"
+> - [ ] Fix the URLs in the badges below so they point to that semester's
+>     repository instead of the "starter" repo.
 > - [ ] Make sure we've added every student in the current semester
-> to that semester's organization so they'll have permission to push to
-> this repo.
-> - [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md) so that students can `push`.
+>     to that semester's organization so they'll have permission to
+>     push to this repo.
+> - [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md)
+>     so that students can `push`.
 > - [ ] Remove this note and the broken badge above in the fork.
 >
 > We should leave these notes in the copy in the "starter"
@@ -31,17 +32,6 @@
 
 ## Background
 
-> :exclamation: There are a few places in this write-up where we assume that we're
-> all together in the lab, which isn't true this semester due to COVID. I've
-> typically ~~crossed out~~ those sections and marked them with :zzz: so you'll
-> know to ignore them. I didn't want to fully delete them because I need to
-> make sure we bring them back next year when (hopefully) we're all back in the
-> lab again.
->
-> Text that I've added "just" for this semester is marked with :mask:, mostly
-> to make it easier for me to find and remove/update them after this semester
-> is over.
-
 :mask: Normally we would do this in the CSci lab and you wouldn't need to worry
 about installing anything. Because we're doing the course online, you'll need
 to make sure you've installed the tools discussed below (`git`, GitKraken,
@@ -58,7 +48,7 @@ those tools will be part of our primary workflow this semester. `git` is essenti
 a command line tool, and it can be difficult to visualize branching and history;
 GitKraken provides a nice GUI for `git` which we find quite helpful for understanding
 what's going on. VS Code is our IDE (basically our fancy program editor); there are lots
-of alternatives, but we're going to use VS Code this semester.
+of alternatives, but we've been very happy with VS Code over the past few years.
 
 :bangbang: While in most labs it will be fine for groups to move ahead
 at their own pace, in this lab we'd like people to keep together
@@ -82,11 +72,6 @@ friends:
     short introduction to the key ideas)
   - [Getting started with GitHub](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github)
   - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-  - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-    - Markdown is the markup language used
-      by Slack, GitHub, and _many_ other
-      online tools, so understanding at least
-      the basics is really valuable.)
 - [The GitKraken tutorial videos](https://www.gitkraken.com/learn-git)
   - The beginner tutorials would be the
     obvious place to start; over time,
@@ -98,6 +83,10 @@ of documentation we have in the `docs/` folder:
 
 - [A discussion of how to avoid merge conflicts and deal with them when they (inevitably) happen](docs/MERGE_CONFLICTS.md)
 - [An overview of the Gradle build tool and how we're using it in this lab](docs/Gradle_README.md)
+
+You should also probably read [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
+Markdown is the markup language used by Slack, GitHub, and _many_ other
+online tools, so understanding at least the basics is really valuable.
 
 Below are some additional resources that you might
 want to (re)visit over time as you become more
@@ -114,14 +103,14 @@ a single-page app that goes through the major features of `git`
 As circumstances allow, you might also want to at least skim one or two of the
 tutorials listed above.
 
-We'll also be using _Gradle_, a tool for building and running programs. We'll be
-using Gradle throughout the course, so it's useful to see it a bit here. We also
-use it to automate the tests for this project, which allows GitHub Actions to
-automatically run our tests whenever someone makes a change, and holler at us if
-someone breaks the tests.
+> [We'll also be using _Gradle_](docs/Gradle_README.md),
+> a tool for building and running programs. We'll be
+> using Gradle throughout the course, so it's useful to see it a bit here. We also
+> use it to automate the tests for this project, which allows GitHub Actions to
+> automatically run our tests whenever someone makes a change, and holler at us if
+> someone breaks the tests.
 
-:zzz: (We're going to do this lab as individuals to make sure everyone's system is set up and working.)
-~~The discussion below assumes that people are paired up in the lab, but we want
+The discussion below assumes that people are paired up in the lab, but we want
 to make sure everyone has hands on experience with these tools and ideas.
 This sort of _pair programming_ will be common throughout the class and
 beyond, with two people working together. It is common in these settings for
@@ -131,7 +120,7 @@ and answering questions. For this process to work, both of you have to
 contribute and be involved, and it's extremely important for you to trade
 off the roles of driver and navigator now and then. Thus in this lab
 there will be times where we'll explicitly ask you to trade roles so that
-everyone has a chance to go through all the activities.~~
+everyone has a chance to go through all the activities.
 
 ### How we're going to use `git`
 
@@ -139,15 +128,16 @@ everyone has a chance to go through all the activities.~~
 a team of developers to work together on a project, helping manage
 collaboration and change. We're going to use three related tools:
 
-- `git` is the fundamental program (originally developed to help manage the Linux
-  operating system codebase) that underlies the next two tools. It
+- `git` is the fundamental program. It was originally developed to help manage
+  change in the Linux
+  operating system codebase, and it underlies the next two tools. `git`
   organizes projects into _repositories_, which are collections of files and
-  histories of all the changes ever made to that project. It is a command
+  the histories of all the changes ever made to that project. It is a command
   line tool.
 - GitKraken is a GUI for `git` that provides a nice visual interface to `git`
-  and display of complex things like `git` histories and branching.
+  and displays of complex things like `git` histories and branching.
 - _GitHub_ is a web-based software service that allows people
-  to host, search, and use repositories created and managed with `git`.
+  to host, search, and manage repositories created and managed with `git`.
 
 You could use `git` without ever using GitKraken or GitHub. We've found that a
 good GUI like GitKraken can be a big help when things get complicated. GitHub
@@ -179,14 +169,25 @@ Each developer then has one or more private copies of the repository
 from the GitHub repository into their local repository, as well as push
 local changes up to the GitHub repository so that other people can access them.
 
+In the diagram below, each of Pat, Chris, and Sally would have their own copy
+of the repository on their computer, and they would use `git` to `push`
+changes up to GitHub and `pull` changes (that other people made) down to
+their copy. Thus they're all effectively communicating with each other
+through GitHub as the shared "truth".
+
+![Diagram showing users interacting with/through GitHub.com.](docs/images/GitHub-and-users.png)
+
 ### Configuring your `git` e-mail
 
-:mask::warning::exclamation::warning::mask:
-This whole section may be irrelevant for home set-ups. It looks like
-GitKraken may set all this stuff up for you. To check that run these
-two commands and confirm that they return the email you used when
+:warning::exclamation::warning:
+This whole section will be irrelevant for people that already have done
+this configuration step, either because you did it by hand (perhaps
+for another class) or used a tool like
+GitKraken that set all this stuff up for you. To see if you're already set up,
+run the following two commands on the command line, and confirm that they
+return the email you used when
 you created your GitHub account, and your user name as you'd like it
-to be displayed in things like commit messages and on GitHub:
+to be displayed in things like commit messages and on GitHub.
 
 - `git config --global user.email`
 - `git config --global user.name`
@@ -195,15 +196,8 @@ If both of those look right, ignore the rest of this. You're done
 with the setup and ready to start the first half of the lab exercise!
 
 If either or both don't return the values you want, then follow along
-below to set that up.
-
-:exclamation: You _will_ need to set these on your account in the CSci
-lab in order for your name and email to work properly there. Assuming
-you'll eventually be taking classes in the lab again, you'll probably want
-to set these in the CSci Lab at some point as well.
-
-:zzz: Ignore everything from here to the end of this section if your
-settings are correct. :zzz:
+below to set that up. Ignore everything from here to the end of this
+section if your settings are correct.
 
 ---
 
@@ -214,7 +208,6 @@ You only need to do this once and it will "stick" throughout the course
 (and beyond) in all systems that use `git`.
 
 - Open a terminal window
-  - :mask: On Macs and Linux boxes use the Terminal app. On Windows use PowerShell.
 - Type `git config --global user.email "email@example.com"` where
   you replace `email@example.com` with the email you used to set up
   your GitHub account.
@@ -227,7 +220,7 @@ email but you'd like to use your UMM email now) you can
 [set your commit email address on GitHub](https://help.github.com/articles/setting-your-commit-email-address-on-github/)
 so that they match.
 
-If you'll occasionally be using any non-lab machines (like your own computer)
+:warning: If you'll occasionally be using any non-lab machines (like your own computer)
 to do work, make sure you [set your `git` email](https://help.github.com/articles/setting-your-commit-email-address-in-git/)
 on those machines as well. This will ensure that no matter where
 you commit from, `git` and GitHub will "know" it's you and properly

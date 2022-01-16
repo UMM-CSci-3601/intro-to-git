@@ -91,23 +91,24 @@ To run tasks with Gradle Wrapper, use `./gradlew <task>` in the top-level
 directory of the project. There are a _lot_ of tasks; some of particular
 interest include:
 
+- `./gradlew check` will run all yours tests and check your code style.
 - `./gradlew run` will run your application.
-- `./gradlew build` will compile all your files.
+- `./gradlew build` will compile all your files and run tests and checks.
 - `./gradlew clean` will delete all the generated files (e.g., `.class`
   files), which can be helpful when it looks like you need to force a
   rebuild. It's also a nice thing to do when you're done working on a
   project for a while and want to clean up some disk space.
 - `./gradlew jar` will generate a standalone JAR file for your application.
-- `./gradlew check` will make sure everything builds and the tests
-  all pass.
 - etc., etc.
 
 ### Gradle in VS Code
 
 "Out of the box", VS Code doesn't give you any way to run Gradle Tasks.
-If you install the [Gradle Tasks](https://marketplace.visualstudio.com/items?itemName=richardwillis.vscode-gradle)
-extensions then you get a "Gradle Tasks"
-view (bottom left in the Explorer, below your file tree).
+If you install the [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle)
+extensions then you get a "Gradle" view, which is an elephant
+icon along the left side of the VS Code window.
+
+![](images/Gradle_extension_in_VSCode.png)
 
 That will have a "folder" with the name of the repo (`intro-to-git` or
 similar in this case). That which will contain many other folders
@@ -120,5 +121,10 @@ containing specific tasks. Some of particular interest:
   rebuild. It's also a nice thing to do when you're done working on a
   project for a while and want to clean up some disk space.
 - _build -> jar_ will generate a standalone JAR file for your application
-- _verification -> check_ will make sure everything builds and the tests
-  all pass
+- _verification -> check_ will make sure everything builds, Checkstyle
+  is happy, and the tests all pass
+
+Running these from VS Code is equivalent to running the same tasks from the
+command like, e.g., `./gradlew run` or `./gradlew check`. Note that on the
+command line, however, there's no "folder" name like "application" or
+"verification".
