@@ -4,21 +4,21 @@
 
 > :bangbang: :mage_woman: **Faculty**
 >
-> Each semester _after creating the instance in GitHub Classroom_,
-> we need to (in the GitHub Classroom "fork"):
+> Each semester there's fair bit of setup that has to be done
+> to initially create and configure that semester's GitHub
+> organization, that semester's GitHub Classroom, and the
+> specific set up for this first lab.
 >
-> - [ ] Create a team called "Everyone"
-> - [ ] Fix the URLs in the badges below so they point to that semester's
->     repository instead of the "starter" repo.
-> - [ ] Make sure we've added every student in the current semester
->     to that semester's organization so they'll have permission to
->     push to this repo.
-> - [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md)
->     so that students can `push`.
-> - [ ] Remove this note and the broken badge above in the fork.
+> The instructions for all this are in [the FACULTY_REPO_SETUP.md](docs/FACULTY_REPO_SETUP.md) document in the `/docs` directory
+> of this repo.
 >
-> We should leave these notes in the copy in the "starter"
-> repository so it's there each semester when we fork this.
+> After you've gone through those instructions, you should
+> remove these faculty-oriented instructions and the
+> "FIX BADGES" badge above.
+>
+> Make sure to leave these notes in the copy in the "starter"
+> repository so it's there each semester when we make a copy
+> of this.
 
 [![Continuous integration status](../../actions/workflows/gradle.yaml/badge.svg)](../../actions/workflows/gradle.yaml)
 [![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=main)](https://bettercodehub.com/)
