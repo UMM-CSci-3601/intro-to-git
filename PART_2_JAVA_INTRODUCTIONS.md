@@ -44,8 +44,7 @@ changes on a branch into an entity that supports conversations and
 [_code review_](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-proposed-changes-in-a-pull-request).
 Quality code reviews can be a vital part of maintaining and improving
 the quality of code in a project, so it's important to seriously engage
-in the code review process. :mask: This is likely to be doubly important
-with the entire course being online.
+in the code review process.
 
 ## Open GitKraken
 
@@ -424,7 +423,7 @@ two things must be true:
 
 We use a feature called GitHub Actions to automate a set of checks on the lab
 and project repositories in this course. All those checks have to pass before
-you can merge in your pull request. For this lab we have five checks:
+you can merge in your pull request. For this lab we have four checks:
 
 - "build": This runs `./gradlew check`, which compiles the code
   and runs two checks. If both of these succeed you get a green check mark, and you get a red x if anything fails.
@@ -436,13 +435,10 @@ you can merge in your pull request. For this lab we have five checks:
   the other end of that URI). You won't be adding or changing any
   links in this lab, so that should continue to pass without any
   concerns.
-- "LGTM analysis: Java": This performs an automated "statement-level" analysis
-  of the Java code.
-- "Better Code Hub": This performs a more "big picture" analysis of the
-  project's code.
+- "CodeQL": This triggers security checks in languages specified in our GitHub workflows
+- "Analyze (java)": This checks some security things in the Java of this project (since we asked it to check Java)
 
-So have a look at the bottom of your pull request and you should see info on
-all three of these checks. If any of them have an orange/yellow dot next to them,
+So have a look at the bottom of your pull request and you should see the status of this check. If any of them have an orange/yellow dot next to them,
 then that tells you that check is still being processed (e.g., the tests are still
 being run) so you'll need to wait a bit for the check to finish. The checks can
 take a few minutes, depending on their complexity and how busy the various services
@@ -462,11 +458,6 @@ If any of the checks fail (give you a red x), then you probably want to click on
   doesn't meet the Checkstyle criteria. Run `./gradlew check`
   locally and see if the output there helps you understand
   why things are failing.
-- If either LGTM or Better Code Hub is grumpy, definitely click the "Details"
-  link, and you'll see more information about what they're not happy about.
-  If you understand the problem and how to possibly fix it, that's great.
-  If you don't, however, that's totally fine and you should definitely ask
-  for a hand!
 
 #### You might need to merge in changes from `main`
 
