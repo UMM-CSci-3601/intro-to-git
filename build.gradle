@@ -29,7 +29,7 @@ java {
 
 dependencies {
   // JUnit Jupiter API for testing.
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
 
   // JUnit Jupiter Engine for testing.
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
