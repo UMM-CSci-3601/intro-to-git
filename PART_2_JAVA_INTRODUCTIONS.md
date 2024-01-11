@@ -650,7 +650,7 @@ be visible in `main` – your work is officially part of the project! You'll
 be given the option to "Delete branch", which will delete your work branch.
 Since the changes on that branch are now all merged into `main` it should be
 safe to delete that branch, but you can leave it there if you prefer and
-remove it some "branch housekeeping" session you run later.
+remove it in some "branch housekeeping" session you run later.
 
 ## Huzzah! We're done! :-)
 
