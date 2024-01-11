@@ -6,16 +6,6 @@ package hellos;
  */
 public class Hellos {
 
-  public static void main(final String[] args) {
-    Hellos helloRunner = new Hellos();
-    helloRunner.run();
-  }
-
-  public void run() {
-    String output = generateOutput();
-    System.out.println(output);
-  }
-
   public String generateOutput() {
     StringBuilder builder = new StringBuilder();
 
