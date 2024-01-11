@@ -90,6 +90,43 @@ _in_ the directory containing your clone of the repo (i.e., you're in the
 
 This may spend a little time downloading dependencies; how long this takes
 will depend on the configuration of your computer, your networking speed, etc.
+
+You might get a bunch of lines that look something like:
+
+```text
+Path for java installation '/usr/lib/jvm/java-11-openjdk-11.0.15.0.10-2.el8_6.x86_64' (Common Linux Locations) does not contain a java executable
+```
+
+<!--
+  There's a Markdown lint warning (MD033) about not using HTML in
+  Markdown. This is generally a good idea, but I think the `details`
+  tag is actually really useful and there isn't currently a "pure"
+  Markdown equivalent, so I'm disabling that warning here where I'm
+  using `details`.
+-->
+<!-- markdownlint-disable MD033 -->
+<details>
+  <summary>These are fine; feel free to ignore them.</summary>
+  <quote>
+  We're using a Gradle plugin that lets us specify a particular
+  Java version in `build.gradle`, and Gradle will actually download
+  the specified version of Java if that version doesn't appear to
+  already be on the system you're using.
+
+  This is nice because it makes it much easier to run Java programs
+  on pretty much any reasonable system, and Gradle will automatically
+  download the specified version of Java if necessary.
+
+  Before it downloads a new version of Java, however, it does look in
+  a variety of "standard" locations to see if the desired version is
+  already there. For every "standard" location it looks, but fails to
+  find the desired version, you'll get one of these
+  `Path for java installation` lines. In our lab (at the moment)
+  there are quite a few possible locations that are checked, so you
+  get quite a few of these lines.
+  </quote>
+</details>
+
 It will eventually run our program, which should generate output that
 looks something like
 

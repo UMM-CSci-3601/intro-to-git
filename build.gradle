@@ -26,16 +26,17 @@ repositories {
 
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(11)
+    languageVersion = JavaLanguageVersion.of(21)
   }
 }
 
 dependencies {
   // JUnit Jupiter API for testing.
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
-
   // JUnit Jupiter Engine for testing.
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+  // JUnit Platform Launcher for testing.
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 application {
