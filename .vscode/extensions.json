@@ -8,10 +8,6 @@
     // https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
     "vscjava.vscode-java-pack",
 
-    // EditorConfig for VS Code
-    // https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
-    "EditorConfig.EditorConfig",
-
     // Gradle language support
     // https://marketplace.visualstudio.com/items?itemName=naco-siren.gradle-language
     "naco-siren.gradle-language",
