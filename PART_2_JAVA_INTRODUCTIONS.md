@@ -328,11 +328,11 @@ branch dropdown.
 If you select it you should see your last commit just below
 that. Next to the "Latest commit" label should either be an
 orange/yellow dot
-![GitHub's orange in-progress circle][orange-circle],
+(![GitHub's orange in-progress circle][orange-circle]),
 a green check mark
-![GitHub's green success check mark][green-check],
+(![GitHub's green success check mark][green-check]),
 or a red x
-![GitHub's red failure x][red-x]
+(![GitHub's red failure x][red-x])
 These show you the build status of that commit.
 Every time you (or anyone else) pushes to GitHub, we have GitHub Actions
 set up so they run the JUnit tests against that version of the code.
@@ -426,6 +426,11 @@ you can merge in your pull request. For this lab we have four checks:
 
 - "build": This runs `./gradlew check`, which compiles the code
   and runs the JUnit tests. If these succeed you get a green check mark, and you get a red x if anything fails.
+  and runs several checks. If all of these succeed you get a check mark (:white_check_mark:), and you get a red x (:x:) if anything fails.
+  - It runs the JUnit tests
+  - It confirms that the test coverage is at least 80%. (This should
+    be trivially true as the tests that we've provided should
+    automatically cover any new code that's added to `Hellos.java`)
 - "markdown-link-check": This checks that all the links in the
   project's Markdown files "work" (i.e., there's something at
   the other end of that URI). You won't be adding or changing any
@@ -438,10 +443,10 @@ So have a look at the bottom of your pull request and you should see the status 
 then that tells you that check is still being processed (e.g., the tests are still
 being run) so you'll need to wait a bit for the check to finish. The checks can
 take a few minutes, depending on their complexity and how busy the various services
-are. That's one of several reasons you should usually run the tests locally before
+are. :bangbang: That's one of several reasons you should usually run the tests locally before
 you push.
 
-If any of the checks fail (give you a red x), then you probably want to click on
+If any of the checks fail (give you a red :x:), then you probably want to click on
 "Details" by that check to learn more about what might have failed. If the
 Java `build` fails, it's likely because a test has
 failed, either because you didn't structure your
@@ -505,21 +510,21 @@ There are numerous ways this conflict could have come about, such as:
   instead call the (supposedly different) method `chrisSaysHello()`.
 - Chris has renamed `patSaysHello()` to `chrisSaysHello()`, and wants to change
   the call to match this renaming.
-- Chris wants to make _both_ function calls (in some order, which `git` couldn't
-  begin to guess).
+- Chris wants to make _both_ function calls in some order, and `git` can't
+  begin to guess what the desired is.
 
 Here `git` can't tell which of these happened, and thus can't "know" how to
-handle the merge. Thus it punts it to us, the human users, to sort out. Sometimes
+handle the merge. Thus it punts it to us, the human developers, to sort out. Sometimes
 it's obvious to us what to do, but sometimes it's really _not_ clear what the
 right course of action is. :warning: DO NOT JUST THROW AWAY OTHER PEOPLE'S
-WORK TO RESOLVE A MERGE CONFLICT. This is a place where you really want to
+WORK TO RESOLVE A MERGE CONFLICT :warning:. This is a place where you really want to
 take a moment and contact other people on your team to decide what is the best course
 of action.
 
 In this lab, the last option is the most likely situation, and we better call `chrisSaysHello()`
 first so that at least those two calls are in alphabetical order.
 
-Chris would use the web editor to make those changes, deleting the `<<<<`, `====`,
+Chris could use the web editor to make those changes, deleting the `<<<<`, `====`,
 and `>>>>` lines, leaving the two calls in the desired order. When things look good,
 Chris clicks "Mark as resolved", and then the button to commit the merged changes.
 
@@ -532,7 +537,10 @@ for more examples and details.
 
 :warning: :bangbang: At this point Chris (or you if you've been doing something
 similar) will need to pull these changes back down to your copy if you want
-or need to make changes to your branch. If, for example, Chris realizes here
+or need to make changes to your branch. The changes you've made by
+resolving conflicts in the web GUI _only_ affect the version of the
+code on GitHub, so you have to pull if you want those changes to be
+reflected in your local copy as well. If, for example, Chris realizes here
 that the tests are failing because they have the alphabetical order wrong,
 they'll need to pull down these changes, fix the alphabetical order, push back
 up, and attempt to merge again.
@@ -540,9 +548,9 @@ up, and attempt to merge again.
 #### You need a review
 
 Now you've finally gotten your code up-to-date and all the checks pass. You
-still can't merge because of a big red X and the message "Review required".
+still can't merge because of a red :x: and the message "Review required".
 This is because we're following a common "best practice" and requiring at
-least two code review _by other people_ for each pull request.
+least two code reviews _by other people_ for each pull request.
 
 So you need to get someone to review your code! In the upper right there's
 a "Reviewers" section. Click on the gear there and you should get a drop down
@@ -586,7 +594,7 @@ check for:
 - [ ] Do the new methods they're adding have reasonable names that convey useful
       info to the reader?
 - [ ] Are new method names in camel cases, starting in lowercase (the Java standard
-      for method names)?.
+  for method names)?
 - [ ] Is the implementation of the new methods reasonable?
 - [ ] Is the spacing and indentation uniform and consistent with the rest of the file?
 
@@ -599,13 +607,23 @@ gets merged in. _Don't be shy about requesting changes._ It can seem kind of mea
 and it definitely slows things down, but it can significantly improve the quality
 of the overall work, which benefits everyone in the long run.
 
+> :warning: Don't just gloss over their code. It is ultimately up to
+_all_ of us to work together to maintain the overall quality of the
+work produced by our groups. Part of that is taking code reviews
+seriously. It may not seem "nice" to ask for changes to someone's
+pull request, but this is the best (and often the only) time for
+us to help each other improve the quality of our work. Suggesting
+that they fix a misspelling or improve the naming of a method may
+seem "minor" and kinda obnoxious, but really that's how we maintain
+the quality of our systems over time. So be polite, but also be firm.
+
 #### Process the code reviews you receive
 
 Once you receive a positive review you can proceed to merge. If, however, you
 received a request to make some changes, look those over. Does the request make
 sense? Do you understand what (and why) it's being made? If not, _definitely_
 ask the requestor for further information or explanation. You can post your own comment
-on the pull request and/or contact them by other means (e.g., Slack, email). You
+on the pull request and/or contact them by other means (e.g., talk to them in person, or use things like Discord or email). You
 probably want any important info to be captured in the pull request, but sometimes
 it's useful to poke someone on another channel to get their attention.
 
@@ -625,7 +643,7 @@ be visible in `main` – your work is officially part of the project! You'll
 be given the option to "Delete branch", which will delete your work branch.
 Since the changes on that branch are now all merged into `main` it should be
 safe to delete that branch, but you can leave it there if you prefer and
-remove it later in a "branch housekeeping" session.
+remove it in some "branch housekeeping" session you run later.
 
 ## Huzzah! We're done! :-)
 

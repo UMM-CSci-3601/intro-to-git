@@ -195,9 +195,10 @@ install them one at a time if you want to know more about what we're doing here.
 ### Have a look at the project
 
 In the file explorer on the left of the VS Code window,
-open up `src -> main/java/hellos -> Hellos.java` and you should see a small
-Java program. Now open up `src -> test/java/hellos -> HellosTest.java` and you
-should see our JUnit tests.
+open up `src -> main/java/hellos -> Main.java` and
+ `src -> main/java/hellos -> Hellos.java`, and you should see a small
+Java program. Now open up `src -> test/java/hellos -> HellosTest.java`
+and you should see our JUnit tests.
 
 > [JUnit is a widely used testing framework for Java](https://junit.org/junit5/docs/current/user-guide/#writing-tests).
 > A Junit test is a method that has the special `@Test` annotation and contains

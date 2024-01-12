@@ -8,6 +8,9 @@
 plugins {
   // Apply the application plugin to add support for building a CLI application.
   id 'application'
+
+  // Apply the Jacoco plugin to add suppport for JUnit test coverage reports.
+  id 'jacoco'
 }
 
 // In this section you declare where to find the dependencies of your project.
@@ -34,12 +37,86 @@ dependencies {
 
 application {
   // Define the main class for the application.
-  mainClass.set('hellos.Hellos')
+  mainClass.set('hellos.Main')
 }
 
 test {
   // Use junit platform for unit tests.
   useJUnitPlatform()
+
+  // After running the tests, generate a coverage report
+  finalizedBy jacocoTestReport
+  // After running the tests, check the coverage level
+  finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestReport {
+  // Running the test report task automatically runs test first
+  dependsOn test
+
+  reports {
+    // This isn't strictly necessary, but the default reports
+    // location is buried pretty deep in the build directory,
+    // so this makes it easier to find.
+    html.outputLocation = file("${buildDir}/jacocoHtml")
+  }
+
+  afterEvaluate {
+    // This excludes the `Main` class from coverage verification.
+    // All the "useful" logic is in the `Hellos` class, so we'll
+    // check the coverage on that class instead.
+    classDirectories.setFrom(files(classDirectories.files.collect {
+      fileTree(dir: it, exclude: ['**/Main.class'])
+    }))
+  }
+}
+
+jacocoTestCoverageVerification {
+  // Running the test verification task automatically runs test first
+  dependsOn test
+
+  // These are the rules applied to the test coverage
+  violationRules {
+    rule {
+      // We are looking at the entire bundle overall, i.e.,
+      // 80% of all instructions across all the Java files
+      // need to be covered.
+      element = 'BUNDLE'
+
+      // 80% of instructions should be covered
+      limit {
+        counter = 'INSTRUCTION'
+        minimum = 0.8
+      }
+
+      // 80% of lines should be covered
+      limit {
+        counter = 'LINE'
+        minimum = 0.8
+      }
+
+      // 80% of branches should be covered
+      limit {
+        counter = 'BRANCH'
+        minimum = 0.8
+      }
+
+      // 80% of methods should be covered
+      limit {
+        counter = 'METHOD'
+        minimum = 0.8
+      }
+    }
+  }
+
+  // This excludes the `Main` class from coverage verification.
+  // All the "useful" logic is in the `Hellos` class, so we'll
+  // check the coverage on that class instead.
+  afterEvaluate {
+    classDirectories.setFrom(files(classDirectories.files.collect {
+      fileTree(dir: it, exclude: ['**/Main.class'])
+    }))
+  }
 }
 
 tasks.withType(JavaCompile) {
