@@ -265,7 +265,7 @@ Each contact info page should:
 - Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
 - Contain at least:
   - Your preferred names (e.g., "Nic" or "KK")
-  - [Your preferred pronouns](https://www.mypronouns.org/)
+  - [Your pronouns](https://www.mypronouns.org/)
   - Your GitHub usernames (so we can figure out who `UnicornWizard375`
     is in real life)
 
