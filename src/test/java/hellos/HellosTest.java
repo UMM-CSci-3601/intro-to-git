@@ -8,20 +8,20 @@ import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class HellosTest {
+class HellosTest {
 
   private String[] lines;
   private String output;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     Hellos helloRunner = new Hellos();
     output = helloRunner.generateOutput();
     lines = output.split("\n");
   }
 
   @Test
-  public void testLineStructure() {
+  void testLineStructure() {
     // This regex supports unicode letters spaces, apostrophes, and hyphens
     // Taken from
     // https://stackoverflow.com/questions/15805555/java-regex-to-validate-full-name-allow-only-spaces-and-letters
@@ -39,7 +39,7 @@ public class HellosTest {
   }
 
   @Test
-  public void testAlphabetization() {
+  void testAlphabetization() {
     // Make another list that will be sorted
     String[] sortedLines = output.split("\n");
     Arrays.sort(sortedLines);
