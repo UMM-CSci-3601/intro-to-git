@@ -347,7 +347,7 @@ The meaning of these symbols is:
   the tests passed, and any other checks passed as well).
 - ![GitHub's red failure x][red-x]: A red x means that
   something bad happened, like a test failed.
-  
+
 If you click on any of these symbols on the GitHub page, you can get
 more information, including links to pages with details on, e.g., failed tests.
 
@@ -493,7 +493,7 @@ Here, if Chris clicks the "Resolve conflicts" button, GitHub will put Chris in
 a (web) editor where they can resolve the conflicts. That editor will likely
 have a section that looks something like:
 
-```java
+```diff
 <<<<<<< chris-greeting
     builder.append(chrisSaysHello());
 =======
@@ -590,12 +590,12 @@ look over the code and make sure the changes look reasonable. Some things to
 check for:
 
 - [ ] Does it look (by eye) that this will print all the greetings in alphabetical
-  order? (The tests check that for sure, but you should always be thinking about
-  correctness as well.)
+      order? (The tests check that for sure, but you should always be thinking about
+      correctness as well.)
 - [ ] Do the new methods they're adding have reasonable names that convey useful
-  info to the reader?
+      info to the reader?
 - [ ] Are new method names in camel cases, starting in lowercase (the Java standard
-  for method names)?.
+      for method names)?.
 - [ ] Is the implementation of the new methods reasonable?
 - [ ] Is the spacing and indentation uniform and consistent with the rest of the file?
 

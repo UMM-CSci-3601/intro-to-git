@@ -42,12 +42,12 @@ will create a copy on GitHub for your team of our starter
 repository; your team will use that as the starting point for your work.
 
 This lab is unusual in that we will all be on a single large team called
-__Everyone__, all making changes to a single shared repository. This will
+**Everyone**, all making changes to a single shared repository. This will
 help illustrate the value of version control systems like `git` in managing
 this kind of shared resource, and also give us opportunities to see what
 happens when different people make inconsistent changes to the same files.
 
-So follow the link in the Canvas assignment and join the __Everyone__ team;
+So follow the link in the Canvas assignment and join the **Everyone** team;
 that should take you to the shared repository on GitHub. From there
 you can get the URL for that repository
 from the green `Code` button visible on the "home page" for each
