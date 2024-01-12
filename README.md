@@ -78,7 +78,7 @@ of documentation we have in the `docs/` folder:
 - [An overview of the Gradle build tool and how we're using it in this lab](docs/Gradle_README.md)
 
 You should also probably read [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-Markdown is the markup language used by Slack, GitHub, and _many_ other
+Markdown is the markup language used by Discord, Slack, GitHub, and _many_ other
 online tools, so understanding at least the basics is really valuable.
 
 Below are some additional resources that you might

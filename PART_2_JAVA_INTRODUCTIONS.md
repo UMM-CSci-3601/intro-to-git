@@ -490,11 +490,11 @@ a (web) editor where they can resolve the conflicts. That editor will likely
 have a section that looks something like:
 
 ```diff
-<<<<<<< chris-greeting
+ <<<<<<< chris-greeting
     builder.append(chrisSaysHello());
-=======
+ =======
     builder.append(patSaysHello());
->>>>>>> main
+ >>>>>>> main
 ```
 
 What this rather odd syntax says is that Chris's `chris-greeting` branch has
@@ -623,9 +623,10 @@ Once you receive a positive review you can proceed to merge. If, however, you
 received a request to make some changes, look those over. Does the request make
 sense? Do you understand what (and why) it's being made? If not, _definitely_
 ask the requestor for further information or explanation. You can post your own comment
-on the pull request and/or contact them by other means (e.g., talk to them in person, or use things like Discord or email). You
-probably want any important info to be captured in the pull request, but sometimes
-it's useful to poke someone on another channel to get their attention.
+on the pull request and/or contact them by other means (e.g., talk to them in person, 
+or use things like Discord or email). You probably want any important info to be captured 
+in the pull request, but sometimes it's useful to poke someone on another channel 
+to get their attention.
 
 While you're waiting for them to re-review your pull request, check and make sure
 no one else is waiting for you to re-review code reviews you left on their pull
