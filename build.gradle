@@ -11,10 +11,6 @@ plugins {
 
   // Apply the Jacoco plugin to add suppport for JUnit test coverage reports.
   id 'jacoco'
-
-  // The checkstyle plugin provides basic Java style checks to ensure we're
-  // following industry style standards.
-  id 'checkstyle'
 }
 
 // In this section you declare where to find the dependencies of your project.

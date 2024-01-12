@@ -1,6 +1,6 @@
 # Info on merge conflicts <!-- omit in toc -->
 
-- [What is a merge conflict & why do they matter?](#what-is-a-merge-conflict--why-do-they-matter)
+- [What is a merge conflict \& why do they matter?](#what-is-a-merge-conflict--why-do-they-matter)
 - [Pro-tip: Keep your branch(es) up-to-date](#pro-tip-keep-your-branches-up-to-date)
 - [How to deal with merge conflicts](#how-to-deal-with-merge-conflicts)
   - [Make sure you have the latest version of `main` locally](#make-sure-you-have-the-latest-version-of-main-locally)
@@ -144,7 +144,7 @@ your feature branch.
   Go with the first one (probably "Merge", but possibly "Fast-forward").
 - On the command line
   - Run `git checkout my-cool-feature` to check out the
-  feature branch
+    feature branch
   - Then run `git merge main` to merge in the new changes from `main`.
     - On the command line, `git merge <branch-name>` will merge the specified
       branch into whichever branch is currently checked out.

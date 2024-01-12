@@ -9,12 +9,12 @@
 >
 > - [ ] Create a team called "Everyone"
 > - [ ] Fix the URLs in the badges below so they point to that semester's
->     repository instead of the "starter" repo.
+>       repository instead of the "starter" repo.
 > - [ ] Make sure we've added every student in the current semester
->     to that semester's organization so they'll have permission to
->     push to this repo.
+>       to that semester's organization so they'll have permission to
+>       push to this repo.
 > - [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md)
->     so that students can `push`.
+>       so that students can `push`.
 > - [ ] Remove this note and the broken badge above in the fork.
 >
 > We should leave these notes in the copy in the "starter"
@@ -88,9 +88,9 @@ its more advanced features.
 
 - The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
 - [The "standard" `git` documentation site](https://git-scm.com/documentation),
-which also includes links to videos, cheat sheets, and such
+  which also includes links to videos, cheat sheets, and such
 - [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
-a single-page app that goes through the major features of `git`
+  a single-page app that goes through the major features of `git`
 - [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
 
 As circumstances allow, you might also want to at least skim one or two of the
