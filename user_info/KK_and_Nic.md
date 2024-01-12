@@ -8,14 +8,14 @@ until something interesting came up.
 
 ## Kristin Lamberty
 
-* I prefer to be called "KK".
-* My pronouns are she/her/hers.
-* My GitHub username is `kklamberty`.
-* My GitHub "home page" is [github.com/kklamberty](https://github.com/kklamberty/).
+- I prefer to be called "KK".
+- My pronouns are she/her/hers.
+- My GitHub username is `kklamberty`.
+- My GitHub "home page" is [github.com/kklamberty](https://github.com/kklamberty/).
 
 ## Nic McPhee
 
-* I prefer to be called "Nic".
-* My pronouns are he/him/his.
-* My GitHub username is `NicMcPhee`.
-* My GitHub "home page" is [github.com/NicMcPhee](https://github.com/NicMcPhee/).
+- I prefer to be called "Nic".
+- My pronouns are he/him/his.
+- My GitHub username is `NicMcPhee`.
+- My GitHub "home page" is [github.com/NicMcPhee](https://github.com/NicMcPhee/).
