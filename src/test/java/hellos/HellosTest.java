@@ -21,26 +21,15 @@ class HellosTest {
   }
 
   @Test
-  void sillyTest() {
-    int numLines = 0;
-
-    for (int i = 0; i < lines.length; ++i) {
-      ++numLines;
-    }
-
-    assertEquals(lines.length, numLines, "Number of lines in output doesn't match");
-  }
-
-  @Test
   void testLineStructure() {
     // This regex supports unicode letters spaces, apostrophes, and hyphens
     // Taken from
     // https://stackoverflow.com/questions/15805555/java-regex-to-validate-full-name-allow-only-spaces-and-letters
     // The pattern needs to include
-    // - some name,
-    // - the "says",
-    // - and the single quotes, and
-    // - they must speak with emphasis as noted by the required "!"
+    //  - some name,
+    //  - the "says",
+    //  - and the single quotes, and
+    //  - they must speak with emphasis as noted by the required "!"
     String linePattern = "[\\p{L} .'-]+ says '+[\\p{L} .'-]+!'";
 
     for (int i = 0; i < lines.length; ++i) {
