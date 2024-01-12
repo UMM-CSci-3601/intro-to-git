@@ -347,7 +347,7 @@ The meaning of these symbols is:
   the tests passed, and any other checks passed as well).
 - ![GitHub's red failure x][red-x]: A red x means that
   something bad happened, like a test failed.
-  
+
 If you click on any of these symbols on the GitHub page, you can get
 more information, including links to pages with details on, e.g., failed tests.
 
@@ -614,7 +614,7 @@ Once you receive a positive review you can proceed to merge. If, however, you
 received a request to make some changes, look those over. Does the request make
 sense? Do you understand what (and why) it's being made? If not, _definitely_
 ask the requestor for further information or explanation. You can post your own comment
-on the pull request and/or contact them by other means (e.g., Slack, email). You
+on the pull request and/or contact them by other means (e.g., Discord, email). You
 probably want any important info to be captured in the pull request, but sometimes
 it's useful to poke someone on another channel to get their attention.
 
