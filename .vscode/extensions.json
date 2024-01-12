@@ -18,7 +18,20 @@
 
     // GitHub Markdown Preview
     // https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview
-    "bierner.github-markdown-preview"
+    "bierner.github-markdown-preview",
+
+    // Support GitHub Markdown emoji syntax
+    // https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji
+    "bierner.markdown-emoji",
+
+    // Support footnotes in GitHub Markdown
+    // https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes
+    "bierner.markdown-footnotes",
+
+    // Support Markdown linting, which also provides the default formatting for
+    // Markdown files.
+    // https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
+    "davidanson.vscode-markdownlint"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
