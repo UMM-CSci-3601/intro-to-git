@@ -64,8 +64,7 @@ GitHub account** as this will do two important things:
   GitHub Student Pack, you should do so before setting up GitKraken._
 
 After you've authenticated with GitHub, GitKraken will ask to setup
-your `git` info ([like you did at the start for the command line](#configuring-your-git-e-mail));
-you should enter your name and whatever email you've used for GitHub.
+your `git` info; you should enter your name and whatever email you've used for GitHub.
 
 Once all the setup is finished, select `File -> Open` and navigate to the directory
 containing your local clone (`intro-to-git`), and open that up. There's a lot of information
@@ -426,10 +425,7 @@ and project repositories in this course. All those checks have to pass before
 you can merge in your pull request. For this lab we have four checks:
 
 - "build": This runs `./gradlew check`, which compiles the code
-  and runs two checks. If both of these succeed you get a green check mark, and you get a red x if anything fails.
-  - It uses a tool called [Checkstyle](https://checkstyle.org/) that
-    checks that your code follows a set of basic style guides.
-  - It runs the JUnit tests
+  and runs the JUnit tests. If these succeed you get a green check mark, and you get a red x if anything fails.
 - "markdown-link-check": This checks that all the links in the
   project's Markdown files "work" (i.e., there's something at
   the other end of that URI). You won't be adding or changing any
@@ -446,18 +442,13 @@ are. That's one of several reasons you should usually run the tests locally befo
 you push.
 
 If any of the checks fail (give you a red x), then you probably want to click on
-"Details" by that check to learn more about what might have failed.
-
-- If the Java `build` fails, it's likely because a test has
-  failed, either because you didn't structure your
-  greeting correctly, or you didn't put it in the correct place so that all
-  greetings are in alphabetical order. You should probably run the tests again
-  on your computer, where you'll get more information on which test failed and
-  why. If you're unsure how to proceed _definitely ask for some help!_
-- The other way the Java `build` could fail is if your formatting
-  doesn't meet the Checkstyle criteria. Run `./gradlew check`
-  locally and see if the output there helps you understand
-  why things are failing.
+"Details" by that check to learn more about what might have failed. If the
+Java `build` fails, it's likely because a test has
+failed, either because you didn't structure your
+greeting correctly, or you didn't put it in the correct place so that all
+greetings are in alphabetical order. You should probably run the tests again
+on your computer, where you'll get more information on which test failed and
+why. If you're unsure how to proceed _definitely ask for some help!_
 
 #### You might need to merge in changes from `main`
 
