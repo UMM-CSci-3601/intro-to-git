@@ -62,7 +62,7 @@ jacocoTestReport {
     // This isn't strictly necessary, but the default reports
     // location is buried pretty deep in the build directory,
     // so this makes it easier to find.
-    html.destination file("${buildDir}/jacocoHtml")
+    html.outputLocation = file("${buildDir}/jacocoHtml")
   }
 
   afterEvaluate {
