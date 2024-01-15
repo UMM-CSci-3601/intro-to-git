@@ -1,23 +1,22 @@
 name: Java
 
-on: [push]
+on: [push, pull_request, merge_group]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Cache Gradle artifacts (downloaded JARs, the wrapper, and any downloaded JDKs)
-      uses: actions/cache@v2
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-          ~/.gradle/jdks
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/.gradle/') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
-    - name: Build with Gradle (which runs the tests as one of its subtasks)
-      run: ./gradlew build
+      - uses: actions/checkout@v1
+      - name: Cache Gradle artifacts (downloaded JARs, the wrapper, and any downloaded JDKs)
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.gradle/jdks
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/.gradle/') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Build with Gradle (which runs the tests as one of its subtasks)
+        run: ./gradlew build
