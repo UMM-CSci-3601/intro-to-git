@@ -457,7 +457,7 @@ be some questions/options you'll need to address when creating your PAT:
   the end of the week.
 - Under "Resource owner" you _have_ to select the organization for this semester's
   Software Design course. That's probably something of the form `UMM-CSci-3601-S24`.
-- Under **Reposity access** choose "Only select repositories". Then choose
+- Under **Repository access** choose "Only select repositories". Then choose
   the repository with `intro-to-git` in the name from the "Select repositories" dropdown.
 - Open the **Repository permissions** drop-down. You'll get a somewhat bewildering
   set of options there, but all you need is to set "Contents" to "Read and write".

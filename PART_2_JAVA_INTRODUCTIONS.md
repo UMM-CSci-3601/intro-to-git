@@ -533,7 +533,7 @@ for more examples and details.
 similar) will need to pull these changes back down to your copy if you want
 or need to make changes to your branch. The changes you've made by
 resolving conflicts in the web GUI _only_ affect the version of the
-code on GitHub, so you have to `pull`` if you want those changes to be
+code on GitHub, so you have to `pull` if you want those changes to be
 reflected in your local copy as well. If, for example, Chris realizes here
 that the tests are failing because they have the alphabetical order wrong,
 they'll need to pull down these changes, fix the alphabetical order, push back
