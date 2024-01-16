@@ -7,12 +7,14 @@
 >
 > - [ ] Post the link on the LMS (e.g., Canvas)
 > - [ ] Create a team called "Everyone"
+> - [ ] Go to <https://github.com/settings/connections/applications/>, click on
+>       "GitKraken", and grant access to the new semester's organization
 > - [ ] Make sure we've added every student in the current semester
 >       to that semester's organization so they'll have permission to
->       push to this repo.
+>       push to this repo
 > - [ ] [Turn off branch protection](docs/FACULTY_BRANCH_PROTECTION_SETTINGS.md)
->       so that students can `push`.
-> - [ ] Remove this note and the broken badge above in the fork.
+>       so that students can `push`
+> - [ ] Remove this note and the broken badge above in the fork
 >
 > We should leave these notes in the copy in the "starter"
 > repository so it's there each semester when we fork this.
