@@ -1,6 +1,6 @@
 name: Java
 
-on: [push, pull_request, merge_group]
+on: [push]
 
 jobs:
   build:
