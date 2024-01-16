@@ -75,19 +75,20 @@ Many projects, including ours, block pull requests from out-of-date branches as
 a safety measure. So, you'll need to bring your branches up to date before
 merging your pull requests.
 
-In general you want to keep your branch up-to-date with any
-changes that have been merged into `main` as much as you can.
+In general you want to keep your branch as up-to-date with `main`
+as possible, merging changed from `main` into your branch
+as often as you can.
 The longer you wait to merge changes in from `main`, the harder
 it will be and the more likely it is that you'll have merge
 conflicts when you do.
 
 Branches that get really disconnected from `main` often get
 abandoned because merging that work in just becomes too much
-hassle, and lots of potentially good work has been "lost"
+hassle, and lots of potentially good work gets "lost"
 that way.
 
 In the next section we'll go over the mechanics of getting
-your branch up to do with `main`.
+your branch up to date with `main`.
 
 ## How to deal with merge conflicts
 
@@ -108,14 +109,15 @@ The basic process you'll typically want to follow is:
     committed. If there is an `WIP` entry, you can click on it to see what's
     not yet committed. (There can be times where you have changes you don't
     yet want to commit, but these can interfere with the process. Feel free
-    to create a _stash_ as a way to temporarily store those changes so you
+    to [create a _stash_](https://help.gitkraken.com/gitkraken-client/stashing/)
+    as a way to temporarily store those changes so you
     can get them back later.)
-  - Or use `git status` on the command line to confirm that everything you
-    mean to have committed is in fact committed.
+  - Alternatively, you can use `git status` on the command line to confirm that
+    everything you meant to have committed is in fact committed.
 - Check out the `main` branch
   - Double click on `main` in the branch listing on the left-hand side
     of GitKraken.
-  - Or `git checkout main` on the command line
+  - Or `git switch main` on the command line
 
 At this point you should be on the `main` branch, and all your work
 on your new feature should "disappear" in VS Code. Don't worry, it's still
@@ -143,7 +145,7 @@ your feature branch.
   `my-cool-feature`). That will bring up a dialog with several options.
   Go with the first one (probably "Merge", but possibly "Fast-forward").
 - On the command line
-  - Run `git checkout my-cool-feature` to check out the
+  - Run `git switch -c my-cool-feature` to check out the
     feature branch
   - Then run `git merge main` to merge in the new changes from `main`.
     - On the command line, `git merge <branch-name>` will merge the specified
@@ -196,8 +198,8 @@ The sequence of events in GitKraken is likely to look something like:
 
 ### Push your feature branch to GitHub
 
-When that's all done then the merge conflict will be _resolved_ in `git`
-terminology and you'll be (nearly) read to `push` your changes.
+When that's all done then the merge conflict will be (in `git` terminology)
+_resolved_, and you'll be (nearly) read to `push` your changes.
 
 Before you do that, however, you should carefully
 proofread any code that's modified in resolving a merge conflict,
@@ -213,7 +215,7 @@ Once that's all happy, you should `push` your feature branch up to GitHub!
 Hopefully, at this point, your branch should be up-to-date with `main`.
 Occasionally, however, someone will manage to sneak in another change to `main`
 while you were resolving your merge conflict&mdash;and that's actually
-pretty likely today with so many people working in parallel on the same
+pretty likely in this lab with so many people working in parallel on the same
 file.
 
 If that happens, `pull` the latest `main` branch again, merge it into your

@@ -17,8 +17,14 @@ like (minus all the comments):
 
 ```groovy
 plugins {
-  id 'java'
   id 'application'
+  id 'jacoco'
+}
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
 }
 
 repositories {
@@ -26,12 +32,13 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
-  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 application {
-  mainClassName = 'hellos.Hellos'
+  mainClass.set('hellos.Main')
 }
 
 test {
@@ -39,10 +46,17 @@ test {
 }
 ```
 
-The two lines in the opening `plugins` section tell Gradle that this is a Java project
-and that we want to build a stand-alone command-line application.
+The two lines in the opening `plugins` section tell Gradle that we want to
+build a stand-alone command-line application using Java.
 That actually gives us a _bunch_ of Gradle commands we can run that know
-how to build, run, test, and deploy a Java application.
+how to build, run, test, and deploy a Java application. The `jacoco`
+plugin gives us tools for determining which parts of our code are covered
+by our JUnit tests.
+
+The `java / toolchain` section specifies which version of Java we're using.
+If Gradle can't find that version of Java on the computer you're using, it will
+in fact download a project-specific copy of that version of Java and use it for
+all the Gradle commands you run.
 
 The `repositories` section allows us to provide one or more repositories where
 Gradle can go to download libraries that our project depends on. We're using [`mavenCentral()`](https://search.maven.org/), which is the Maven Central Repository.
@@ -62,7 +76,10 @@ qualified path, so in this case `hellos.Hellos` for the class `Hellos` in the pa
 
 In the `test` section we specify (via `useJunitPlatform()`) that we want Gradle to
 use JUnit to run our tests. If we were using a different Java test platform like
-[TestNG](https://testng.org/doc/) then we would indicate that here.
+[TestNG](https://testng.org/doc/) then we would indicate that here. There's some
+additional configuration there that tells Gradle to use Jacoco to compute the
+test coverage, and fail the build if our tests don't cover at least 80% of our
+code.
 
 There are a _lot_ more nifty things you can set up in a `build.gradle` file,
 but this is all we need for this lab.
@@ -70,7 +87,7 @@ but this is all we need for this lab.
 ## Running Gradle
 
 This simple setup creates a _lot_ of Gradle commands that we can use to build and
-run our application. These can be done through IDEA or on the command line.
+run our application. These can be done through VS Code or on the command line.
 
 ### Gradle on the command line
 

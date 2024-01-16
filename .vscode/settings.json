@@ -4,6 +4,7 @@
     "bangbang",
     "gaurav",
     "gradlew",
+    "jacoco",
     "Phee",
     "unstage",
     "Unstaged",
@@ -12,7 +13,7 @@
   "editor.formatOnSave": true,
   "[java]": {
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.defaultFormatter": "redhat.java",
+    "editor.defaultFormatter": "redhat.java"
   },
   "[markdown]": {
     // Prettier tends to mangle Markdown, so we'll use the Markdownlint extension instead.
