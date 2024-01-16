@@ -8,8 +8,7 @@
 > specific set up for this first lab.
 >
 > After you've gone through those instructions, you should
-> remove these faculty-oriented instructions and the
-> "FIX BADGES" badge above.
+> remove these faculty-oriented instructions.
 >
 > Make sure to leave these notes in the copy in the "starter"
 > repository so it's there each semester when we make a copy
