@@ -20,6 +20,8 @@
 :bangbang: Don't move on to this next part until _everyone_ is done with
 the previous part.
 
+:bangbang: You should definitely change _driver_ and _navigator_ roles now.
+
 > :bangbang: :mage_woman: **Faculty**
 >
 > When the students get this part of the lab, we'll need to
@@ -28,8 +30,6 @@ the previous part.
 > all pull requests and merging will be blocked if,
 > e.g., the tests fail or there aren't enough code
 > reviews.
-
-:bangbang: You should definitely change _driver_ and _navigator_ roles now.
 
 In this second part each group will make a small change to a simple Java
 program, `Hellos.java` in the `src/main/java/hellos` directory. Each group will make a
@@ -63,7 +63,7 @@ GitHub account** as this will do two important things:
   for resolving merge conflicts. :bangbang: _If you haven't set up your
   GitHub Student Pack, you should do so before setting up GitKraken._
 
-After you've authenticated with GitHub, GitKraken will ask to setup
+After you've authenticated with GitHub, GitKraken will ask to set up
 your `git` info; you should enter your name and whatever email you've used for GitHub.
 
 Once all the setup is finished, select `File -> Open` and navigate to the directory
@@ -78,10 +78,12 @@ we have the latest version of the code. In GitKraken you can just click the
 changes that you didn't have, the history would update
 to show the new commits you just pulled down to your local repository.
 
+![The "pull" button in GitKraken](./docs/images/GitKraken-pull.png)
+
 ## Creating a branch
 
-Before we get started on actually editing the program, we want to introduce
-the concept of _branches_ in `git`, as they are a powerful tool for
+Before we start actually editing the program, we want to introduce
+the concept of _branches_ in `git`, which are a powerful tool for
 isolating in-progress work
 on a particular feature from other on-going work on the project.
 Creating and working in your own feature branch allows you to commit,
@@ -607,9 +609,9 @@ Once you receive a positive review you can proceed to merge. If, however, you
 received a request to make some changes, look those over. Does the request make
 sense? Do you understand what (and why) it's being made? If not, _definitely_
 ask the requestor for further information or explanation. You can post your own comment
-on the pull request and/or contact them by other means (e.g., talk to them in person, 
-or use things like Discord or email). You probably want any important info to be captured 
-in the pull request, but sometimes it's useful to poke someone on another channel 
+on the pull request and/or contact them by other means (e.g., talk to them in person,
+or use things like Discord or email). You probably want any important info to be captured
+in the pull request, but sometimes it's useful to poke someone on another channel
 to get their attention.
 
 While you're waiting for them to re-review your pull request, check and make sure
