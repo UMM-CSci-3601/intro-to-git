@@ -116,12 +116,19 @@ In GitKraken we can do this by clicking the `Branch` button in the toolbar
 up at the top. It
 won't immediately look like anything actually happened, but there will be a
 text box to the left of the history diagram where the _HEAD_ (top) of `main` is.
+
+![Creating a new branch in GitKraken](./docs/images/GitKraken-create-a-branch.png)
+
 Enter your branch name (e.g., `pat-and-chris-greetings`) there and hit return. It
 should now show (part of) `pat-and-chris-greetings` and a `+1` which indicates
 that there's another branch (`main`) whose HEAD is at the same place. You should
 also have `pat-and-chris-greetings` listed as a new branch under `LOCAL` in the
 explorer on the left, and it should be highlighted to indicate that it is the
-currently _checked out_ branch. That means that any new commits you make will
+currently _checked out_ branch.
+
+![After creating a new branch in GitKraken](./docs/images/GitKraken-with-new-branch.png)
+
+That means that any new commits you make will
 be _in that branch_ instead of in `main` as they were in the first half
 of this lab.
 
@@ -130,14 +137,13 @@ command line as well. To create and move to a new branch in the command line
 you'd use something like
 
 ```bash
-git checkout -b <new_branch_name>
+git switch -c <new_branch_name>
 ```
 
-This creates the new branch and perform a `checkout` on that branch.
-The `checkout` part of the process tells `git` to "switch over" to that new
-branch, so subsequent commits will happen on that branch. You use
-`git checkout` without the `-b` to just switch between existing branches;
-the `-b` tells `git` that this is a new branch that needs to be created.
+This creates the new branch and switches to that branch, so subsequent commits
+will happen on that branch. You use
+`git switch` without the `-c` to just switch between existing branches;
+the `-c` tells `git` that this is a new branch that needs to be created.
 
 ## Edit the program
 
@@ -155,7 +161,7 @@ method:
         builder.append(patSaysHello());
 ```
 
-Here you'll replace `pat_says_hello` with method names that
+Here you'll replace `patSaysHello` with a method name that
 reflects the name of the person providing the greeting.
 You should create one new method for
 _every_ person in your group. If your group is Pat and Chris, then you
@@ -191,7 +197,7 @@ So let's fix that, by adding the necessary new methods somewhere down amongst
 the example methods; they should look something like:
 
 ```java
-    private static String chrisSaysHello() {
+    private String chrisSaysHello() {
         return "Chris says 'Hello!'\n";
     }
 ```
@@ -366,9 +372,9 @@ collectively can.
 ### Create a pull request
 
 Go this repo on GitHub (on the web) and there's likely to be one or
-more messages in a light yellow box near the top that say something like:
+more messages in a light yellow box near the top like:
 
-> **\<branch name\>** had recent pushes \<some recent time frame\>
+![GitHub button to create a pull request](./docs/images/Create-pull-request-button.png)
 
 If you pushed recently, then one of these messages may will be about your
 branch.
@@ -387,34 +393,34 @@ this pull request – what are you trying to accomplish and how did you do it?
 When all that's ready, click the green "Create pull request" button to actually
 create the pull request.
 
-Once that's done, you want to request two or three reviewers. Click the gear
-icon to the right of "Reviewers" in the right hand column of actions. Hopefully
-there will be several people in the drop-down list; if so pick two or three at
-random. You should always be able to just type in "NicMcPhee" to add me as a
-reviewer, but you want to get a few other people in case I'm swamped.
-
 ### You can't merge yet
 
 What you _want_ to do is merge this into `main` so your wonderful changes are
-an official part of the project. You can't do it yet, though – the "Merge pull
-request" button down at the bottom is grayed out. Before you can merge, at least
-two things must be true:
+an official part of the project. You can't do it yet, though.
+
+Before you can merge, the following things must be true:
 
 - A set of automated checks have to pass
 - Your pull request/branch has to be up-to-date with `main`
-- At least one person has to review _and accept_ your pull request
+- At least two people have to review _and accept_ your pull request
+
+In this example, all the automated checks are passing and the branch is
+up-to-date with `main`, but there haven't been any reviews yet.
+
+![GitHub showing checks have passed, but missing reviews](./docs/images/Merging-blocked.png)
 
 #### Automated checks
 
 We use a feature called GitHub Actions to automate a set of checks on the lab
 and project repositories in this course. All those checks have to pass before
-you can merge in your pull request. For this lab we have four checks:
+you can merge in your pull request. For this lab we have several checks:
 
-- "build": This runs `./gradlew check`, which compiles the code
-  and runs the JUnit tests. If these succeed you get a green check mark, and you get a red x if anything fails.
-  and runs several checks. If all of these succeed you get a check mark (:white_check_mark:), and you get a red x (:x:) if anything fails.
-  - It runs the JUnit tests
-  - It confirms that the test coverage is at least 80%. (This should
+- "Java / build": This runs `./gradlew check`, which compiles the code
+  and runs several checks. If all of these succeed you get a check mark
+  (:white_check_mark:), and you get a red x (:x:) if anything fails.
+  In particular "Java /build":
+  - Runs the JUnit tests and makes sure they pass.
+  - Confirms that the test coverage is at least 80%. (This should
     be trivially true as the tests that we've provided should
     automatically cover any new code that's added to `Hellos.java`)
 - "markdown-link-check": This checks that all the links in the
@@ -422,8 +428,10 @@ you can merge in your pull request. For this lab we have four checks:
   the other end of that URI). You won't be adding or changing any
   links in this lab, so that should continue to pass without any
   concerns.
-- "CodeQL": This triggers security checks in languages specified in our GitHub workflows
-- "Analyze (java)": This checks some security things in the Java of this project (since we asked it to check Java)
+- "CodeQL / Analyze (java-kotlin)": This triggers quality and security
+  checks on our Java code.
+- "Check markdown links" makes sure that all the links in the Markdown
+  documents in this repository still actually work.
 
 So have a look at the bottom of your pull request and you should see the status of this check. If any of them have an orange/yellow dot next to them,
 then that tells you that check is still being processed (e.g., the tests are still
@@ -484,7 +492,8 @@ have a section that looks something like:
 ```
 
 What this rather odd syntax says is that Chris's `chris-greeting` branch has
-a line that calls `chrisSaysHello()`, where `main` (which has Pat's changes)
+a line that calls `chrisSaysHello()`, where the `main` branch (which has Pat's
+previously committed changes)
 has a line that calls `patSaysHello()`. Everything between the `<<<<` line
 and the `====` line is what things look like in the `chris-greeting` branch,
 and everything between the `====` line and the `>>>>` line are what things
@@ -496,8 +505,7 @@ There are numerous ways this conflict could have come about, such as:
   instead call the (supposedly different) method `chrisSaysHello()`.
 - Chris has renamed `patSaysHello()` to `chrisSaysHello()`, and wants to change
   the call to match this renaming.
-- Chris wants to make _both_ function calls in some order, and `git` can't
-  begin to guess what the desired is.
+- Chris wants to make _both_ function calls.
 
 Here `git` can't tell which of these happened, and thus can't "know" how to
 handle the merge. Thus it punts it to us, the human developers, to sort out. Sometimes
@@ -521,11 +529,11 @@ conflicts, and you'd probably rather use that for more complex conflicts.
 See [our write-up on using GitKraken to deal with merge conflicts](docs/MERGE_CONFLICTS.md)
 for more examples and details.
 
-:warning: :bangbang: At this point Chris (or you if you've been doing something
+:bangbang: At this point Chris (or you if you've been doing something
 similar) will need to pull these changes back down to your copy if you want
 or need to make changes to your branch. The changes you've made by
 resolving conflicts in the web GUI _only_ affect the version of the
-code on GitHub, so you have to pull if you want those changes to be
+code on GitHub, so you have to `pull`` if you want those changes to be
 reflected in your local copy as well. If, for example, Chris realizes here
 that the tests are failing because they have the alphabetical order wrong,
 they'll need to pull down these changes, fix the alphabetical order, push back
@@ -610,7 +618,7 @@ received a request to make some changes, look those over. Does the request make
 sense? Do you understand what (and why) it's being made? If not, _definitely_
 ask the requestor for further information or explanation. You can post your own comment
 on the pull request and/or contact them by other means (e.g., talk to them in person,
-or use things like Discord or email). You probably want any important info to be captured
+or use things like Slack or email). You probably want any important info to be captured
 in the pull request, but sometimes it's useful to poke someone on another channel
 to get their attention.
 
@@ -621,15 +629,28 @@ requests!
 ### Finally merge your pull request
 
 Let's assume you've _finally_ gotten all the checks to pass, you're up to date
-with `main`, and you've gotten a positive pull request. Now the green
-"Merge Pull Request" should enabled, so push that button! Make any updates
-you want, and then click "Confirm merge".
+with `main`, and you've gotten the necessary code review approvals. Click the
+"Merge when ready" button to tell GitHub that you think everything is good,
+and you're ready to merge this code in. You'll then be asked to "Confirm merge
+when ready".
 
-At this point your pull request should be merged in and your changes should now
-be visible in `main` – your work is officially part of the project! You'll
+If there's something still blocking the merge (a test is failing, or you're
+still missing an approval), then GitHub will hold your pull request until everything
+is OK. Once that happens, though, your pull request will be added to the
+_merge queue_, which is a series of "good to go" pull requests waiting to
+be merged into `main`. This process can take a few minutes because GitHub
+re-runs all the checks just to make sure things are good, and if there are
+several other pull requests ahead of you in the queue it could be a bit.
+While you're waiting, do your colleagues a favor and go review some other
+pull requests.
+
+Eventually, hopefully, your pull request will get be merged in and your
+changes should now
+be visible in `main` – your work is officially part of the project! If you
+go back to your pull request page, you'll
 be given the option to "Delete branch", which will delete your work branch.
 Since the changes on that branch are now all merged into `main` it should be
-safe to delete that branch, but you can leave it there if you prefer and
+safe to delete that branch. You can, however, leave it there if you prefer and
 remove it in some "branch housekeeping" session you run later.
 
 ## Huzzah! We're done! :-)
