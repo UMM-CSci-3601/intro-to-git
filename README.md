@@ -1,16 +1,11 @@
 # Introduction to `git` <!-- omit in toc -->
 
-!["Broken" badge to remind us to fix the URLs on the "real" badges](https://img.shields.io/badge/FIX_BADGES-Badges_below_need_to_be_updated-red)
-
 > :bangbang: :mage_woman: **Faculty**
 >
 > Each semester there's fair bit of setup that has to be done
 > to initially create and configure that semester's GitHub
 > organization, that semester's GitHub Classroom, and the
 > specific set up for this first lab.
->
-> The instructions for all this are in [the FACULTY_REPO_SETUP.md](docs/FACULTY_REPO_SETUP.md) document in the `/docs` directory
-> of this repo.
 >
 > After you've gone through those instructions, you should
 > remove these faculty-oriented instructions and the
@@ -19,8 +14,6 @@
 > Make sure to leave these notes in the copy in the "starter"
 > repository so it's there each semester when we make a copy
 > of this.
-
-[![Continuous integration status](../../actions/workflows/gradle.yaml/badge.svg)](../../actions/workflows/gradle.yaml)
 
 - [Background](#background)
   - [Resources for learning `git` and friends](#resources-for-learning-git-and-friends)
@@ -77,7 +70,7 @@ of documentation we have in the `docs/` folder:
 - [A discussion of how to avoid merge conflicts and deal with them when they (inevitably) happen](docs/MERGE_CONFLICTS.md)
 - [An overview of the Gradle build tool and how we're using it in this lab](docs/Gradle_README.md)
 
-You should also probably read [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
+You should also probably read GitHub's [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) guide.
 Markdown is the markup language used by Discord, Slack, GitHub, and _many_ other
 online tools, so understanding at least the basics is really valuable.
 
@@ -104,7 +97,7 @@ tutorials listed above.
 > someone breaks the tests.
 
 The discussion below assumes that people are paired up in the lab, but we want
-to make sure everyone has hands on experience with these tools and ideas.
+to make sure everyone has hands-on experience with these tools and ideas.
 This sort of _pair programming_ will be common throughout the class and
 beyond, with two people working together. It is common in these settings for
 one person (the _driver_, say Pat) to be at the keyboard, while the other person (the

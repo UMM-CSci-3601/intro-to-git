@@ -29,6 +29,7 @@ Before you can really do anything you'll need to
   - [ ] We usually use "Everyone" as the name for the set of
         teams; GitHub Classroom will then call the shared
         repository `intro-to-git-everyone`, which is nice.
+  - [ ] Post the invite link to the GitHub Classroom assignment on the LMS (e.g., Canvas)
 
 Now it's useful to "force" the creation of the repository in
 this semester's organization/classroom. You can just follow
@@ -59,8 +60,7 @@ To do this you _have_ to be an admin on the
 organization for this semester; that will be true "for free"
 if you're the person that created the organization above.
 
-- Go to your _personal_ settings (assuming you're an admin on the org)
-- Click "Applications" in the "Account settings" panel on the left
-- Click "Authorized OAuth Apps" tab
-- Find and click "GitKraken" on that list
-- Click "Grant" for the new, semester specific org
+- [ ] Go to <https://github.com/settings/connections/applications/>
+- [ ] Click on "GitKraken"
+- [ ] Grant access to the new semester's organization in the list of
+      organizations on that page

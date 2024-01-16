@@ -12,6 +12,8 @@
   - [Creating a page](#creating-a-page)
   - [`commit` your changes (locally)](#commit-your-changes-locally)
   - [`push`ing your work to GitHub](#pushing-your-work-to-github)
+    - [Personal Access Tokens](#personal-access-tokens)
+    - [Back to `git push`](#back-to-git-push)
 
 In this part of the lab we'll add everyone's names and GitHub usernames to the
 repository so we'll be able to figure out who GitHub user `MightyWombat259`
@@ -52,6 +54,9 @@ that should take you to the shared repository on GitHub. From there
 you can get the URL for that repository
 from the green `Code` button visible on the "home page" for each
 repository on GitHub.
+
+![Green "Code" button and GitHub URL](./docs/images/GitHub-repo-URL.png)
+
 See [GitHub's "Cloning a repository" tutorial](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 for examples. The URL should look like this:
 
@@ -59,7 +64,7 @@ for examples. The URL should look like this:
 https://github.com/YOUR-ORG-OR-NAME/REPO.git
 ```
 
-where `YOUR-ORG-OR-NAME` is the a user name or (in our case) an organization name
+where `YOUR-ORG-OR-NAME` is a user name or (in our case) an organization name
 and `REPO` is the name of the repository.
 
 ### Command line `clone`
@@ -167,7 +172,7 @@ of the repo (the directory `intro-to-git`) and choose `Open`.
 When you first open a project in VS Code, it will ask you
 if you trust the authors of the project:
 
-![](docs/images/VSCode-trust-dialog.png)
+![VS Code "Do you trust the authors" dialog box](docs/images/VSCode-trust-dialog.png)
 
 This is important because VS Code and its extensions are
 quite powerful, and a malicious agent could hijack these
@@ -200,11 +205,15 @@ open up `src -> main/java/hellos -> Main.java` and
 Java program. Now open up `src -> test/java/hellos -> HellosTest.java`
 and you should see our JUnit tests.
 
+![`intro-to-git` file structure in VS Code](./docs/images/VSCode-file-structure.png)
+
 > [JUnit is a widely used testing framework for Java](https://junit.org/junit5/docs/current/user-guide/#writing-tests).
 > A Junit test is a method that has the special `@Test` annotation and contains
 > one or more _assertions_ like `assertTrue` or `assertEquals`. Tests _pass_
 > if all the assertions in a test method are true; they _fail_ if any assertion
-> is false.
+> is false. You won't have to edit or directly work with the JUnit tests in this
+> lab, but you will work with JUnit in subsequent labs and your project iterations.
+> Feel free to ask questions about the test code.
 
 As well as running tests from an "external" terminal window, you can also run
 them from a terminal inside VS Code. Go to the "Terminal" menu and select
@@ -230,7 +239,8 @@ lab we'll create a new file in that directory for each group, each of which
 will contain your real names and your GitHub user names. Sometimes
 it's easy for us to figure out how those names relate, but if your
 GitHub user name is `UnicornWizard375` it's not always obvious who in the
-class that is, especially if you don't always wear your wizarding regalia to lab.
+class that is, especially if you don't always wear your single-horned
+wizarding regalia to lab.
 
 There will be several steps to this process, each of which is described in
 more detail below:
@@ -254,10 +264,12 @@ approach is:
   you want the new file to go in.
 - Right click on that directory and choose "New File".
 - Enter its name (see below for naming rules for this step). Make sure
-  to include the appropriate extension (e.g., `.md` or `java`) so
+  to include the appropriate extension (e.g., `.md` or `.java`) so
   VS Code will know how to handle the file and its contents.
 - Press Enter/Return and VS Code will create your new (empty) file
   and open an editing pane for you to start working in it.
+
+![Creating a new file in VS Code](./docs/images/VSCode-new-file.png)
 
 Each contact info page should:
 
@@ -265,7 +277,7 @@ Each contact info page should:
 - Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
 - Contain at least:
   - Your preferred names (e.g., "Nic" or "KK")
-  - [Your pronouns](https://www.mypronouns.org/)
+  - [Your pronouns](https://www.mypronouns.org/) (e.g., "she/her/hers", "he/him/his", or "they/them/theirs")
   - Your GitHub usernames (so we can figure out who `UnicornWizard375`
     is in real life)
 
@@ -354,10 +366,10 @@ you can save and exit the editor.
 > If you've set up a GUI editor like VS Code
 > to be your editor for `git` commit messages, then you may need to save
 > and close the editor window for the commit message before `git` will
-> recognize that you're done editing the message.
+> recognize that you're done editing the message. That should finalize
+> the commit.
 
-That should finalize the commit, and you should get
-output that looks something like:
+After finishing the commit, you should get output that looks something like:
 
 ```text
 [main 47d9c89] Add the info for Pat and Chris to `user_info/KK_and_Nic.md`.
@@ -411,17 +423,63 @@ work up to the GitHub repository:
 git push
 ```
 
+#### Personal Access Tokens
+
 :warning: You'll need to authenticate with GitHub at this point. So far all
 you've been doing with things like `git clone` and `git pull` is "reading" info
 from Github, and anyone can do that on a public repository (which this is).
 Now, however, you want to _change_ something, so you need to prove that you
-have permission to make changes to the contents of the repository. How exactly
-this will play out depends on your setup and what exactly GitHub is doing at
-the moment. Hopefully it'll be fairly "obvious" how to authenticate after you
-enter `git push`, but if not definitely ask! If it asks for a username and
-password at some point, that will almost certainly need to be the info you
-used when setting up your GitHub account.
+have permission to make changes to the contents of the repository.
 
+To make `git push` work on the command line you'll need [a GitHub _Personal
+Access Token_ (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+GitHub doesn't want you typing your GitHub password on the command line
+(where there's no guarantee that it'll be encrypted), so they instead
+have you get a PAT from their web site, and type that in on the command line
+instead. You don't need PATs on things like GitKraken and VS Code because
+they completely control the communication with GitHub's servers, and GitHub
+can force them to use encrypted communication channels.
+
+PATs are basically short-lived "passwords" that you can use to authenticate with
+GitHub up until they expire. They also have neat properties like the ability
+to constrain a PAT to only work on a particular repository/project, or only
+have certain permissions on that project, all helping limit the damage if
+someone was able to get a copy of your PAT.
+
+To create a PAT for this lab, follow GitHub's ["Creating a fine grained personal access token"](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+instructions. We're going to create a PAT that's entirely specific to this lab,
+which means you'll need to create new PATs later in the semester if/when you
+need them. You can go with the defaults for most of the options, but there will
+be some questions/options you'll need to address when creating your PAT:
+
+- You can use whatever **Token name** makes sense to you for the token.
+- I'd go with an **Expiration** of 7 days since we should be done with this lab
+  the end of the week.
+- Under "Resource owner" you _have_ to select the organization for this semester's
+  Software Design course. That's probably something of the form `UMM-CSci-3601-S24`.
+- Under **Repository access** choose "Only select repositories". Then choose
+  the repository with `intro-to-git` in the name from the "Select repositories" dropdown.
+- Open the **Repository permissions** drop-down. You'll get a somewhat bewildering
+  set of options there, but all you need is to set "Contents" to "Read and write".
+  You can leave the rest alone.
+- Ignore **Organization permissions**; you don't need to do anything there.
+
+:warning: :bangbang: Make sure you save that token somewhere safe. Once you
+leave that page you won't be able to get back to it and you'll have to generate
+a new token. They're also really long and no fun to type in, so you probably want
+it in someplace you can access from a lab computer.
+
+#### Back to `git push`
+
+Now that we have a PAT sorted out, we can come back to `git push` and hopefully
+authenticate properly. When you enter `git push`, it should essentially ask
+for your user name and password:
+
+- It'll ask you for your `Username for 'https://github.com'`.
+- It'll ask you for your `Password for 'https://<username>@github.com'`.
+  This is where you paste (or type in) your PAT.
+
+Assuming all that worked the push should happen.
 Again, look for errors in the output of `git push`. If someone else managed
 to do a `git push` between when you did `git pull` and tried `git push`, `git`
 will complain and force you to do `git pull` again. Essentially you can never
