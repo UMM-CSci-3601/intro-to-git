@@ -2,8 +2,6 @@
 
 - [Overall instructions](#overall-instructions)
 - [Set up various apps](#set-up-various-apps)
-  - [Better Code Hub](#better-code-hub)
-  - [LGTM (Looks Good To Me)](#lgtm-looks-good-to-me)
   - [GitKraken](#gitkraken)
 
 Each semester we need to do a certain amount of setup for that
@@ -54,26 +52,10 @@ As well as setting up the classroom and the initial repository,
 we need to set up various apps that will need access to this
 organization.
 
-### Better Code Hub
-
-- [ ] Install [the Better Code Hub app](https://github.com/marketplace/better-code-hub) in the new, semester specific organization.
-  - Choose the free plan
-  - Make sure you set the account (right above the green "go" button) to the new, semester specific organization
-  - Click to install
-- [ ] Go to the Better Code Hub interface, load up the new org, and run a check on the `intro-to-git` repo _in that org_ (& using whatever name you used there)
-- [ ] Click the button on the bottom left of that card to enable PR checks
-- [ ] Update the badge URL to point to the correct org/repo
-
-### LGTM (Looks Good To Me)
-
-- [ ] Install the LGTM app in the new, semester specific organization.
-- [ ] Go to the LGTM interface and enter the URL for the new `intro-to-git` repo in the "Follow a project" entry at the top
-- [ ] Click the "Enable PR code reviews" button
-- [ ] Update the badge URL if necessary
-
 ### GitKraken
 
-We also need to enable GitKraken on the new, semester specific organization. To do this you *have* to be an admin on the
+We need to enable GitKraken on the new, semester specific organization.
+To do this you _have_ to be an admin on the
 organization for this semester; that will be true "for free"
 if you're the person that created the organization above.
 

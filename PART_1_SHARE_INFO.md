@@ -42,12 +42,12 @@ will create a copy on GitHub for your team of our starter
 repository; your team will use that as the starting point for your work.
 
 This lab is unusual in that we will all be on a single large team called
-__Everyone__, all making changes to a single shared repository. This will
+**Everyone**, all making changes to a single shared repository. This will
 help illustrate the value of version control systems like `git` in managing
 this kind of shared resource, and also give us opportunities to see what
 happens when different people make inconsistent changes to the same files.
 
-So follow the link in the Canvas assignment and join the __Everyone__ team;
+So follow the link in the Canvas assignment and join the **Everyone** team;
 that should take you to the shared repository on GitHub. From there
 you can get the URL for that repository
 from the green `Code` button visible on the "home page" for each
@@ -90,6 +90,43 @@ _in_ the directory containing your clone of the repo (i.e., you're in the
 
 This may spend a little time downloading dependencies; how long this takes
 will depend on the configuration of your computer, your networking speed, etc.
+
+You might get a bunch of lines that look something like:
+
+```text
+Path for java installation '/usr/lib/jvm/java-11-openjdk-11.0.15.0.10-2.el8_6.x86_64' (Common Linux Locations) does not contain a java executable
+```
+
+<!--
+  There's a Markdown lint warning (MD033) about not using HTML in
+  Markdown. This is generally a good idea, but I think the `details`
+  tag is actually really useful and there isn't currently a "pure"
+  Markdown equivalent, so I'm disabling that warning here where I'm
+  using `details`.
+-->
+<!-- markdownlint-disable MD033 -->
+<details>
+  <summary>These are fine; feel free to ignore them.</summary>
+  <quote>
+  We're using a Gradle plugin that lets us specify a particular
+  Java version in `build.gradle`, and Gradle will actually download
+  the specified version of Java if that version doesn't appear to
+  already be on the system you're using.
+
+  This is nice because it makes it much easier to run Java programs
+  on pretty much any reasonable system, and Gradle will automatically
+  download the specified version of Java if necessary.
+
+  Before it downloads a new version of Java, however, it does look in
+  a variety of "standard" locations to see if the desired version is
+  already there. For every "standard" location it looks, but fails to
+  find the desired version, you'll get one of these
+  `Path for java installation` lines. In our lab (at the moment)
+  there are quite a few possible locations that are checked, so you
+  get quite a few of these lines.
+  </quote>
+</details>
+
 It will eventually run our program, which should generate output that
 looks something like
 
@@ -158,9 +195,10 @@ install them one at a time if you want to know more about what we're doing here.
 ### Have a look at the project
 
 In the file explorer on the left of the VS Code window,
-open up `src -> main/java/hellos -> Hellos.java` and you should see a small
-Java program. Now open up `src -> test/java/hellos -> HellosTest.java` and you
-should see our JUnit tests.
+open up `src -> main/java/hellos -> Main.java` and
+ `src -> main/java/hellos -> Hellos.java`, and you should see a small
+Java program. Now open up `src -> test/java/hellos -> HellosTest.java`
+and you should see our JUnit tests.
 
 > [JUnit is a widely used testing framework for Java](https://junit.org/junit5/docs/current/user-guide/#writing-tests).
 > A Junit test is a method that has the special `@Test` annotation and contains
@@ -227,7 +265,7 @@ Each contact info page should:
 - Be named `<your_names>.md`, e.g., `Pat_and_Chris.md`
 - Contain at least:
   - Your preferred names (e.g., "Nic" or "KK")
-  - [Your preferred pronouns](https://www.mypronouns.org/)
+  - [Your pronouns](https://www.mypronouns.org/)
   - Your GitHub usernames (so we can figure out who `UnicornWizard375`
     is in real life)
 

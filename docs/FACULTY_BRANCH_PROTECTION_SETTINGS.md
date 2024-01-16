@@ -60,8 +60,7 @@ Then go through and check/enable the following options:
   - [ ] "Restrict who can dismiss pull request reviews"
 - [ ] "Require status checks to pass before merging"
   - [ ] "Require branches to be up to date before merging"
-  - [ ] Check each of "Better Code Hub", "LGTM analysis: Java", and
-        "build" to turn those checks on.
+  - [ ] Check "build" to turn that check on
 
 This should prevent anyone from directly committing to `main`, forcing
 them to go through pull requests. Those PR will require at least two

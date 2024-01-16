@@ -21,8 +21,6 @@
 > of this.
 
 [![Continuous integration status](../../actions/workflows/gradle.yaml/badge.svg)](../../actions/workflows/gradle.yaml)
-[![BCH compliance](https://bettercodehub.com/edge/badge/UMM-CSci-3601/intro-to-git?branch=main)](https://bettercodehub.com/)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/UMM-CSci-3601/intro-to-git.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/UMM-CSci-3601/intro-to-git/alerts/)
 
 - [Background](#background)
   - [Resources for learning `git` and friends](#resources-for-learning-git-and-friends)
@@ -31,11 +29,6 @@
 - [We're ready to start the lab](#were-ready-to-start-the-lab)
 
 ## Background
-
-:mask: Normally we would do this in the CSci lab and you wouldn't need to worry
-about installing anything. Because we're doing the course online, you'll need
-to make sure you've installed the tools discussed below (`git`, GitKraken,
-and VS Code) **before the lab** so we can all get started.
 
 This is an in-lab exercise where we'll introduce and practice several of the
 key features of [the `git` version control system](https://git-scm.com/),
@@ -85,7 +78,7 @@ of documentation we have in the `docs/` folder:
 - [An overview of the Gradle build tool and how we're using it in this lab](docs/Gradle_README.md)
 
 You should also probably read [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-Markdown is the markup language used by Slack, GitHub, and _many_ other
+Markdown is the markup language used by Discord, Slack, GitHub, and _many_ other
 online tools, so understanding at least the basics is really valuable.
 
 Below are some additional resources that you might
@@ -95,9 +88,9 @@ its more advanced features.
 
 - The excellent [Atlassian `git` tutorials](https://www.atlassian.com/git/tutorials/what-is-version-control)
 - [The "standard" `git` documentation site](https://git-scm.com/documentation),
-which also includes links to videos, cheat sheets, and such
+  which also includes links to videos, cheat sheets, and such
 - [`git` – the simple guide](http://rogerdudler.github.io/git-guide/),
-a single-page app that goes through the major features of `git`
+  a single-page app that goes through the major features of `git`
 - [A little on-line "game" for learning how branching works in `git`](https://learngitbranching.js.org/)
 
 As circumstances allow, you might also want to at least skim one or two of the
