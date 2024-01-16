@@ -60,7 +60,19 @@ Then go through and check/enable the following options:
   - [ ] "Restrict who can dismiss pull request reviews"
 - [ ] "Require status checks to pass before merging"
   - [ ] "Require branches to be up to date before merging"
-  - [ ] Check "build" to turn that check on
+- [ ] "Require merge queue"
+- [ ] "Do not allow bypassing the above settings"
+
+You also need to add `build` to the set of required checks. Go to the
+search box right below "Require branches to be up to date before merging",
+search for "build", and select the "build" entry in the resulting
+drop-down:
+
+![Finding `build` to add to the status checks](./images/Requiring-build-to-merge.png)
+
+You will have had to have had GitHub Actions run at least once for "build"
+to show up in the list. That should have happened multiple times during
+part one of the lab, though.
 
 This should prevent anyone from directly committing to `main`, forcing
 them to go through pull requests. Those PR will require at least two
