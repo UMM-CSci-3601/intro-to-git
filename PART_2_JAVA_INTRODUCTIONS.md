@@ -105,22 +105,6 @@ lives, while active development, bug fixes, and the like happen in other
 development branches that are merged into `main` when that work is deemed
 "done done" (passes the tests, has been through a code review, etc.).
 
-> Historically the default has actually been called `master`. One side-effect
-> of the Black Lives Matter movement has been an increasing recognition of
-> the painful connotations that term has for many people, and there have
-> been [calls to change from `master` to the more neutral `main`](https://dev.to/afrodevgirl/replacing-master-with-main-in-github-2fjf).
-> GitHub in fact did a lot of work to support changing the default naming for new projects,
-> and provides tools to help automate changing the name of the default branch.
-> See [their renaming repo](https://github.com/github/renaming) for the
-> details. New, blank repositories will, for example, now
-> have `main` as their default branch name, and they've provided tools for
-> renaming your primary branch.
->
-> There were a _lot_ of instances of `master` created when that was the
-> default, so there are likely to be references to `master` as the default
-> branch in older
-> `git` examples and documentation for quite a while.
-
 To illustrate the use of branches, we'll have each group create a new branch
 for their modification of the shared program. Assuming, for example, that
 we still have Pat and Chris, they would create a new branch called something
