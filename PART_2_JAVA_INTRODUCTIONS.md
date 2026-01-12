@@ -376,8 +376,14 @@ more messages in a light yellow box near the top like:
 
 ![GitHub button to create a pull request](./docs/images/Create-pull-request-button.png)
 
-If you pushed recently, then one of these messages may will be about your
-branch.
+If you pushed recently, then one of these messages will be about your
+branch. You will also want to be careful to select the correct base branch
+(`main`) and compare branch (your branch) in the correct **repository**. The correct
+repository is the one you cloned from the class GitHub organization
+(e.g., `https://github.com/UMM-CSci-3601-S26/intro-to-git-everyone`), not the one that
+GitHub Classroom created on our behalf that includes a lot of extra stuff in its name
+(e.g., `https://github.com/UMM-CSci-3601-S26/umm-csci-3601-s26-classroom-intro-to-git-intro-to-git`).
+GitHub seems to offer up the wrong repository by default, so be sure to check that.
 
 - If there is such a message for your branch, click "Compare & pull request".
 - If there isn't a message for your branch:
